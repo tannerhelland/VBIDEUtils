@@ -1,0 +1,14 @@
+(*.
+(*.*)
+):*.
+*.*
+.CTX
+.DLL
+.FRX
+.OCX
+.RES
+:\
+;*.
+=
+HKEY_
+sFirstWord =

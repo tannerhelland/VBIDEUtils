@@ -1,0 +1,26 @@
+[Options]
+Compiled File = ###CompiledFile###.chm
+Title = ###Title###
+Contents File = ###ProjectTitle###.hhc
+Default topic = ###IntroFile###
+Default Window = NewWindow
+Error log file=
+Display compile progress=Yes
+Display compile notes=Yes
+Full-text search=Yes
+Binary Index = No
+Auto Index = No
+Enhanced decompilation = No
+Binary TOC = No
+Flat = No
+
+[Windows]
+
+[Files]
+###FileList###
+
+[Alias]
+
+[MAP]
+
+[TEXT POPUPS]

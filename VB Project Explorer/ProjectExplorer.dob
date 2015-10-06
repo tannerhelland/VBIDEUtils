@@ -1,0 +1,2802 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Begin VB.UserDocument docProjectExplorer 
+   ClientHeight    =   3075
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   3570
+   HScrollSmallChange=   225
+   ScaleHeight     =   3075
+   ScaleWidth      =   3570
+   VScrollSmallChange=   225
+   Begin VB.PictureBox picSideBar 
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   2595
+      Left            =   3240
+      ScaleHeight     =   2595
+      ScaleWidth      =   255
+      TabIndex        =   3
+      Top             =   360
+      Visible         =   0   'False
+      Width           =   255
+   End
+   Begin MSComctlLib.ImageList ilTreeview 
+      Left            =   960
+      Top             =   360
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   16711935
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   46
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":0000
+            Key             =   "Project"
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":01DA
+            Key             =   "Property Pages"
+         EndProperty
+         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":0334
+            Key             =   "User controls"
+         EndProperty
+         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":048E
+            Key             =   "Related Documents"
+         EndProperty
+         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":05E8
+            Key             =   "Designers"
+         EndProperty
+         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":0A3A
+            Key             =   "Class Modules"
+         EndProperty
+         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":0C14
+            Key             =   "Modules"
+         EndProperty
+         BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":0DEE
+            Key             =   "User documents"
+         EndProperty
+         BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":0FC8
+            Key             =   "Description"
+         EndProperty
+         BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":11A2
+            Key             =   "Declaration"
+         EndProperty
+         BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":14BC
+            Key             =   "ActiveX Document"
+         EndProperty
+         BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":17D6
+            Key             =   "ActiveX Exe"
+         EndProperty
+         BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":1B2A
+            Key             =   "Standard EXE"
+         EndProperty
+         BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":1E7E
+            Key             =   "Variable"
+         EndProperty
+         BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":2058
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage16 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":23AC
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage17 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":2700
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage18 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":2A54
+            Key             =   "Forms"
+         EndProperty
+         BeginProperty ListImage19 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":2DA8
+            Key             =   "friend declare"
+         EndProperty
+         BeginProperty ListImage20 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":30FC
+            Key             =   "friend const"
+         EndProperty
+         BeginProperty ListImage21 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":3450
+            Key             =   "friend enum"
+         EndProperty
+         BeginProperty ListImage22 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":37A4
+            Key             =   "friend method"
+         EndProperty
+         BeginProperty ListImage23 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":3AF8
+            Key             =   "friend property"
+         EndProperty
+         BeginProperty ListImage24 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":3E4C
+            Key             =   "friend sub"
+         EndProperty
+         BeginProperty ListImage25 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":41A0
+            Key             =   "Mdi form"
+         EndProperty
+         BeginProperty ListImage26 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":44F4
+            Key             =   "private declare"
+         EndProperty
+         BeginProperty ListImage27 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":4848
+            Key             =   "private const"
+         EndProperty
+         BeginProperty ListImage28 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":4B9C
+            Key             =   "private enum"
+         EndProperty
+         BeginProperty ListImage29 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":4EF0
+            Key             =   "private event"
+         EndProperty
+         BeginProperty ListImage30 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":5244
+            Key             =   "private property"
+         EndProperty
+         BeginProperty ListImage31 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":5598
+            Key             =   "private sub"
+         EndProperty
+         BeginProperty ListImage32 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":58EC
+            Key             =   "private function"
+         EndProperty
+         BeginProperty ListImage33 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":5C40
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage34 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":5F94
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage35 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":62E8
+            Key             =   "public declare"
+         EndProperty
+         BeginProperty ListImage36 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":663C
+            Key             =   "public const"
+         EndProperty
+         BeginProperty ListImage37 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":6990
+            Key             =   "public enum"
+         EndProperty
+         BeginProperty ListImage38 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":6CE4
+            Key             =   "public event"
+         EndProperty
+         BeginProperty ListImage39 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":7038
+            Key             =   "public function"
+         EndProperty
+         BeginProperty ListImage40 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":738C
+            Key             =   "public property"
+         EndProperty
+         BeginProperty ListImage41 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":76E0
+            Key             =   "public sub"
+         EndProperty
+         BeginProperty ListImage42 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":7A34
+            Key             =   "folder"
+         EndProperty
+         BeginProperty ListImage43 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":7D88
+            Key             =   "folderopen"
+         EndProperty
+         BeginProperty ListImage44 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":80DC
+            Key             =   "ActiveX DLL"
+         EndProperty
+         BeginProperty ListImage45 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":8430
+            Key             =   "ActiveX Control"
+         EndProperty
+         BeginProperty ListImage46 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":8784
+            Key             =   "return"
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.ImageList ImageList1 
+      Left            =   1620
+      Top             =   360
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   12632256
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   13
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":8AD8
+            Key             =   "View Code"
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":902A
+            Key             =   "View Form"
+         EndProperty
+         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":957C
+            Key             =   "Refresh"
+         EndProperty
+         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":98D0
+            Key             =   "Indent"
+         EndProperty
+         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":9C24
+            Key             =   "Comment"
+         EndProperty
+         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":A1BE
+            Key             =   "Properties"
+         EndProperty
+         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":A318
+            Key             =   "Module"
+         EndProperty
+         BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":A472
+            Key             =   "Form"
+         EndProperty
+         BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":A78C
+            Key             =   "MDI Form"
+         EndProperty
+         BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":A8E6
+            Key             =   "Class Module"
+         EndProperty
+         BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":AA40
+            Key             =   "User Control"
+         EndProperty
+         BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":AD5A
+            Key             =   "Property Page"
+         EndProperty
+         BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "ProjectExplorer.dox":B074
+            Key             =   "User Document"
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.Toolbar tb 
+      Align           =   1  'Align Top
+      Height          =   360
+      Left            =   0
+      TabIndex        =   2
+      Top             =   0
+      Width           =   3570
+      _ExtentX        =   6297
+      _ExtentY        =   635
+      ButtonWidth     =   609
+      ButtonHeight    =   582
+      Appearance      =   1
+      Style           =   1
+      ImageList       =   "ImageList1"
+      _Version        =   393216
+      BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
+         NumButtons      =   8
+         BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Enabled         =   0   'False
+            Key             =   "View Code"
+            Object.ToolTipText     =   "View Code"
+            ImageKey        =   "View Code"
+         EndProperty
+         BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Enabled         =   0   'False
+            Key             =   "View Form"
+            Object.ToolTipText     =   "View Form"
+            ImageKey        =   "View Form"
+         EndProperty
+         BeginProperty Button3 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "Refresh"
+            Object.ToolTipText     =   "Refresh the Project"
+            ImageKey        =   "Refresh"
+         EndProperty
+         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "Indent"
+            Object.ToolTipText     =   "Indent Code"
+            ImageKey        =   "Indent"
+         EndProperty
+         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button8 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Key             =   "Comment"
+            Object.ToolTipText     =   "Comment Code"
+            ImageKey        =   "Comment"
+         EndProperty
+      EndProperty
+      BorderStyle     =   1
+   End
+   Begin MSComctlLib.TreeView treMain 
+      Height          =   2340
+      Left            =   45
+      TabIndex        =   1
+      Top             =   405
+      Width           =   3330
+      _ExtentX        =   5874
+      _ExtentY        =   4128
+      _Version        =   393217
+      Indentation     =   18
+      LabelEdit       =   1
+      LineStyle       =   1
+      Style           =   7
+      BorderStyle     =   1
+      Appearance      =   1
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin MSComctlLib.TabStrip border 
+      Height          =   2715
+      Left            =   0
+      TabIndex        =   0
+      Top             =   360
+      Width           =   3435
+      _ExtentX        =   6059
+      _ExtentY        =   4789
+      Placement       =   1
+      _Version        =   393216
+      BeginProperty Tabs {1EFB6598-857C-11D1-B16A-00C0F0283628} 
+         NumTabs         =   1
+         BeginProperty Tab1 {1EFB659A-857C-11D1-B16A-00C0F0283628} 
+            Caption         =   "Project"
+            ImageVarType    =   2
+         EndProperty
+      EndProperty
+   End
+End
+Attribute VB_Name = "docProjectExplorer"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+' #VBIDEUtils#************************************************************
+' * Programmer Name  : removed
+' * Web Site         : http://www.ppreview.net
+' * E-Mail           : removed
+' * Date             : 06/10/2001
+' * Time             : 11:03
+' * Module Name      : docProjectExplorer
+' * Module Filename  : ProjectExplorer.dob
+' **********************************************************************
+' * Comments         :
+' *
+' *
+' **********************************************************************
+
+Option Explicit
+
+Private d_x             As Single
+Private d_y             As Single
+Private d_x2            As Single
+Private d_y2            As Single
+Private b_clicked       As Boolean
+
+Public WithEvents compEvents As VBIDE.VBComponentsEvents
+Attribute compEvents.VB_VarHelpID = -1
+Public WithEvents projEvents As VBIDE.VBProjectsEvents
+Attribute projEvents.VB_VarHelpID = -1
+Private WithEvents clsPopupMenu As cPopupMenu
+Attribute clsPopupMenu.VB_VarHelpID = -1
+
+Private tNodes          As Nodes
+
+Public nodeRoot         As Node ' Root Node - Code File Name
+Private nodeStart       As Node ' Func/Sub/Property in Code File
+Private nodeLine        As Node ' Code element - If/Do/While/etc
+
+Private inStack         As class_Stack
+Private outStack        As class_Stack
+Public d_components     As Collection
+Public Enum useColors
+   defaultColor = vbBlack
+   errcolor = vbRed
+   EndColor = &HC0C0C0
+   dimColor = vbWhite / 2
+   constColor = &H606060
+   compilerColor = vbCyan
+   StartColor = vbBlue
+End Enum
+
+Public Type NMHDR
+   hwndFrom             As Long
+   idfrom               As Long
+   code                 As Long
+End Type
+
+Private Type NMCUSTOMDRAW
+   hdr                  As NMHDR
+   dwDrawStage          As Long
+   hdc                  As Long
+   rc                   As RECT
+   dwItemSpec           As Long ' this is control specific, but it's how to specify an item.  valid only with CDDS_ITEM bit set
+   uItemState           As Long
+   lItemlParam          As Long
+End Type
+
+Private Type NMTVCUSTOMDRAW
+   nmcd                 As NMCUSTOMDRAW
+   clrText              As Long
+   clrTextBk            As Long
+   #If (WIN32_IE >= &H400) Then
+      iLevel               As Long
+   #End If
+End Type
+
+' CustomDraw paint stages.
+Private Const CDDS_PREPAINT = &H1
+Private Const CDDS_POSTPAINT = &H2
+Private Const CDDS_PREERASE = &H3
+Private Const CDDS_POSTERASE = &H4
+Private Const CDDS_ITEMPREPAINT = (&H10000 Or &H1)
+Private Const CDDS_ITEMPOSTPAINT = (&H10000 Or &H2)
+Private Const CDDS_ITEM = &H10000
+Private Const CDDS_SUBITEM = &H20000
+
+Private Const NM_CUSTOMDRAW = (&HFFFF - 11)
+
+' CustomDraw return values.
+Private Const CDRF_DODEFAULT = &H0
+Private Const CDRF_NEWFONT = &H2
+Private Const CDRF_SKIPDEFAULT = &H4
+Private Const CDRF_NOTIFYPOSTPAINT = &H10
+Private Const CDRF_NOTIFYITEMDRAW = &H20
+Private Const CDRF_NOTIFYPOSTERASE = &H40
+Private Const CDRF_NOTIFYSUBITEMDRAW = &H20
+Private Const WM_NOTIFY = &H4E
+
+Private Sub ClearOutStack(treeKey As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : ClearOutStack
+   ' * Parameters       :
+   ' *                    treeKey As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   Dim parentNode       As Node
+
+   With outStack
+      While .Count > 0
+         Set parentNode = nodeStart.Parent
+         If Not left$(parentNode.Key, 5) = "Type~" Then
+            Set nodeStart = parentNode
+         End If
+         AddLine .Pop, String(.Count, "_") & treeKey, errcolor
+      Wend
+   End With
+
+End Sub
+
+Private Function GetNodeType(VBComponent As VBIDE.VBComponent) As String
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : GetNodeType
+   ' * Parameters       :
+   ' *                    VBComponent As VBIDE.VBComponent
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   GetNodeType = "Unknown"
+   On Error Resume Next
+   Select Case VBComponent.Type
+      Case vbext_ct_ClassModule:
+         GetNodeType = "Class Modules"
+      Case vbext_ct_DocObject:
+         GetNodeType = "User documents"
+      Case vbext_ct_MSForm:
+         GetNodeType = "Forms"
+      Case vbext_ct_PropPage:
+         GetNodeType = "Property Pages"
+      Case vbext_ct_RelatedDocument:
+         GetNodeType = "Related Documents"
+      Case vbext_ct_StdModule:
+         GetNodeType = "Modules"
+      Case vbext_ct_UserControl:
+         GetNodeType = "User controls"
+      Case vbext_ct_VBForm:
+         GetNodeType = "Forms"
+      Case vbext_ct_VBMDIForm:
+         GetNodeType = "MDI Form"
+      Case vbext_ct_ResFile:
+         GetNodeType = "Resource Files"
+      Case vbext_ct_ActiveXDesigner:
+         GetNodeType = "Designers"
+      Case Else
+         GetNodeType = "Unknown"
+   End Select
+   err.Clear
+   On Error GoTo 0
+
+End Function
+
+Private Function GetProjectType(VBProject As VBIDE.VBProject) As String
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : GetProjectType
+   ' * Parameters       :
+   ' *                    VBProject As VBIDE.VBProject
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   GetProjectType = "Unknown"
+   On Error Resume Next
+   Select Case VBProject.Type
+      Case vbext_pt_StandardExe:
+         GetProjectType = "Standard EXE"
+      Case vbext_pt_ActiveXExe:
+         GetProjectType = "ActiveX EXE"
+      Case vbext_pt_ActiveXDll:
+         GetProjectType = "ActiveX DLL"
+      Case vbext_pt_ActiveXControl:
+         GetProjectType = "ActiveX Control"
+      Case Else
+         GetProjectType = "Unknown"
+   End Select
+   err.Clear
+   On Error GoTo 0
+
+End Function
+
+Public Sub Reload()
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : Reload
+   ' * Parameters       :
+   ' **********************************************************************
+   ' * Comments         :
+   ' *  load the tree with the module name, and the code (up to 10,000,000 lines)
+   ' *
+   ' **********************************************************************
+
+   Dim VBComponent      As VBIDE.VBComponent
+   Dim VBProject        As VBIDE.VBProject
+
+   On Error Resume Next
+
+   If tNodes Is Nothing Then
+      Set tNodes = treMain.Nodes
+   End If
+   On Error Resume Next
+   If gdocProjectExplorer Is Nothing Then
+      Exit Sub
+   End If
+
+   SetRedraw Me, False
+
+   Set gdocProjectExplorer.compEvents = VBInstance.Events.VBComponentsEvents(VBInstance.ActiveVBProject)
+   Set gdocProjectExplorer.projEvents = VBInstance.Events.VBProjectsEvents
+
+   On Error GoTo 0
+   treMain.Visible = False
+   treMain.Sorted = False
+   Set treMain.ImageList = ilTreeview
+
+   Set d_components = New Collection
+   If Not VBInstance Is Nothing Then
+      tNodes.Clear
+      For Each VBProject In VBInstance.VBProjects
+         AddProject VBProject
+      Next
+   End If
+   treMain.Visible = True
+
+   SetRedraw Me, True
+
+End Sub
+
+Private Sub AddProject(VBProject As VBIDE.VBProject)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : AddProject
+   ' * Parameters       :
+   ' *                    VBProject As VBIDE.VBProject
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   Dim aNode            As Node
+   Dim aNodeDesc        As Node
+   Dim VBComponent      As VBIDE.VBComponent
+   Dim sProjectName     As String
+   Dim sParentKey       As String
+   Dim sKey             As String
+   Dim nCount           As Long
+
+   On Error Resume Next
+
+   If Not VBProject.VBComponents Is Nothing Then
+      sProjectName = VBProject.Name
+      On Error Resume Next
+
+      ' *** Add project name
+      Set aNode = tNodes.Add(, , "Project~" & sProjectName, sProjectName)
+      If err.number <> 0 Then
+         Set aNode = tNodes("Project~" & sProjectName)
+         err.Clear
+      End If
+      aNode.Image = ilTreeview.ListImages(GetProjectType(VBProject)).Key
+      aNode.Expanded = True
+
+      sParentKey = "Project~" & sProjectName
+
+      ' *** Description
+      sKey = "Description~" & VBProject.Description & "~" & sProjectName
+      Set aNodeDesc = tNodes.Add(aNode, tvwChild, sKey, VBProject.Description, "Description")
+
+      nCount = VBProject.VBComponents.Count
+      ' *** Add all forms
+      If nCount > 0 Then
+         For Each VBComponent In VBProject.VBComponents
+            If VBComponent.Type = vbext_ct_MSForm Or _
+               VBComponent.Type = vbext_ct_VBForm Or _
+               VBComponent.Type = vbext_ct_VBMDIForm Then
+               AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), sProjectName
+               nCount = nCount - 1
+            End If
+         Next
+      End If
+
+      ' *** Add all modules
+      If nCount > 0 Then
+         For Each VBComponent In VBProject.VBComponents
+            If VBComponent.Type = vbext_ct_StdModule Then
+               AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), sProjectName
+               nCount = nCount - 1
+            End If
+         Next
+      End If
+
+      ' *** Add all class modules
+      If nCount > 0 Then
+         For Each VBComponent In VBProject.VBComponents
+            If VBComponent.Type = vbext_ct_ClassModule Then
+               AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), sProjectName
+               nCount = nCount - 1
+            End If
+         Next
+      End If
+
+      ' *** Add all User Controls
+      If nCount > 0 Then
+         For Each VBComponent In VBProject.VBComponents
+            If VBComponent.Type = vbext_ct_UserControl Then
+               AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), sProjectName
+               nCount = nCount - 1
+            End If
+         Next
+      End If
+
+      ' *** Add all Property Pages
+      If nCount > 0 Then
+         For Each VBComponent In VBProject.VBComponents
+            If VBComponent.Type = vbext_ct_PropPage Then
+               AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), sProjectName
+               nCount = nCount - 1
+            End If
+         Next
+      End If
+
+      ' *** Add all designers
+      If nCount > 0 Then
+         For Each VBComponent In VBProject.VBComponents
+            If VBComponent.Type = vbext_ct_ActiveXDesigner Then
+               AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), sProjectName
+               nCount = nCount - 1
+            End If
+         Next
+      End If
+
+      ' *** Add all related documents
+      If nCount > 0 Then
+         For Each VBComponent In VBProject.VBComponents
+            Debug.Print VBComponent.Name
+            If VBComponent.Type = vbext_ct_RelatedDocument Or _
+               VBComponent.Type = vbext_ct_DocObject Or _
+               VBComponent.Type = vbext_ct_ResFile Then
+               AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), sProjectName
+               nCount = nCount - 1
+            End If
+         Next
+      End If
+
+   End If
+   On Error Resume Next
+   If sProjectName = VBInstance.VBProjects.StartProject.Name Then
+      tNodes("Project~" & sProjectName).Bold = True
+   End If
+   err.Clear
+   On Error GoTo 0
+
+End Sub
+
+Public Sub LoadData(sComponent As String, sData As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : LoadData
+   ' * Parameters       :
+   ' *                    sComponent As String
+   ' *                    sData As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   Dim fileLines        As Variant
+
+   Dim curLine          As perLine
+   Dim parentNode       As Node
+   Dim index2           As Long
+   Dim index            As Long
+   Dim Length           As Long
+
+   Dim indexLine        As String
+   Dim fileContent      As String
+   Dim treeKey          As String
+   Dim aLine            As String
+
+   Dim b_consts         As Boolean
+   Dim b_vars           As Boolean
+
+   On Error Resume Next
+
+   If tNodes Is Nothing Then
+      Set tNodes = treMain.Nodes
+   End If
+
+   b_vars = False
+   b_consts = False
+   Debug.Print "Start Process: " & Now()
+
+   fileContent = sData
+   fileContent = Replace(fileContent, vbTab, " ", , , vbBinaryCompare)
+   While InStr(fileContent, "    ") > 0
+      fileContent = Replace(fileContent, "    ", " ", , , vbBinaryCompare)
+   Wend
+   While InStr(fileContent, "  ") > 0
+      fileContent = Replace(fileContent, "  ", " ", , , vbBinaryCompare)
+   Wend
+
+   fileLines = VBA.Split(fileContent, vbCrLf, , vbBinaryCompare)
+   fileContent = vbNullString
+   'addRoot sComponent
+   Set inStack = New class_Stack
+   Set outStack = New class_Stack
+   For index2 = UBound(fileLines) To LBound(fileLines) Step -1
+      aLine = Trim$(fileLines(index2))
+      If left$(aLine, 1) = "'" Then
+         'remove comments to condense the code, comment the following
+         'line out to leave comments in
+         aLine = vbNullString
+      ElseIf LCase$(left$(aLine, 4)) = "rem " Then
+         'remove comments to condense the code, comment the following
+         'line out to leave comments in
+         aLine = vbNullString
+      Else
+         On Error Resume Next
+         If right$(fileLines(index2 - 1), 1) = "_" Then
+            Mid$(fileLines(index2 - 1), Len(fileLines(index2 - 1)), 1) = " "
+            'because someone might put a line continuation on the last line
+            'of a module, and cause a crash otherwise
+            fileLines(index2 - 1) = fileLines(index2 - 1) & aLine
+            If err.number = 0 Then
+               fileLines(index2) = vbNullString
+               aLine = vbNullString
+               'inStack.Pop
+            Else
+               err.Clear
+            End If
+         End If
+         On Error GoTo 0
+         fileContent = Replace(aLine, """""", "  ", , , vbBinaryCompare) 'remove all double quotes as they are not useful
+         fileContent = Replace(fileContent, ":=", "  ", , , vbBinaryCompare) 'remove all := as they are not useful
+         index = InStr(1, fileContent, """", vbBinaryCompare)
+         If index > 0 Then   'eliminate all quoted sections as they might confuse the parser
+            Length = InStr(index + 1, fileContent, """", vbBinaryCompare)
+            Do While Length > 0
+               Length = Length + 1 - index
+               Mid$(fileContent, index, Length) = Space(Length) 'do this to keep the same length/positions
+               'as the original string, makes other processing easier
+               index = InStr(index + Length, fileContent, """", vbBinaryCompare)
+               If index < 1 Then
+                  Exit Do
+               End If
+               Length = InStr(index + 1, fileContent, """", vbBinaryCompare) 'actually pos in string at this point
+            Loop
+         End If
+         If InStr(fileContent, "'") > 0 Then
+            fileContent = left$(fileContent, InStr(1, fileContent, "'", vbBinaryCompare) - 1)
+         End If
+         If IsNumeric(left$(fileContent, 1)) Then
+            'line is labelled with a row number, we need to replace with spaces
+            index = InStr(1, fileContent, " ", vbBinaryCompare)
+            If index > 0 Then
+               fileContent = Space(index - 1) & Mid$(fileContent, index)
+            End If
+         End If
+         fileContent = LCase$(fileContent)
+         If Not b_consts Then
+            If left$(fileContent, 6) = "const " Then
+               aLine = vbNullString
+            ElseIf InStr(fileContent, " const ") > 0 Then
+               aLine = vbNullString
+            End If
+         End If
+         'now we have removed all the strings "hello" from the line
+         'eliminating the risk of errors caused by circumstances like
+         'If x = "then" Then
+
+         If Len(aLine) > 0 Then
+            'add to stack, otherwise ignore it
+            With curLine
+               .lineID = index2
+               .lineContent = aLine
+               .lcaseContent = LCase$(fileContent)
+            End With
+            inStack.Push curLine
+         End If
+      End If
+   Next
+   Debug.Print "Start Add/End Process: " & Now()
+   Set nodeStart = nodeRoot
+   fileLines = vbNullString
+   With outStack
+      While inStack.Count > 0
+         curLine = inStack.Pop()
+         With curLine
+            fileContent = .lcaseContent & " "
+            aLine = .lineContent & " "
+            indexLine = .lineID
+            index = InStr(1, fileContent, ":", vbBinaryCompare)
+            If index > 0 Then
+               If index < Len(fileContent) Then
+                  'here we have a problem, need to change contents of curLine and
+                  'replace on stack
+                  fileContent = left$(fileContent, index - 1) & " "
+                  aLine = left$(aLine, InStr(1, aLine, ":", vbBinaryCompare) - 1) & " "
+                  index = index + 1
+                  .lcaseContent = Mid$(.lcaseContent, index)
+                  .lineContent = Mid$(.lineContent, index)
+                  .lineID = "@~" & .lineID
+                  If Len(.lineContent) > 1 Then
+                     inStack.Push curLine
+                  End If
+               Else    'was a line label only
+                  'just continue with it
+               End If
+            End If
+         End With
+         treeKey = sComponent & "@" & indexLine
+         Set parentNode = nodeStart.Parent
+         Select Case left$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) - 1)
+            '            Case "for":
+            '               'no need to find second word on line, starts new sub section
+            '               addStartSection aLine, treeKey
+            '               .Push "next"
+            '            Case "do":
+            '               'no need to find second word on line, starts new sub section
+            '               addStartSection aLine, treeKey
+            '               .Push "loop"
+            '            Case "dim", "static", "global":
+            '               'no need to find second word on line, starts new sub section
+            '               fileContent = Mid$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) + 1) & " "
+            '               fileContent = left$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) - 1)
+            '               Select Case fileContent
+            '                  Case "const":
+            '                     If b_consts Then
+            '                        addLine aLine, treeKey, constColor
+            '                     End If
+            '                  Case Else
+            '                     If b_vars Then
+            '                        addLine aLine, treeKey, dimColor
+            '                     End If
+            '               End Select
+            '            Case "const":
+            '               'no need to find second word on line, starts new sub section
+            '               If b_consts Then
+            '                  addLine aLine, treeKey, constColor
+            '               End If
+            '            Case "while":
+            '               'no need to find second word on line, starts new sub section
+            '               addStartSection aLine, treeKey
+            '               .Push "wend"
+            '            Case "if":
+            '               'no need to find second word on line, starts new sub section
+            '               'may be a single line if statement
+            '               fileContent = Mid$(fileContent, InStrRev(fileContent, "then", , vbBinaryCompare) + 4)
+            '               fileContent = Trim$(fileContent)
+            '               If Len(fileContent) < 1 Then
+            '                  ' was a multi line if, so we need to track it
+            '                  addStartSection aLine, treeKey
+            '                  .Push "end if"
+            '               Else
+            '                  addLine aLine, treeKey, startColor
+            '               End If
+            '            Case "#if":
+            '               'no need to find second word on line, starts new sub section
+            '               'may be a single line if statement
+            '               fileContent = Mid$(fileContent, InStrRev(fileContent, "then", , vbBinaryCompare) + 4)
+            '               fileContent = Trim$(fileContent)
+            '               If Len(fileContent) < 1 Then
+            '                  ' was a multi line if, so we need to track it
+            '                  addStartSection aLine, treeKey, compilerColor
+            '                  .Push "#end if"
+            '               Else
+            '                  addLine aLine, treeKey, compilerColor
+            '               End If
+            '            Case "with":
+            '               'no need to find second word on line, starts new sub section
+            '               addStartSection aLine, treeKey
+            '               .Push "end with"
+            '            Case "select":
+            '               'no need to find second word on line, starts new sub section
+            '               addStartSection aLine, treeKey, vbBlack
+            '               .Push "end select"
+            '            Case "declare":
+            '               'no need to find second word on line, makes a Declare statement
+            '               addLine aLine, treeKey
+            '            Case "implements":
+            '               'no need to find second word on line, makes a Declare statement
+            '               addLine aLine, treeKey, compilerColor
+            '            Case "begin":
+            '               'no need to find second word on line, starts new sub section
+            '               addStartSection aLine, treeKey
+            '               .Push "end "
+            Case "sub", "function", "property":
+               'no need to find second word on line, starts new main section
+               'first make the stack empty
+               With outStack
+                  ClearOutStack treeKey
+                  Set nodeStart = nodeRoot
+                  fileContent = left$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) - 1)
+                  addStartSection aLine, treeKey, "public " & fileContent
+                  'public is the default scope
+                  .Push "end " & fileContent
+               End With
+               '            Case "enum", "type":
+               '               'no need to find second word on line, starts new main section
+               '
+               '               'first make the stack empty
+               '               With outStack
+               '                  ClearOutStack treeKey
+               '                  Set nodeStart = nodeRoot
+               '                  addStartSection aLine, treeKey, constColor
+               '                  fileContent = left$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) - 1)
+               '                  .Push "end " & fileContent
+               '               End With
+
+            Case "public", "private", "friend":
+               'roger
+               Dim Scope            As String
+               Scope = left$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) - 1)
+
+               'need to check second word to tell if it starts a new section, or just a line
+               fileContent = Mid$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) + 1) & " "
+               fileContent = left$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) - 1)
+               Select Case fileContent
+                  '                  Case "enum", "type":
+                  '                     .Push "end " & fileContent
+                  '                     addStartSection aLine, treeKey, constColor
+                  Case "sub", "function", "property":
+                     'first make the stack empty
+                     With outStack
+                        ClearOutStack treeKey
+                        .Push "end " & fileContent
+                     End With
+                     addStartSection aLine, treeKey, Scope & " " & fileContent, StartColor
+                     '                  Case "declare":
+                     '                     addLine aLine, treeKey
+                     '                  Case "const":
+                     '                     If b_consts Then addLine aLine, treeKey, constColor
+                     '                  Case "static", "withevents":
+                     '                     If b_vars Then addLine aLine, treeKey, dimColor
+                     '                  Case vbNullString:
+                     '                  Case Else
+                     '                     If b_vars Then addLine aLine, treeKey, dimColor
+               End Select
+               '            Case "end":
+               '               'end of a section - need to find what sort - depends on second word
+               '               fileContent = Mid$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) + 1) & " "
+               '               fileContent = left$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) - 1)
+               '               If .top <> "end " & fileContent Then
+               '                  If fileContent = vbNullString Then 'And .Top <> "end "
+               '                     addLine aLine, treeKey
+               '                  Else
+               '                     addLine "NO START " & fileContent, "I" & treeKey, errcolor
+               '                  End If
+               '               Else
+               '                  .Pop
+               '                  If Not left$(parentNode.Key, 5) = "Type~" Then
+               '                     Set nodeStart = parentNode
+               '                  End If
+               '                  'addLine aLine, treekey, endColor
+               '               End If
+               '            Case "loop":
+               '               'end of a section
+               '               If .top <> "loop" Then
+               '                  addLine "NO START DO", "L" & treeKey, errcolor
+               '               Else
+               '                  .Pop
+               '                  If Not left$(parentNode.Key, 5) = "Type~" Then
+               '                     Set nodeStart = parentNode
+               '                  End If
+               '                  'addLine aLine, treekey, endColor
+               '               End If
+               '            Case "next":
+               '               'end of a section
+               '               If .top <> "next" Then
+               '                  addLine "NO START FOR", "N" & treeKey, errcolor
+               '               Else
+               '                  ' we have to allow for case "Next i, j"
+               '                  ' thanks for pointing this out Ulli :)
+               '                  fileContent = Trim$(Mid$(fileContent, InStr(1, fileContent, " ", vbBinaryCompare) + 1))
+               '                  If Len(fileContent) > 0 Then
+               '                     'we have items in here, ie next i, or next i, j
+               '                     fileLines = vba.split(fileContent, ",", , vbBinaryCompare)
+               '                  Else
+               '                     fileLines = vba.split(" ", ",", , vbBinaryCompare)
+               '                  End If
+               '                  For index = LBound(fileLines) To UBound(fileLines)
+               '                     If Not left$(parentNode.Key, 5) = "Type~" Then
+               '                        Set nodeStart = parentNode
+               '                     End If
+               '                     If .top = "next" Then
+               '                        .Pop
+               '                     Else
+               '                        addLine "ERROR NEXT STATEMENT NESTING", String(index, "_") & treeKey, errcolor
+               '                     End If
+               '                  Next
+               '                  'addLine aLine, treekey, endColor
+               '               End If
+               '            Case "wend":
+               '               'end of a section
+               '               If .top <> "wend" Then
+               '                  addLine "NO START WHILE", "WE" & treeKey, errcolor
+               '               Else
+               '                  .Pop
+               '                  If Not left$(parentNode.Key, 5) = "Type~" Then
+               '                     Set nodeStart = parentNode
+               '                  End If
+               '                  'addLine aLine, treekey, endColor
+               '               End If
+               '            Case "#end":
+               '               'end of a compiler section
+               '               If .top <> "#end if" Then
+               '                  addLine "NO START #IF", "#I" & treeKey, errcolor
+               '               Else
+               '                  .Pop
+               '                  If Not left$(parentNode.Key, 5) = "Type~" Then
+               '                     Set nodeStart = parentNode
+               '                  End If
+               '                  addLine aLine, treeKey, compilerColor
+               '               End If
+               '            Case "case":
+               '               'both begins and ends a section
+               '               'effectively equivalent to 'end select' in outStack
+               '               'but is left on the stack (as is also equivalent to 'select case')
+               '               If .top <> "end select" Then
+               '                  addLine "NO START SELECT", "S" & treeKey, errcolor
+               '               Else
+               '                  '.Pop
+               '                  If Not left$(parentNode.Key, 5) = "Type~" Then
+               '                     Set nodeStart = parentNode
+               '                  End If
+               '                  addStartSection aLine, treeKey
+               '               End If
+               '            Case "else", "elseif":
+               '               'both begins and ends a section
+               '               'effectively equivalent to 'end if' in outStack
+               '               'but are left on the stack (as is also equivalent to 'if x then')
+               '               If .top <> "end if" Then
+               '                  addLine "NO START IF", "I" & treeKey, errcolor
+               '               Else
+               '                  '.Pop
+               '                  If Not left$(parentNode.Key, 5) = "Type~" Then
+               '                     Set nodeStart = parentNode
+               '                  End If
+               '                  addStartSection aLine, treeKey
+               '               End If
+               '            Case "#else", "#elseif":
+               '               'both begins and ends a section
+               '               'effectively equivalent to 'end if' in outStack
+               '               'but are left on the stack (as is also equivalent to 'if x then')
+               '               If .top <> "#end if" Then
+               '                  addLine "NO START #IF", "#I" & treeKey, errcolor
+               '               Else
+               '                  If Not left$(parentNode.Key, 5) = "Type~" Then
+               '                     Set nodeStart = parentNode
+               '                  End If
+               '                  addStartSection aLine, treeKey, compilerColor
+               '               End If
+               '            Case "option":
+               '               addLine aLine, treeKey
+               '            Case Else
+               '               If left$(aLine, 1) = "#" Then
+               '                  addLine aLine, treeKey, compilerColor
+               '                  'inside a type or enum, could do as a different colour
+               '                  'ElseIf .Top = "end enum" Then
+               '                  '    addLine aLine, treeKey
+               '                  'ElseIf .Top = "end type" Then
+               '                  '    addLine aLine, treeKey
+               '               Else
+               '                  addLine aLine, treeKey
+               '               End If
+         End Select
+      Wend
+   End With
+   On Error Resume Next
+   index = indexLine + 1
+   ClearOutStack treeKey
+   Debug.Print "End Add: " & Now()
+End Sub
+
+' ***************************************************
+'Tree Node Code
+
+Private Sub addStartSection(strLine As String, line As String, sSectionType As String, Optional lineColor As useColors = StartColor)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/18/2001
+   ' * Time             : 13:55
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : addStartSection
+   ' * Parameters       :
+   ' *                    strLine As String
+   ' *                    line As String
+   ' *                    sSectionType As String
+   ' *                    Optional lineColor As useColors = StartColor
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   If LCase$(strLine) Like "private*" Then
+      strLine = Replace(strLine, "private ", "", 1, 1, vbTextCompare)
+   End If
+
+   If LCase$(strLine) Like "public*" Then
+      strLine = Replace(strLine, "public ", "", 1, 1, vbTextCompare)
+   End If
+
+   If LCase$(strLine) Like "friend*" Then
+      strLine = Replace(strLine, "friend ", "", 1, 1, vbTextCompare)
+   End If
+
+   If LCase$(strLine) Like "sub*" Then
+      strLine = Replace(strLine, "sub", "", 1, 1, vbTextCompare)
+   End If
+
+   If LCase$(strLine) Like "function*" Then
+      strLine = Replace(strLine, "function", "", 1, 1, vbTextCompare)
+   End If
+
+   If LCase$(strLine) Like "property*" Then
+      strLine = Replace(strLine, "property", "", 1, 1, vbTextCompare)
+   End If
+
+   Dim ReturnType       As String 'roger
+   Dim strParameters    As String
+   Dim arrParameters()  As String
+   Dim i                As Long
+
+   ReturnType = strLine
+
+   If LCase$(ReturnType) Like "*'*" Then
+      ReturnType = Trim$(left$(ReturnType, InStr(ReturnType, "'") - 1))
+   End If
+
+   If LCase$(ReturnType) Like "* rem *" Then
+      ReturnType = Trim$(left$(ReturnType, InStr(ReturnType, "rem") - 1))
+   End If
+
+   ReturnType = Trim$(Mid$(ReturnType, InStrRev(strLine, ")") + 1))
+
+   If LCase$(ReturnType) Like "as *" Then
+      ReturnType = Trim$(Mid$(ReturnType, 3))
+   End If
+
+   strParameters = Mid$(strLine, InStr(strLine, "(") + 1)
+   strParameters = left$(strParameters, InStrRev(strParameters, ")") - 1)
+   arrParameters = VBA.Split(strParameters, ",")
+
+   If nodeStart Is Nothing Then
+      Exit Sub
+   End If
+   Dim Title            As String
+   If Len(strLine) > 50 Then
+      Title = left$(strLine, 47) & "..."
+   Else
+      Title = strLine
+   End If
+
+   Title = Trim$(left$(strLine, InStr(strLine, "(") - 1))
+
+   Set nodeStart = tNodes.Add(nodeStart, tvwChild, "S" & line, Title, ilTreeview.ListImages(sSectionType).Key)
+   With nodeStart
+      If Len(Title) = 50 Then
+         .Tag = left$(strLine, 150)
+      End If
+      .ForeColor = vbBlack 'lineColor
+      If lineColor = errcolor Then
+         .EnsureVisible
+      End If
+   End With
+
+   ' Set nodeFolder = tNodes.Add(nodeStart, tvwChild, , "InParams", "folder")
+   ' nodeFolder.Expanded = True
+
+   For i = 0 To UBound(arrParameters)
+      tNodes.Add nodeStart, tvwChild, , Trim$(arrParameters(i)), "public property"
+   Next
+
+   If ReturnType <> "" Then
+      tNodes.Add nodeStart, tvwChild, , ReturnType, "return"
+   End If
+
+End Sub
+
+Private Sub AddLine(strLine As String, line As String, Optional lineColor As useColors = defaultColor)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : AddLine
+   ' * Parameters       :
+   ' *                    strLine As String
+   ' *                    line As String
+   ' *                    Optional lineColor As useColors = defaultColor
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   'add a normal line of code (or close element wend/loop/etc) to the tree
+   If nodeStart Is Nothing Then
+      Exit Sub
+   End If
+
+   Dim Title            As String
+   If Len(strLine) > 50 Then
+      Title = left$(strLine, 47) & "..."
+   Else
+      Title = strLine
+   End If
+   If left$(Title, 3) <> "end" Then
+      Set nodeLine = tNodes.Add(nodeStart, tvwChild, "C" & line, Title)
+      With nodeLine
+         If Len(Title) = 50 Then
+            .Tag = left$(strLine, 150)
+         End If
+         'set color based on the passed in parameter
+         .ForeColor = lineColor
+         If lineColor = errcolor Then
+            .EnsureVisible
+         End If
+      End With
+   End If
+
+End Sub
+
+Private Sub clsPopupMenu_Click(ItemNumber As Long)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : clsPopupMenu_Click
+   ' * Parameters       :
+   ' *                    ItemNumber As Long
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   Dim menuBar          As CommandBar
+
+   On Error Resume Next
+
+   Set menuBar = VBInstance.CommandBars.Item("Menu Bar")
+   Select Case LCase$(clsPopupMenu.ItemKey(ItemNumber))
+      Case "projectsave":
+         'file menu
+         menuBar.Controls("File").Controls("Save Project").Execute
+
+      Case "projectindent":
+         ' *** Indent the project
+         Call IndentProject
+
+      Case "indent":
+         ' *** Indent Sub...
+         Call IndentProcedure
+
+      Case "indentmodule"
+         ' *** Indent Modules
+         Call IndentModule
+
+      Case "projectsetstartup":
+         tNodes("Project~" & VBInstance.VBProjects.StartProject.Name).Bold = False
+         VBInstance.VBProjects.StartProject = VBInstance.VBProjects(tNodes(clsPopupMenu.ItemData(ItemNumber)).Text)
+         tNodes("Project~" & VBInstance.VBProjects.StartProject.Name).Bold = True
+
+      Case "addform":
+         If menuBar.Controls("Project").Controls("Add Form").Enabled Then
+            menuBar.Controls("Project").Controls("Add Form").accDoDefaultAction
+         End If
+
+      Case "addmdiform":
+         If menuBar.Controls("Project").Controls("Add MDI Form").Enabled Then
+            menuBar.Controls("Project").Controls("Add MDI Form").accDoDefaultAction
+         End If
+
+      Case "addmodule":
+         If menuBar.Controls("Project").Controls("Add Module").Enabled Then
+            menuBar.Controls("Project").Controls("Add Module").accDoDefaultAction
+         End If
+
+      Case "addclass":
+         If menuBar.Controls("Project").Controls("Add Class Module").Enabled Then
+            menuBar.Controls("Project").Controls("Add Class Module").accDoDefaultAction
+         End If
+
+      Case "addusercontrol":
+         If menuBar.Controls("Project").Controls("Add User Control").Enabled Then
+            menuBar.Controls("Project").Controls("Add User Control").accDoDefaultAction
+         End If
+
+      Case "addpropertypage":
+         If menuBar.Controls("Project").Controls("Add Property Page").Enabled Then
+            menuBar.Controls("Project").Controls("Add Property Page").accDoDefaultAction
+         End If
+
+      Case "adduserdocument":
+         If menuBar.Controls("Project").Controls("Add User Document").Enabled Then
+            menuBar.Controls("Project").Controls("Add User Document").accDoDefaultAction
+         End If
+
+      Case "addfile":
+         If menuBar.Controls("Project").Controls("Add File...").Enabled Then
+            menuBar.Controls("Project").Controls("Add File...").accDoDefaultAction
+         End If
+
+      Case "object":
+         treMain.SelectedItem = tNodes(clsPopupMenu.ItemData(ItemNumber))
+         'tb.Buttons(2)_Click
+         tb_ButtonClick tB.Buttons(2)
+
+      Case "properties":
+         'MsgBox "Unable to perform as cannot set SelectedVBProperty - Blame MS for this one"
+         'Exit Sub
+         If menuBar.Controls("View").Controls("Properties Window").Enabled Then
+            menuBar.Controls("View").Controls("Properties Window").accDoDefaultAction
+         End If
+
+      Case "code":
+         OpenNode tNodes(clsPopupMenu.ItemData(ItemNumber))
+
+      Case "remove":
+         If Not VBInstance.VBProjects(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(1)).VBComponents(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(0)).IsDirty Then
+            VBInstance.VBProjects(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(1)).VBComponents.Remove VBInstance.VBProjects(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(1)).VBComponents(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(0))
+         Else
+            MsgBox "Must Be Saved First."
+         End If
+         ' #HOut# ********************
+         ' #HOut# Programmer Name  : removed
+         ' #HOut# Date             : 06/17/2001
+         ' #HOut# Time             : 09:30
+         ' #HOut# Comment          :
+         ' #HOut# Comment          :
+         ' #HOut# Comment          :
+         ' #HOut# ********************
+         ' #Out#       Case "hide":
+         ' #Out#          connect.Hide
+         ' #HOut# ********************
+
+      Case Else
+         If left$(clsPopupMenu.ItemKey(ItemNumber), 5) = "Goto:" Then
+            'is goto line number
+            OpenNode tNodes(Mid$(clsPopupMenu.ItemKey(ItemNumber), 6))
+         Else
+            'MsgBox "No such item: " & clsPopupMenu.ItemKey(ItemNumber)
+         End If
+   End Select
+End Sub
+
+Private Sub clsPopupMenu_DrawItem(ByVal hdc As Long, ByVal lMenuIndex As Long, lLeft As Long, lTop As Long, lRight As Long, lBottom As Long, ByVal bSelected As Boolean, ByVal bChecked As Boolean, ByVal bDisabled As Boolean, bDoDefault As Boolean)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 20/09/99
+   ' * Time             : 12:50
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : clsPopupMenu_DrawItem
+   ' * Parameters       :
+   ' *                    ByVal hdc As Long
+   ' *                    ByVal lMenuIndex As Long
+   ' *                    lLeft As Long
+   ' *                    lTop As Long
+   ' *                    lRight As Long
+   ' *                    lBottom As Long
+   ' *                    ByVal bSelected As Boolean
+   ' *                    ByVal bChecked As Boolean
+   ' *                    ByVal bDisabled As Boolean
+   ' *                    bDoDefault As Boolean
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   Dim lW               As Long
+   ' The DrawItem event for Owner Draw menu items either allows you
+   ' to draw the entire item, or just to do some new drawing then
+   ' let the standard method do its stuff.  This is useful if you
+   ' want to add a graphic to the left or right of the menu item.
+
+   ' Here we draw the relevant part of the side bar
+   ' logo to the left of the menu then offset the
+   ' left position so the rest of the menu draws
+   ' after it:
+   lW = picSideBar.Width \ Screen.TwipsPerPixelX
+   BitBlt hdc, lLeft, lTop, lW, lBottom - lTop, picSideBar.hdc, 0, lTop, vbSrcCopy
+   lLeft = lLeft + lW + 1
+   bDoDefault = True
+End Sub
+
+Private Sub projEvents_ItemActivated(ByVal VBProject As VBIDE.VBProject)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : projEvents_ItemActivated
+   ' * Parameters       :
+   ' *                    ByVal VBProject As VBIDE.VBProject
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   'do nothing
+End Sub
+
+Private Sub projEvents_ItemAdded(ByVal VBProject As VBIDE.VBProject)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : projEvents_ItemAdded
+   ' * Parameters       :
+   ' *                    ByVal VBProject As VBIDE.VBProject
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   '
+   AddProject VBProject
+End Sub
+
+Private Sub projEvents_ItemRemoved(ByVal VBProject As VBIDE.VBProject)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : projEvents_ItemRemoved
+   ' * Parameters       :
+   ' *                    ByVal VBProject As VBIDE.VBProject
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   '
+   On Error Resume Next
+
+   treMain.Nodes.Remove treMain.Nodes("Project~" & VBProject.Name).index
+
+End Sub
+
+Private Sub projEvents_ItemRenamed(ByVal VBProject As VBIDE.VBProject, ByVal OldName As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : projEvents_ItemRenamed
+   ' * Parameters       :
+   ' *                    ByVal VBProject As VBIDE.VBProject
+   ' *                    ByVal OldName As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   '
+   On Error Resume Next
+   treMain.Nodes.Remove treMain.Nodes("Project~" & OldName).index
+   err.Clear
+   On Error GoTo 0
+   AddProject VBProject
+
+End Sub
+
+Private Sub tb_ButtonClick(ByVal Button As MSComctlLib.Button)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/17/2001
+   ' * Time             : 10:33
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : tb_ButtonClick
+   ' * Parameters       :
+   ' *                    ByVal Button As MSComctlLib.Button
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   ' #VBIDEUtilsERROR#
+   On Error GoTo ERROR_tb_ButtonClick
+
+   Dim Key              As String
+   Dim theNode          As Node
+   Dim VBComponent      As VBIDE.VBComponent
+
+   Select Case LCase$(Button.Key)
+      Case "view code"
+         OpenNode treMain.SelectedItem
+
+      Case "view form"
+         Set theNode = treMain.SelectedItem
+
+         Key = theNode.Key
+         While Not left$(theNode.Parent.Key, 5) = "Type~"
+            Set theNode = theNode.Parent
+         Wend
+         err.Clear
+         Key = theNode.Key
+         Set VBComponent = VBInstance.VBProjects(VBA.Split(Key, "~")(1)).VBComponents(VBA.Split(Key, "~")(0))
+         If Not VBComponent Is Nothing Then
+            VBComponent.Activate
+         End If
+         err.Clear
+         On Error GoTo 0
+
+      Case "refresh" ' *** Refresh
+         Reload
+
+      Case "indent" ' *** Indent
+         If treMain.SelectedItem.Parent Is Nothing Then
+            ' *** Project
+            Call IndentProject
+
+         Else
+            OpenNode treMain.SelectedItem
+
+            Select Case LCase$(VBA.Split(treMain.SelectedItem.Parent.Key, "~")(1))
+               Case "project":
+                  ' *** Project
+                  Call IndentProject
+               Case "class modules"
+                  ' *** Module
+                  Call IndentModule
+               Case "user documents"
+                  ' *** Module
+                  Call IndentModule
+               Case "forms"
+                  ' *** Module
+                  Call IndentModule
+               Case "property pages"
+                  ' *** Module
+                  Call IndentModule
+               Case "modules"
+                  ' *** Module
+                  Call IndentModule
+               Case "user controls"
+                  ' *** Module
+                  Call IndentModule
+               Case "designers"
+                  ' *** Module
+                  Call IndentModule
+               Case Else
+                  ' *** Indent single procedure
+                  Call IndentProcedure
+            End Select
+         End If
+
+      Case "comment" ' *** Comment
+         If treMain.SelectedItem.Parent Is Nothing Then
+            ' *** Project
+            Call InsertProjectHeader
+
+         Else
+            OpenNode treMain.SelectedItem
+
+            Select Case LCase$(VBA.Split(treMain.SelectedItem.Parent.Key, "~")(1))
+               Case "project":
+                  ' *** Project
+                  Call IndentProject
+               Case "class modules"
+                  ' *** Module
+                  Call InsertModuleProcedureHeader
+               Case "user documents"
+                  ' *** Module
+                  Call InsertModuleProcedureHeader
+               Case "forms"
+                  ' *** Module
+                  Call InsertModuleProcedureHeader
+               Case "property pages"
+                  ' *** Module
+                  Call InsertModuleProcedureHeader
+               Case "modules"
+                  ' *** Module
+                  Call InsertModuleProcedureHeader
+               Case "user controls"
+                  ' *** Module
+                  Call InsertModuleProcedureHeader
+               Case "designers"
+                  ' *** Module
+                  Call InsertModuleProcedureHeader
+               Case Else
+                  ' *** Indent single procedure
+                  Call InsertProcedureHeader
+            End Select
+         End If
+
+   End Select
+
+EXIT_tb_ButtonClick:
+   Exit Sub
+
+   ' #VBIDEUtilsERROR#
+ERROR_tb_ButtonClick:
+   Resume EXIT_tb_ButtonClick
+
+End Sub
+
+Private Sub treMain_Click()
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : treMain_Click
+   ' * Parameters       :
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   b_clicked = True
+   d_x = d_x2
+   d_y = d_y2
+End Sub
+
+Private Sub treMain_DblClick()
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : treMain_DblClick
+   ' * Parameters       :
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   Dim aNode            As Node
+   Dim aProject         As VBProject
+
+   On Error Resume Next
+
+   If Not b_clicked Then
+      Exit Sub
+   End If
+
+   Set aNode = treMain.HitTest(d_x, d_y)
+   If aNode Is Nothing Then
+      b_clicked = False
+      Exit Sub
+   End If
+   OpenNode aNode
+   If VBInstance Is Nothing Then
+      b_clicked = False
+      Exit Sub
+   End If
+   b_clicked = False
+   If VBInstance.ActiveVBProject.Name <> aNode.Root.Text Then
+      For Each aProject In VBInstance.VBProjects
+         If aProject.Name = aNode.Root.Text Then
+            Set VBInstance.ActiveVBProject = aProject
+            Exit For
+         End If
+      Next
+   End If
+
+End Sub
+
+Private Sub treMain_Expand(ByVal Node As MSComctlLib.Node)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : treMain_Expand
+   ' * Parameters       :
+   ' *                    ByVal Node As MSComctlLib.Node
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   Dim Key              As String
+   Dim VBComponent      As VBIDE.VBComponent
+   Dim index            As Long
+   Dim VBProject        As VBProject
+
+   On Error Resume Next
+
+   Key = Node.Key
+   index = 0
+   If left$(Key, 5) = "Type~" Then
+      'one of the parent types, leave it
+      Exit Sub
+   End If
+   If left$(Key, 8) = "Project~" Then
+      'one of the projects, leave it
+      Exit Sub
+   End If
+   While IsNumeric(right$(Key, index + 1))
+      index = index + 1
+   Wend
+   If index > 0 Then
+      'is inside a node, we don't want to change it
+      Exit Sub
+   End If
+   While Node.Children > 0
+      tNodes.Remove Node.Child.index
+   Wend
+   'Key = Mid$(Key, 2, Len(Key) - 2)
+   On Error Resume Next
+   Set VBComponent = d_components(Key)
+   If VBA.Split(Key, "~")(1) <> VBInstance.ActiveVBProject.Name Then
+      Set VBInstance.ActiveVBProject = VBInstance.VBProjects(VBA.Split(Key, "~")(1))
+   End If
+   If err.number <> 0 Then
+      err.Clear
+      Set VBProject = VBInstance.VBProjects(VBA.Split(Key, "~")(1))
+      Set VBComponent = VBProject.VBComponents(VBA.Split(Key, "~")(0))
+      If Not VBComponent Is Nothing Then
+         d_components.Add VBComponent, Key
+      End If
+   End If
+   On Error GoTo 0
+   Set nodeRoot = Node
+   treMain.Visible = False
+   If VBComponent Is Nothing Then
+      On Error Resume Next
+      treMain.Nodes.Remove Node.Child.index
+      err.Clear
+      On Error GoTo 0
+   Else
+      On Error Resume Next
+      LoadData nodeRoot.Key, VBComponent.CodeModule.Lines(1, 9999999)
+      err.Clear
+      On Error GoTo 0
+   End If
+   treMain.Visible = True
+   Debug.Print "End Paint: " & Now()
+
+End Sub
+
+Private Sub treMain_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : treMain_MouseMove
+   ' * Parameters       :
+   ' *                    Button As Integer
+   ' *                    Shift As Integer
+   ' *                    x As Single
+   ' *                    y As Single
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   Dim aNode            As Node
+
+   On Error Resume Next
+
+   Set aNode = treMain.HitTest(x, y)
+   If aNode Is Nothing Then
+      treMain.ToolTipText = vbNullString
+   Else
+      treMain.ToolTipText = aNode.Tag
+   End If
+
+End Sub
+
+Private Sub treMain_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : treMain_MouseUp
+   ' * Parameters       :
+   ' *                    Button As Integer
+   ' *                    Shift As Integer
+   ' *                    x As Single
+   ' *                    y As Single
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   Dim aNode            As Node
+   Dim Key              As String
+   Dim menuBarItem      As CommandBarControl
+   Dim nItem            As Long
+
+   On Error Resume Next
+
+   d_x2 = x
+   d_y2 = y
+
+   ' *** Here we create the context menu
+   If Button = 2 Then
+      ' *** Create menu depending on selected item
+      clsPopupMenu.ImageList = ImageList1
+      clsPopupMenu.GradientHighlight = True
+      clsPopupMenu.Clear
+
+      Set aNode = treMain.HitTest(x, y)
+      If aNode Is Nothing Then
+         Set aNode = treMain.HitTest(treMain.Width / 2, y)
+         If aNode Is Nothing Then
+            Set aNode = treMain.HitTest(treMain.Width / 4, y)
+            If aNode Is Nothing Then
+               ' *** Hit nothing, so in clear space, use selected item
+               Set aNode = treMain.SelectedItem
+            End If
+         End If
+      End If
+      If Not aNode Is Nothing Then Key = aNode.Key
+      If left$(Key, 8) = "Project~" Then
+         LoadProjectMenu Key
+         nItem = clsPopupMenu.AddItem("&Indent Project", , tNodes(Key).index, , ImageList1.ListImages("Indent").index - 1, , , "ProjectIndent")
+         clsPopupMenu.OwnerDraw(nItem) = True
+
+      ElseIf left$(Key, 5) = "Type~" Then
+         LoadTypeMenu Key, aNode.Parent.Key
+
+      ElseIf IsNumeric(right$(Key, 1)) Then
+         LoadSubMenu Key, aNode.Parent.Key
+
+      ElseIf left$(Key, 12) = "Description~" Then
+         Exit Sub
+
+      ElseIf Len(Key) > 0 Then
+         LoadTypeMenu Key, aNode.Parent.Key
+
+         nItem = clsPopupMenu.AddItem("&Indent ", , , , ImageList1.ListImages("Indent").index - 1, , , "IndentModule")
+         clsPopupMenu.OwnerDraw(nItem) = True
+
+      Else
+         LoadDefaultMenu ""
+      End If
+
+      On Error Resume Next
+      err.Clear
+
+      If Key <> vbNullString Then
+         Set menuBarItem = VBInstance.CommandBars("Menu Bar").Controls("Project")
+         nItem = clsPopupMenu.AddItem("&Form", , , clsPopupMenu.IndexForKey("ProjectAdd"), ImageList1.ListImages("Form").index - 1, , menuBarItem.Controls("Add Form").Enabled, "AddForm")
+         clsPopupMenu.OwnerDraw(nItem) = False
+         nItem = clsPopupMenu.AddItem("MD&I Form", , , clsPopupMenu.IndexForKey("ProjectAdd"), ImageList1.ListImages("MDI Form").index - 1, , menuBarItem.Controls("Add MDI Form").Enabled, "AddMDIForm")
+         clsPopupMenu.OwnerDraw(nItem) = False
+         nItem = clsPopupMenu.AddItem("&Module", , , clsPopupMenu.IndexForKey("ProjectAdd"), ImageList1.ListImages("Module").index - 1, , menuBarItem.Controls("Add Module").Enabled, "AddModule")
+         clsPopupMenu.OwnerDraw(nItem) = False
+         nItem = clsPopupMenu.AddItem("&Class Module", , , clsPopupMenu.IndexForKey("ProjectAdd"), ImageList1.ListImages("Class Module").index - 1, , menuBarItem.Controls("Add Class Module").Enabled, "AddClass")
+         clsPopupMenu.OwnerDraw(nItem) = False
+         nItem = clsPopupMenu.AddItem("&User Control", , , clsPopupMenu.IndexForKey("ProjectAdd"), ImageList1.ListImages("User Control").index - 1, , menuBarItem.Controls("Add User Control").Enabled, "AddUserControl")
+         clsPopupMenu.OwnerDraw(nItem) = False
+         nItem = clsPopupMenu.AddItem("&Property Page", , , clsPopupMenu.IndexForKey("ProjectAdd"), ImageList1.ListImages("Property Page").index - 1, , menuBarItem.Controls("Add Property Page").Enabled, "AddPropertyPage")
+         clsPopupMenu.OwnerDraw(nItem) = False
+         nItem = clsPopupMenu.AddItem("User &Document", , , clsPopupMenu.IndexForKey("ProjectAdd"), ImageList1.ListImages("User Document").index - 1, , menuBarItem.Controls("Add User Document").Enabled, "AddUserDocument")
+         clsPopupMenu.OwnerDraw(nItem) = False
+         nItem = clsPopupMenu.AddItem("&Add File...", , , clsPopupMenu.IndexForKey("ProjectAdd"), , , , "AddFile")
+         clsPopupMenu.OwnerDraw(nItem) = False
+         On Error GoTo 0
+
+         Dim tPT              As POINTAPI
+         tPT.x = (treMain.left + x) / Screen.TwipsPerPixelX
+         tPT.y = (treMain.left + y) / Screen.TwipsPerPixelY
+         mAPIAndCallbacks.ClientToScreen treMain.hWnd, tPT
+
+         ' Firstly, evaluate the menu item's height in the main menu:
+         Dim lHeight          As Long
+         Dim nI               As Long
+         lHeight = 0
+         For nI = 1 To clsPopupMenu.Count
+            ' Check if item is in the main menu:
+            If (clsPopupMenu.hMenu(nI) = clsPopupMenu.hMenu(1)) Then
+               ' Add the item:
+               lHeight = lHeight + clsPopupMenu.MenuItemHeight(nI)
+            End If
+         Next
+
+         ' We use a PictureBox to hold the side logo here for convenience,
+         ' however, you could use CreateCompatibleDC and CreateCompatibleBitmap
+         ' to create a memory DC to hold this to avoid having the extra control.
+         picSideBar.Height = lHeight * Screen.TwipsPerPixelY
+         picSideBar.Width = 250
+
+         ' Draw a gradient into it.  Here I stole the code directly from the
+         ' SideLogo/Fonts at any angle project for simplicity:
+         Dim c                As New class_Logo
+         With c
+            .DrawingObject = picSideBar
+            .StartColor = vbBlue
+            .EndColor = vbBlack
+            .Caption = "VBDiamond"
+            .Draw
+         End With
+
+         clsPopupMenu.ShowPopupAbsolute tPT.x, tPT.y
+
+      End If
+
+   End If
+End Sub
+
+Private Sub LoadProjectMenu(strKey As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/18/2001
+   ' * Time             : 13:55
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : LoadProjectMenu
+   ' * Parameters       :
+   ' *                    strKey As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   Dim nItem            As Long
+   Dim menuBarItem      As CommandBarControl
+
+   On Error Resume Next
+
+   If strKey = "" Then Exit Sub
+
+   Set menuBarItem = VBInstance.CommandBars("Menu Bar").Controls("View")
+
+   If left$(strKey, 8) = "Project~" Then
+      nItem = clsPopupMenu.AddItem("Set As Start &Up", , tNodes(strKey).index, , , , , "ProjectSetStartup")
+      clsPopupMenu.OwnerDraw(nItem) = True
+      nItem = clsPopupMenu.AddItem("Prope&rties", , , , ImageList1.ListImages("Properties").index - 1, , menuBarItem.Controls("Properties Window").Enabled, "Properties")
+      clsPopupMenu.OwnerDraw(nItem) = True
+      nItem = clsPopupMenu.AddItem("-")
+      clsPopupMenu.OwnerDraw(nItem) = True
+   End If
+   nItem = clsPopupMenu.AddItem("Sa&ve Project", , tNodes(strKey).index, , , , , "ProjectSave")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("-")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("&Add", , , , , , , "ProjectAdd")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("-")
+   clsPopupMenu.OwnerDraw(nItem) = True
+
+End Sub
+
+Private Sub LoadSubMenu(strKey As String, strType As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : LoadSubMenu
+   ' * Parameters       :
+   ' *                    strKey As String
+   ' *                    strType As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   Dim nItem            As Long
+   Dim index            As Long
+
+   On Error Resume Next
+
+   index = 0
+   While IsNumeric(right$(strKey, index + 1))
+      index = index + 1
+   Wend
+
+   LoadTypeMenu Mid$(strKey, 2, InStr(1, strKey, "@", vbBinaryCompare) - 2), strType
+   nItem = clsPopupMenu.AddItem("&Goto Line " & CLng(right$(strKey, index)) + 1, , , , , , , "Goto:" & strKey)
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("-")
+   clsPopupMenu.OwnerDraw(nItem) = True
+
+   nItem = clsPopupMenu.AddItem("&Indent ", , , , ImageList1.ListImages("Indent").index - 1, , , "Indent")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("-", "Indent")
+   clsPopupMenu.OwnerDraw(nItem) = True
+
+End Sub
+
+Private Sub LoadDefaultMenu(strKey As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : LoadDefaultMenu
+   ' * Parameters       :
+   ' *                    strKey As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   LoadProjectMenu strKey
+
+End Sub
+
+Private Sub LoadTypeMenu(strKey As String, strType As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : LoadTypeMenu
+   ' * Parameters       :
+   ' *                    strKey As String
+   ' *                    strType As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   Dim nItem            As Long
+   Dim menuBarItem      As CommandBarControl
+
+   On Error Resume Next
+
+   Set menuBarItem = VBInstance.CommandBars("Menu Bar").Controls("View")
+   nItem = clsPopupMenu.AddItem("View O&bject", , tNodes(strKey).index, , ImageList1.ListImages("View Form").index - 1, , menuBarItem.Controls("Object").Enabled, "Object")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("View C&ode", , tNodes(strKey).index, , ImageList1.ListImages("View Code").index - 1, , menuBarItem.Controls("Code").Enabled, "Code")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("-")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("Prope&rties", , , , ImageList1.ListImages("Properties").index - 1, , menuBarItem.Controls("Properties Window").Enabled, "Properties")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("-")
+   clsPopupMenu.OwnerDraw(nItem) = True
+   nItem = clsPopupMenu.AddItem("&Add", , , , , , , "ProjectAdd")
+   clsPopupMenu.OwnerDraw(nItem) = True
+
+   If right(strKey, 1) = "~" Then
+      nItem = clsPopupMenu.AddItem("-")
+      clsPopupMenu.OwnerDraw(nItem) = True
+
+      nItem = clsPopupMenu.AddItem("&Remove " & VBA.Split(strKey, "~")(0) & "  ", , tNodes(strKey).index, , , , , "Remove")
+      clsPopupMenu.OwnerDraw(nItem) = True
+
+      nItem = clsPopupMenu.AddItem("-")
+      clsPopupMenu.OwnerDraw(nItem) = True
+   End If
+
+End Sub
+
+Private Sub OpenNode(ByVal Node As MSComctlLib.Node, Optional b_expand As Boolean = True)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : OpenNode
+   ' * Parameters       :
+   ' *                    ByVal Node As MSComctlLib.Node
+   ' *                    Optional b_expand As Boolean = True
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   ' #VBIDEUtilsERROR#
+   On Error GoTo ERROR_OpenNode
+
+   Dim Key              As String
+   Dim lineID           As Long
+   Dim index            As Long
+   Dim theNode          As Node
+   Dim VBComponent      As VBIDE.VBComponent
+   Dim b_codepane       As Boolean
+
+   Set theNode = Node
+   Key = theNode.Key
+   If left$(Key, 5) = "Type~" Then
+      tB.Buttons(1).Enabled = False
+      tB.Buttons(2).Enabled = False
+      Exit Sub
+   ElseIf left$(Key, 8) = "Project~" Then
+      tB.Buttons(1).Enabled = False
+      tB.Buttons(2).Enabled = False
+      Exit Sub
+   End If
+   index = 0
+   While IsNumeric(right$(Key, index + 1))
+      index = index + 1
+   Wend
+
+   'here we select the component
+   On Error Resume Next
+   Do While Not ((left$(theNode.Parent.Key, 8) = "Project~") Or (left$(theNode.Parent.Key, 5) = "Type~"))
+      If err.number <> 0 Then
+         err.Clear
+         Exit Do
+      End If
+      Set theNode = theNode.Parent
+   Loop
+   tB.Buttons(1).Enabled = True
+   b_codepane = False
+   Select Case LCase$(VBA.Split(theNode.Parent.Key, "~")(1))
+      Case "unknown":
+         tB.Buttons(2).Enabled = False
+         tB.Buttons(1).Enabled = False
+      Case "class modules"
+         tB.Buttons(2).Enabled = False
+      Case "user documents"
+         tB.Buttons(2).Enabled = True
+         b_codepane = True
+      Case "forms"
+         tB.Buttons(2).Enabled = True
+         b_codepane = True
+      Case "property pages"
+         tB.Buttons(2).Enabled = True
+         b_codepane = True
+      Case "related documents"
+         tB.Buttons(2).Enabled = False
+         tB.Buttons(1).Enabled = False
+      Case "modules"
+         tB.Buttons(2).Enabled = False
+      Case "user controls"
+         tB.Buttons(2).Enabled = True
+         b_codepane = True
+      Case "resource files"
+         tB.Buttons(2).Enabled = True
+      Case "designers"
+         tB.Buttons(2).Enabled = True
+         b_codepane = True
+      Case Else
+         tB.Buttons(2).Enabled = True
+   End Select
+   err.Clear
+   Key = VBA.Split(theNode.Key, "~")(0)
+   Set VBComponent = VBInstance.VBProjects(VBA.Split(theNode.Key, "~")(1)).VBComponents(Key)
+   If VBComponent Is Nothing Then
+      err.Clear
+      On Error GoTo 0
+      Exit Sub
+   End If
+   If GetComponentName(VBComponent) = Key Then
+      If b_codepane And b_expand Then
+         VBComponent.CodeModule.CodePane.Show
+      ElseIf b_expand Then
+         VBComponent.Activate
+      End If
+      On Error Resume Next
+      If index > 0 Then
+         If VBInstance.ActiveCodePane.CodeModule = VBComponent.CodeModule Then
+            lineID = Abs(CLng(right$(Node.Key, index))) + 1
+            VBInstance.ActiveCodePane.SetSelection lineID, 1, lineID, 1
+         End If
+      End If
+      err.Clear
+      On Error GoTo 0
+   End If
+
+EXIT_OpenNode:
+   Exit Sub
+
+   ' #VBIDEUtilsERROR#
+ERROR_OpenNode:
+   Resume EXIT_OpenNode
+
+End Sub
+
+Private Sub treMain_NodeClick(ByVal Node As MSComctlLib.Node)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : treMain_NodeClick
+   ' * Parameters       :
+   ' *                    ByVal Node As MSComctlLib.Node
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   'here we need to enable/disable buttons, but not show code/expand nodes
+
+   OpenNode Node, False
+
+End Sub
+
+Private Sub UserDocument_Initialize()
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : UserDocument_Initialize
+   ' * Parameters       :
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   Set clsPopupMenu = New cPopupMenu
+   clsPopupMenu.hWndOwner = UserDocument.hWnd
+   treMain.ImageList = ImageList1
+End Sub
+
+Private Sub UserDocument_Resize()
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : UserDocument_Resize
+   ' * Parameters       :
+   ' **********************************************************************
+   ' * Comments         :
+   ' * Resize the objects relative to the form size
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+   Border.Height = UserDocument.ScaleHeight - treMain.top - 160
+   Border.Width = UserDocument.ScaleWidth - 20
+   treMain.Height = UserDocument.ScaleHeight - treMain.top - 550
+   treMain.Width = UserDocument.ScaleWidth - 100
+
+End Sub
+
+Private Sub UserDocument_Show()
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : UserDocument_Show
+   ' * Parameters       :
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   If Not VBInstance Is Nothing Then
+      'automatically show the content
+      Reload
+   End If
+   Call UserDocument_Resize
+
+End Sub
+
+Private Sub UserDocument_Terminate()
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : UserDocument_Terminate
+   ' * Parameters       :
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   ' Release resources
+   Set nodeRoot = Nothing
+   Set tNodes = Nothing
+   Set nodeStart = Nothing
+   Set nodeLine = Nothing
+   Set d_components = Nothing
+
+End Sub
+
+Private Sub compEvents_ItemActivated(ByVal VBComponent As VBIDE.VBComponent)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : compEvents_ItemActivated
+   ' * Parameters       :
+   ' *                    ByVal VBComponent As VBIDE.VBComponent
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   'move to relevant node
+   Dim aNode            As Node
+   On Error Resume Next
+   Set aNode = tNodes.Item(GetComponentName(VBComponent) & "~" & VBComponent.Collection.Parent.Name & "~")
+   If aNode Is Nothing Then
+      err.Clear
+      On Error GoTo 0
+      Exit Sub
+   End If
+   If Not aNode.Expanded Then
+      aNode.EnsureVisible
+      aNode.Selected = True
+   End If
+
+End Sub
+
+Private Sub compEvents_ItemAdded(ByVal VBComponent As VBIDE.VBComponent)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : compEvents_ItemAdded
+   ' * Parameters       :
+   ' *                    ByVal VBComponent As VBIDE.VBComponent
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   '
+   Dim nodetype         As String
+   Dim aNode            As Node
+
+   On Error GoTo Error_compEvents_ItemAdded
+
+   nodetype = GetNodeType(VBComponent)
+   Set aNode = Nothing
+   Set aNode = tNodes("Type~" & nodetype & "~" & VBComponent.Collection.Parent.Name)
+   err.Clear
+   On Error GoTo 0
+   If aNode Is Nothing Then
+      Set aNode = tNodes.Add(tNodes("Project~" & VBComponent.Collection.Parent.Name), tvwChild, "Type" & nodetype & "~" & VBComponent.Collection.Parent.Name, nodetype)
+   End If
+   AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), VBComponent.Collection.Parent.Name
+
+Error_compEvents_ItemAdded:
+   Exit Sub
+
+End Sub
+
+Private Sub compEvents_ItemReloaded(ByVal VBComponent As VBIDE.VBComponent)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : compEvents_ItemReloaded
+   ' * Parameters       :
+   ' *                    ByVal VBComponent As VBIDE.VBComponent
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   '
+   On Error Resume Next
+
+   If tNodes.Item(GetComponentName(VBComponent) & "~" & VBComponent.Collection.Parent.Name & "~").Expanded Then
+      tNodes.Item(GetComponentName(VBComponent) & "~" & VBComponent.Collection.Parent.Name & "~").Expanded = False
+      treMain_Expand tNodes.Item(GetComponentName(VBComponent) & "~" & VBComponent.Collection.Parent.Name & "~")
+   End If
+
+End Sub
+
+Private Sub compEvents_ItemRemoved(ByVal VBComponent As VBIDE.VBComponent)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : compEvents_ItemRemoved
+   ' * Parameters       :
+   ' *                    ByVal VBComponent As VBIDE.VBComponent
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   RemoveComponent GetComponentName(VBComponent), VBComponent.Collection.Parent.Name
+End Sub
+
+Private Sub compEvents_ItemRenamed(ByVal VBComponent As VBIDE.VBComponent, ByVal OldName As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : compEvents_ItemRenamed
+   ' * Parameters       :
+   ' *                    ByVal VBComponent As VBIDE.VBComponent
+   ' *                    ByVal OldName As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   'this is not right
+   RemoveComponent OldName, VBComponent.Collection.Parent.Name
+   AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), VBComponent.Collection.Parent.Name
+
+End Sub
+
+Private Sub compEvents_ItemSelected(ByVal VBComponent As VBIDE.VBComponent)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : compEvents_ItemSelected
+   ' * Parameters       :
+   ' *                    ByVal VBComponent As VBIDE.VBComponent
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+   'do nothing
+End Sub
+
+Private Sub RemoveComponent(ComponentName As String, sProjectName As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : RemoveComponent
+   ' * Parameters       :
+   ' *                    ComponentName As String
+   ' *                    sProjectName As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+   tNodes.Remove ComponentName & "~" & sProjectName & "~"
+   d_components.Remove ComponentName & "~" & sProjectName & "~"
+   err.Clear
+   On Error GoTo 0
+
+End Sub
+
+Private Sub AddComponent(ComponentName As String, TypeName As String, sProjectName As String)
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : AddComponent
+   ' * Parameters       :
+   ' *                    ComponentName As String
+   ' *                    TypeName As String
+   ' *                    sProjectName As String
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   Dim aNode            As Node
+   Dim nodeKey          As String
+
+   On Error Resume Next
+
+   nodeKey = ComponentName & "~" & sProjectName & "~"
+   If tNodes Is Nothing Then
+      Set tNodes = treMain.Nodes
+   End If
+   On Error Resume Next
+   Set aNode = tNodes("Type~" & TypeName & "~" & sProjectName)
+   If aNode Is Nothing Then
+      Set aNode = tNodes.Add(tNodes("Project~" & sProjectName), tvwChild, "Type~" & TypeName & "~" & sProjectName, TypeName)
+   End If
+   aNode.Image = ilTreeview.ListImages("folder").Key
+   aNode.ExpandedImage = ilTreeview.ListImages("folderopen").Key
+
+   Set aNode = aNode.Child
+   Do While Not aNode Is Nothing
+      If aNode.Next Is Nothing Then
+         If aNode.Key < nodeKey Then
+            Set aNode = tNodes.Add(aNode, tvwNext, nodeKey, ComponentName, ilTreeview.ListImages(TypeName).Key)
+         Else
+            Set aNode = tNodes.Add(aNode, tvwPrevious, nodeKey, ComponentName, ilTreeview.ListImages(TypeName).Key)
+         End If
+         Set aNode = tNodes.Add(aNode, tvwChild, "Code - " & nodeKey, "Code List")
+         Exit Sub
+      ElseIf aNode.Next.Key < nodeKey Then
+         Set aNode = aNode.Next
+      Else
+         Exit Do
+      End If
+   Loop
+   If aNode Is Nothing Then
+      Set aNode = tNodes.Add(tNodes("Type~" & TypeName & "~" & sProjectName), tvwChild, nodeKey, ComponentName, ilTreeview.ListImages(TypeName).Key)
+   Else
+      Set aNode = tNodes.Add(aNode, tvwNext, nodeKey, ComponentName, ilTreeview.ListImages(TypeName).Key)
+   End If
+   Set aNode = tNodes.Add(aNode, tvwChild, "Code - " & nodeKey, "Code List", ilTreeview.ListImages(TypeName).Key)
+
+End Sub
+
+Private Function GetComponentName(VBComponent As VBIDE.VBComponent) As String
+   ' #VBIDEUtils#************************************************************
+   ' * Programmer Name  : removed
+   ' * Web Site         : http://www.ppreview.net
+   ' * E-Mail           : removed
+   ' * Date             : 06/10/2001
+   ' * Time             : 11:03
+   ' * Module Name      : docProjectExplorer
+   ' * Module Filename  : ProjectExplorer.dob
+   ' * Procedure Name   : GetComponentName
+   ' * Parameters       :
+   ' *                    VBComponent As VBIDE.VBComponent
+   ' **********************************************************************
+   ' * Comments         :
+   ' *
+   ' *
+   ' **********************************************************************
+
+   On Error Resume Next
+
+   If Len(VBComponent.Name) < 1 Then
+      GetComponentName = Mid$(VBComponent.FileNames(1), InStrRev(VBComponent.FileNames(1), "\", , vbBinaryCompare) + 1)
+   Else
+      GetComponentName = VBComponent.Name
+   End If
+
+End Function
+

@@ -1,0 +1,1022 @@
+{\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\fswiss\fprq2 System;}{\f3\fswiss\fprq2 Arial;}{\f4\froman\fprq2 Times New Roman;}}
+{\colortbl\red0\green0\blue0;}
+\deflang2057\pard\plain\f3\fs24\b TLI Interface Definition 
+\par 
+\par \plain\f3\fs20\b General Information
+\par \pard\tx993\plain\f3\fs20 Library:\tab TLI (TypeLib Information)
+\par File:\tab C:\\WINDOWS\\SYSTEM\\Tlbinf32.dll
+\par GUID:\tab \{8B217740-717D-11CE-AB5B-D41203C10000\}
+\par Version:\tab 1.0
+\par \pard\plain\f4\fs20 
+\par \plain\f3\fs20\b Enumerations
+\par \plain\f3\fs20 This section lists enumerations exposed by TLI.
+\par 
+\par Public Enum DescKinds
+\par \tab DESCKIND_NONE=0
+\par \tab DESCKIND_FUNCDESC=1
+\par \tab DESCKIND_VARDESC=2
+\par End Enum
+\par Public Enum FuncFlags
+\par \tab FUNCFLAG_NONE=0
+\par \tab FUNCFLAG_FRESTRICTED=1
+\par \tab FUNCFLAG_FSOURCE=2
+\par \tab FUNCFLAG_FBINDABLE=4
+\par \tab FUNCFLAG_FREQUESTEDIT=8
+\par \tab FUNCFLAG_FDISPLAYBIND=16
+\par \tab FUNCFLAG_FDEFAULTBIND=32
+\par \tab FUNCFLAG_FHIDDEN=64
+\par \tab FUNCFLAG_FUSESGETLASTERROR=128
+\par \tab FUNCFLAG_FDEFAULTCOLLELEM=256
+\par \tab FUNCFLAG_FUIDEFAULT=512
+\par \tab FUNCFLAG_FNONBROWSABLE=1024
+\par \tab FUNCFLAG_FREPLACEABLE=2048
+\par \tab FUNCFLAG_FIMMEDIATEBIND=4096
+\par \tab FUNCFLAG_DEFAULTFILTER=65
+\par End Enum
+\par Public Enum IDLFlags
+\par \tab IDLFLAG_NONE=0
+\par \tab IDLFLAG_FIN=1
+\par \tab IDLFLAG_FOUT=2
+\par \tab IDLFLAG_FLCID=4
+\par \tab IDLFLAG_FRETVAL=8
+\par End Enum
+\par Public Enum ImplTypeFlags
+\par \tab IMPLTYPEFLAG_FDEFAULT=1
+\par \tab IMPLTYPEFLAG_FSOURCE=2
+\par \tab IMPLTYPEFLAG_FRESTRICTED=4
+\par \tab IMPLTYPEFLAG_FDEFAULTVTABLE=8
+\par End Enum
+\par Public Enum InvokeKinds
+\par \tab INVOKE_UNKNOWN=0
+\par \tab INVOKE_FUNC=1
+\par \tab INVOKE_PROPERTYGET=2
+\par \tab INVOKE_PROPERTYPUT=4
+\par \tab INVOKE_PROPERTYPUTREF=8
+\par \tab INVOKE_EVENTFUNC=16
+\par End Enum
+\par Public Enum LibFlags
+\par \tab LIBFLAG_FRESTRICTED=1
+\par \tab LIBFLAG_FCONTROL=2
+\par \tab LIBFLAG_FHIDDEN=4
+\par \tab LIBFLAG_FHASDISKIMAGE=8
+\par End Enum
+\par Public Enum ParamFlags
+\par \tab PARAMFLAG_NONE=0
+\par \tab PARAMFLAG_FIN=1
+\par \tab PARAMFLAG_FOUT=2
+\par \tab PARAMFLAG_FLCID=4
+\par \tab PARAMFLAG_FRETVAL=8
+\par \tab PARAMFLAG_FOPT=16
+\par \tab PARAMFLAG_FHASDEFAULT=32
+\par \tab PARAMFLAG_FHASCUSTDATA=64
+\par End Enum
+\par Public Enum SysKinds
+\par \tab SYS_WIN16=0
+\par \tab SYS_WIN32=1
+\par \tab SYS_MAC=2
+\par End Enum
+\par Public Enum TliCustomFilterAction
+\par \tab tliCfaLeave=0
+\par \tab tliCfaDuplicate=1
+\par \tab tliCfaExtract=2
+\par \tab tliCfaDelete=3
+\par End Enum
+\par Public Enum TliErrors
+\par \tab tliErrNoCurrentTypelib=-2147220991
+\par \tab tliErrCantLoadLibrary=-2147220990
+\par \tab tliErrTypeLibNotRegistered=-2147220989
+\par \tab tliErrSearchResultsChanged=-2147220988
+\par \tab tliErrNotApplicable=-2147220987
+\par \tab tliErrIncompatibleData=-2147220986
+\par \tab tliErrIncompatibleSearchType=-2147220985
+\par \tab tliErrIncompatibleTypeKind=-2147220984
+\par \tab tliErrInaccessibleImportLib=-2147220983
+\par \tab tliErrNoDefaultValue=-2147220982
+\par \tab tliErrDataNotAvailable=-2147220981
+\par \tab tliErrNotAnEntryPoint=-2147220980
+\par \tab tliErrStopFiltering=-2147220979
+\par \tab tliErrArrayBoundsNotAvailable=-2147220978
+\par End Enum
+\par Public Enum TliItemDataTypes
+\par \tab tliIdtMemberID=0
+\par \tab tliIdtInvokeKinds=1
+\par End Enum
+\par Public Enum TliSearchTypes
+\par \tab tliStDefault=4096
+\par \tab tliStClasses=1
+\par \tab tliStEvents=2
+\par \tab tliStConstants=4
+\par \tab tliStDeclarations=8
+\par \tab tliStAppObject=16
+\par \tab tliStRecords=32
+\par \tab tliStIntrinsicAliases=64
+\par \tab tliStUnions=128
+\par \tab tliStAll=111
+\par End Enum
+\par Public Enum TliVarType
+\par \tab VT_EMPTY=0
+\par \tab VT_NULL=1
+\par \tab VT_I2=2
+\par \tab VT_I4=3
+\par \tab VT_R4=4
+\par \tab VT_R8=5
+\par \tab VT_CY=6
+\par \tab VT_DATE=7
+\par \tab VT_BSTR=8
+\par \tab VT_DISPATCH=9
+\par \tab VT_ERROR=10
+\par \tab VT_BOOL=11
+\par \tab VT_VARIANT=12
+\par \tab VT_UNKNOWN=13
+\par \tab VT_DECIMAL=14
+\par \tab VT_I1=16
+\par \tab VT_UI1=17
+\par \tab VT_UI2=18
+\par \tab VT_UI4=19
+\par \tab VT_I8=20
+\par \tab VT_UI8=21
+\par \tab VT_INT=22
+\par \tab VT_UINT=23
+\par \tab VT_VOID=24
+\par \tab VT_HRESULT=25
+\par \tab VT_PTR=26
+\par \tab VT_SAFEARRAY=27
+\par \tab VT_CARRAY=28
+\par \tab VT_USERDEFINED=29
+\par \tab VT_LPSTR=30
+\par \tab VT_LPWSTR=31
+\par \tab VT_FILETIME=64
+\par \tab VT_BLOB=65
+\par \tab VT_STREAM=66
+\par \tab VT_STORAGE=67
+\par \tab VT_STREAMED_OBJECT=68
+\par \tab VT_STORED_OBJECT=69
+\par \tab VT_BLOB_OBJECT=70
+\par \tab VT_CF=71
+\par \tab VT_CLSID=72
+\par \tab VT_VECTOR=4096
+\par \tab VT_ARRAY=8192
+\par \tab VT_BYREF=16384
+\par \tab VT_RESERVED=32768
+\par End Enum
+\par Public Enum TliWindowTypes
+\par \tab tliWtListBox=0
+\par \tab tliWtComboBox=1
+\par End Enum
+\par Public Enum TypeFlags
+\par \tab TYPEFLAG_NONE=0
+\par \tab TYPEFLAG_FAPPOBJECT=1
+\par \tab TYPEFLAG_FCANCREATE=2
+\par \tab TYPEFLAG_FLICENSED=4
+\par \tab TYPEFLAG_FPREDECLID=8
+\par \tab TYPEFLAG_FHIDDEN=16
+\par \tab TYPEFLAG_FCONTROL=32
+\par \tab TYPEFLAG_FDUAL=64
+\par \tab TYPEFLAG_FNONEXTENSIBLE=128
+\par \tab TYPEFLAG_FOLEAUTOMATION=256
+\par \tab TYPEFLAG_FRESTRICTED=512
+\par \tab TYPEFLAG_FAGGREGATABLE=1024
+\par \tab TYPEFLAG_FREPLACEABLE=2048
+\par \tab TYPEFLAG_FDISPATCHABLE=4096
+\par \tab TYPEFLAG_FREVERSEBIND=8192
+\par \tab TYPEFLAG_COCLASSATTRIBUTES=3635
+\par \tab TYPEFLAG_INTERFACEATTRIBUTES=980
+\par \tab TYPEFLAG_ALWAYSFORWARD=2
+\par \tab TYPEFLAG_DEFAULTFILTER=528
+\par End Enum
+\par Public Enum TypeKinds
+\par \tab TKIND_ENUM=0
+\par \tab TKIND_RECORD=1
+\par \tab TKIND_MODULE=2
+\par \tab TKIND_INTERFACE=3
+\par \tab TKIND_DISPATCH=4
+\par \tab TKIND_COCLASS=5
+\par \tab TKIND_ALIAS=6
+\par \tab TKIND_UNION=7
+\par \tab TKIND_MAX=8
+\par End Enum
+\par Public Enum VarFlags
+\par \tab VARFLAG_NONE=0
+\par \tab VARFLAG_FREADONLY=1
+\par \tab VARFLAG_FSOURCE=2
+\par \tab VARFLAG_FBINDABLE=4
+\par \tab VARFLAG_FREQUESTEDIT=8
+\par \tab VARFLAG_FDISPLAYBIND=16
+\par \tab VARFLAG_FDEFAULTBIND=32
+\par \tab VARFLAG_FHIDDEN=64
+\par \tab VARFLAG_FRESTRICTED=128
+\par \tab VARFLAG_FDEFAULTCOLLELEM=256
+\par \tab VARFLAG_FUIDEFAULT=512
+\par \tab VARFLAG_FNONBROWSABLE=1024
+\par \tab VARFLAG_FREPLACEABLE=2048
+\par \tab VARFLAG_FIMMEDIATEBIND=4096
+\par \tab VARFLAG_DEFAULTFILTER=192
+\par End Enum\plain\f4\fs20 
+\par 
+\par \plain\f3\fs20\b Interfaces
+\par \plain\f3\fs20 This section lists the Classes exposed by TLI.  For each class, the methods and events are listed.
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b _BaseTypeInfos \{8B217750-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b _DirectCalls \{00000000-0000-0000-0000-000000000000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20 None 
+\par 
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b CoClasses \{8B217744-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection\plain\f3\fs20\b 
+\par Property Get Item(ByVal Index As Integer) As CoClassInfo
+\par \plain\f3\fs20 CoClassInfo object\plain\f3\fs20\b 
+\par Property Get IndexedItem(ByVal TypeInfoNumber As Integer) As CoClassInfo
+\par \plain\f3\fs20 Fetch by TypeInfo number\plain\f3\fs20\b 
+\par Property Get NamedItem(ByVal TypeInfoName As String) As CoClassInfo
+\par \plain\f3\fs20 Fetch by name
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b CoClassInfo \{8B217743-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the coclass\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 GUID of the coclass\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the coclass\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the coclass\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the coclass\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the coclass\plain\f3\fs20\b 
+\par Property Get TypeKindString() As String
+\par \plain\f3\fs20 TypeKind of the CoClass, string\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 Actual Index of coclass in TypeLib\plain\f3\fs20\b 
+\par Property Get Parent() As TypeLibInfo
+\par \plain\f3\fs20 Containing TypeLibInfo object\plain\f3\fs20\b 
+\par Property Get Interfaces() As Interfaces
+\par \plain\f3\fs20 Interfaces collection\plain\f3\fs20\b 
+\par Property Get DefaultInterface() As InterfaceInfo
+\par \plain\f3\fs20 Information for Default Interface\plain\f3\fs20\b 
+\par Property Get DefaultEventInterface() As InterfaceInfo
+\par \plain\f3\fs20 Information for Default Event Interface\plain\f3\fs20\b 
+\par Property Get TypeKind() As TypeKinds
+\par \plain\f3\fs20 TypeKind of the CoClass, numeric value\plain\f3\fs20\b 
+\par Property Get ResolvedType() As VarTypeInfo
+\par \plain\f3\fs20 Base type.  Valid only if TypeKind is TKIND_ALIAS.\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the coclass
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b ConstantInfo \{8B21774D-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the TypeInfo\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 GUID of the TypeInfo\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the TypeInfo\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the TypeInfo\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the TypeInfo\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the TypeInfo\plain\f3\fs20\b 
+\par Property Get TypeKindString() As String
+\par \plain\f3\fs20 TypeKind of the TypeInfo, string\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 Actual Index of TypeInfo in TypeLib\plain\f3\fs20\b 
+\par Property Get GetMember(ByVal Index As Variant) As MemberInfo
+\par \plain\f3\fs20 Member by name or MemID\plain\f3\fs20\b 
+\par Property Get Members() As Members
+\par \plain\f3\fs20 Members collection\plain\f3\fs20\b 
+\par Property Get Parent() As TypeLibInfo
+\par \plain\f3\fs20 Containing TypeLibInfo object\plain\f3\fs20\b 
+\par Property Get TypeKind() As TypeKinds
+\par \plain\f3\fs20 TypeKind of the TypeInfo, numeric value\plain\f3\fs20\b 
+\par Property Get ResolvedType() As VarTypeInfo
+\par \plain\f3\fs20 Base type.  Valid only if TypeKind is TKIND_ALIAS.\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the TypeInfo
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b Constants \{8B21774C-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection\plain\f3\fs20\b 
+\par Property Get Item(ByVal Index As Integer) As ConstantInfo
+\par \plain\f3\fs20 ConstantInfo object\plain\f3\fs20\b 
+\par Property Get IndexedItem(ByVal TypeInfoNumber As Integer) As ConstantInfo
+\par \plain\f3\fs20 Fetch by TypeInfo number\plain\f3\fs20\b 
+\par Property Get NamedItem(ByVal TypeInfoName As String) As ConstantInfo
+\par \plain\f3\fs20 Fetch by name
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b CustomData \{8B217763-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par 
+\par Property Get Value() As Variant
+\par \plain\f3\fs20 
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b CustomDataCollection \{8B217764-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Item(ByVal Index As Integer) As CustomData
+\par \plain\f3\fs20 CustomData object\plain\f3\fs20\b 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of custom data entries
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b CustomFilter \{8B217760-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Sub Visit(ByVal Item As SearchItem, ByVal Action As TliCustomFilterAction)
+\par \plain\f3\fs20 
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b CustomSort \{8B21775F-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Sub Compare(ByVal Item1 As SearchItem, ByVal Item2 As SearchItem, ByVal Compare As Long)
+\par \plain\f3\fs20 
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b DeclarationInfo \{8B21774F-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the DeclarationInfo\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 GUID of the DeclarationInfo\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the DeclarationInfo\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the DeclarationInfo\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the DeclarationInfo\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the DeclarationInfo\plain\f3\fs20\b 
+\par Property Get TypeKindString() As String
+\par \plain\f3\fs20 TypeKind of the DeclarationInfo, string\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 Actual Index of DeclarationInfo in TypeLib\plain\f3\fs20\b 
+\par Property Get GetMember(ByVal Index As Variant) As MemberInfo
+\par \plain\f3\fs20 Member by name or MemID\plain\f3\fs20\b 
+\par Property Get Members() As Members
+\par \plain\f3\fs20 Members collection\plain\f3\fs20\b 
+\par Property Get Parent() As TypeLibInfo
+\par \plain\f3\fs20 Containing TypeLibInfo object\plain\f3\fs20\b 
+\par Property Get TypeKind() As TypeKinds
+\par \plain\f3\fs20 TypeKind of the DeclarationInfo, numeric value\plain\f3\fs20\b 
+\par Property Get ResolvedType() As VarTypeInfo
+\par \plain\f3\fs20 Base type.  Valid only if TypeKind is TKIND_ALIAS.\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the DeclarationInfo
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b Declarations \{8B21774E-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection\plain\f3\fs20\b 
+\par Property Get Item(ByVal Index As Integer) As DeclarationInfo
+\par \plain\f3\fs20 DeclarationInfo object\plain\f3\fs20\b 
+\par Property Get IndexedItem(ByVal TypeInfoNumber As Integer) As DeclarationInfo
+\par \plain\f3\fs20 Fetch by TypeInfo number\plain\f3\fs20\b 
+\par Property Get NamedItem(ByVal TypeInfoName As String) As DeclarationInfo
+\par \plain\f3\fs20 Fetch by name
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b InterfaceInfo \{8B217741-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the interface\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 GUID of the interface\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the interface\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the interface\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the interface\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the interface\plain\f3\fs20\b 
+\par Property Get TypeKindString() As String
+\par \plain\f3\fs20 TypeKind of the TypeInfo, string\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 Actual Index of interface in TypeLib\plain\f3\fs20\b 
+\par Property Get VTableInterface() As InterfaceInfo
+\par \plain\f3\fs20 VTable version of this interface\plain\f3\fs20\b 
+\par Property Get GetMember(ByVal Index As Variant) As MemberInfo
+\par \plain\f3\fs20 Member by name or MemID\plain\f3\fs20\b 
+\par Property Get Members() As Members
+\par \plain\f3\fs20 Members collection\plain\f3\fs20\b 
+\par Property Get Parent() As TypeLibInfo
+\par \plain\f3\fs20 Containing TypeLibInfo object\plain\f3\fs20\b 
+\par Property Get ImpliedInterfaces() As Interfaces
+\par \plain\f3\fs20 Interfaces collection\plain\f3\fs20\b 
+\par Property Get TypeKind() As TypeKinds
+\par \plain\f3\fs20 TypeKind of the TypeInfo, numeric value\plain\f3\fs20\b 
+\par Property Get ResolvedType() As VarTypeInfo
+\par \plain\f3\fs20 Base type.  Returns an error if TypeKind is not TKIND_ALIAS.\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the interface
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b Interfaces \{8B217742-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection\plain\f3\fs20\b 
+\par Property Get Item(ByVal Index As Integer) As InterfaceInfo
+\par \plain\f3\fs20 InterfaceInfo object\plain\f3\fs20\b 
+\par Property Get IndexedItem(ByVal TypeInfoNumber As Integer) As InterfaceInfo
+\par \plain\f3\fs20 Fetch by TypeInfo number\plain\f3\fs20\b 
+\par Property Get NamedItem(ByVal TypeInfoName As String) As InterfaceInfo
+\par \plain\f3\fs20 Fetch by name
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b IntrinsicAliases \{8B217762-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection\plain\f3\fs20\b 
+\par Property Get Item(ByVal Index As Integer) As IntrinsicAliasInfo
+\par \plain\f3\fs20 IntrinsicAliasInfo object\plain\f3\fs20\b 
+\par Property Get IndexedItem(ByVal TypeInfoNumber As Integer) As IntrinsicAliasInfo
+\par \plain\f3\fs20 Fetch by TypeInfo number\plain\f3\fs20\b 
+\par Property Get NamedItem(ByVal TypeInfoName As String) As IntrinsicAliasInfo
+\par \plain\f3\fs20 Fetch by name
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b IntrinsicAliasInfo \{8B217761-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the IntrinsicAliasInfo\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 GUID of the IntrinsicAliasInfo\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the IntrinsicAliasInfo\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the IntrinsicAliasInfo\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the IntrinsicAliasInfo\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the IntrinsicAliasInfo\plain\f3\fs20\b 
+\par Property Get TypeKindString() As String
+\par \plain\f3\fs20 TypeKind of the IntrinsicAliasInfo, string\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 Actual Index of IntrinsicAliasInfo in TypeLib\plain\f3\fs20\b 
+\par Property Get Parent() As TypeLibInfo
+\par \plain\f3\fs20 Containing TypeLibInfo object\plain\f3\fs20\b 
+\par Property Get TypeKind() As TypeKinds
+\par \plain\f3\fs20 TypeKind of the IntrinsicAliasInfo, numeric value\plain\f3\fs20\b 
+\par Property Get ResolvedType() As VarTypeInfo
+\par \plain\f3\fs20 Base type.  Valid only if TypeKind is TKIND_ALIAS.\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the IntrinsicAliasInfo
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b ListBoxNotification \{8B217758-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Sub OnAddString(ByVal lpstr As Long, ByVal fUnicode As Boolean)
+\par \plain\f3\fs20 
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b MemberInfo \{8B217747-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the Member\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the member\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the member\plain\f3\fs20\b 
+\par Property Get Parameters() As Parameters
+\par \plain\f3\fs20 Parameters\plain\f3\fs20\b 
+\par Property Get ReturnType() As VarTypeInfo
+\par \plain\f3\fs20 ReturnType\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the interface\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the member\plain\f3\fs20\b 
+\par Property Get Value() As Variant
+\par \plain\f3\fs20 Value of the member, ConstantInfo only\plain\f3\fs20\b 
+\par Property Get MemberId() As Long
+\par \plain\f3\fs20 MemberId (DispId) for member function or variable.\plain\f3\fs20\b 
+\par Property Get VTableOffset() As Integer
+\par \plain\f3\fs20 VTable Offset of member\plain\f3\fs20\b 
+\par Property Get InvokeKind() As InvokeKinds
+\par \plain\f3\fs20 InvokeKind of member\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get DescKind() As DescKinds
+\par \plain\f3\fs20 DescKind of member.\plain\f3\fs20\b 
+\par Sub GetDllEntry(ByVal DllName As String, ByVal EntryName As String, ByVal Ordinal As Integer)
+\par \plain\f3\fs20 Get Dll name and entry point.\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the Member
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b Members \{8B217748-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Item(ByVal Index As Integer) As MemberInfo
+\par \plain\f3\fs20 MemberInfo object\plain\f3\fs20\b 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of Members in interface\plain\f3\fs20\b 
+\par Property Let FuncFilter(RHS  As FuncFlags)
+\par \plain\f3\fs20 Method exclusion filter\plain\f3\fs20\b 
+\par Property Get FuncFilter() As FuncFlags
+\par \plain\f3\fs20 Method exclusion filter\plain\f3\fs20\b 
+\par Property Let VarFilter(RHS  As VarFlags)
+\par \plain\f3\fs20 Property exclusion filter\plain\f3\fs20\b 
+\par Property Get VarFilter() As VarFlags
+\par \plain\f3\fs20 Property exclusion filter\plain\f3\fs20\b 
+\par Property Get GetFilteredMembers(Optional ByVal ShowUnderscore As Boolean=False) As SearchResults
+\par \plain\f3\fs20 Get members without named duplicates\plain\f3\fs20\b 
+\par Function GetFilteredMembersDirect(ByVal hWnd As Integer, Optional ByVal WindowType As TliWindowTypes=0, Optional ByVal ItemDataType As TliItemDataTypes=0, Optional ByVal ShowUnderscore As Boolean=False) As Integer
+\par \plain\f3\fs20 Get members without named duplicates (Clear and fill hWnd)
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b ParameterInfo \{8B217749-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the Member\plain\f3\fs20\b 
+\par Property Get Optional() As Boolean
+\par \plain\f3\fs20 Optional Parameter\plain\f3\fs20\b 
+\par Property Get VarTypeInfo() As VarTypeInfo
+\par \plain\f3\fs20 VarType of this parameter\plain\f3\fs20\b 
+\par Property Get Default() As Boolean
+\par \plain\f3\fs20 Default Parameter\plain\f3\fs20\b 
+\par Property Get DefaultValue() As Variant
+\par \plain\f3\fs20 Default value\plain\f3\fs20\b 
+\par Property Get HasCustomData() As Boolean
+\par \plain\f3\fs20 Check if custom data is available\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get Flags() As ParamFlags
+\par \plain\f3\fs20 Parameter Flags
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b Parameters \{8B21774A-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Item(ByVal Index As Integer) As ParameterInfo
+\par \plain\f3\fs20 ParameterInfo object\plain\f3\fs20\b 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of Parameters in collection\plain\f3\fs20\b 
+\par Property Get OptionalCount() As Integer
+\par \plain\f3\fs20 Number of optional parameters\plain\f3\fs20\b 
+\par Property Get DefaultCount() As Integer
+\par \plain\f3\fs20 Number of default parameters.  Not included in optional count.
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b RecordInfo \{8B21775B-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the TypeInfo\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 GUID of the TypeInfo\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the TypeInfo\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the TypeInfo\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the TypeInfo\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the TypeInfo\plain\f3\fs20\b 
+\par Property Get TypeKindString() As String
+\par \plain\f3\fs20 TypeKind of the TypeInfo, string\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 Actual Index of TypeInfo in TypeLib\plain\f3\fs20\b 
+\par Property Get GetMember(ByVal Index As Variant) As MemberInfo
+\par \plain\f3\fs20 Member by name or MemID\plain\f3\fs20\b 
+\par Property Get Members() As Members
+\par \plain\f3\fs20 Members collection\plain\f3\fs20\b 
+\par Property Get Parent() As TypeLibInfo
+\par \plain\f3\fs20 Containing TypeLibInfo object\plain\f3\fs20\b 
+\par Property Get TypeKind() As TypeKinds
+\par \plain\f3\fs20 TypeKind of the TypeInfo, numeric value\plain\f3\fs20\b 
+\par Property Get ResolvedType() As VarTypeInfo
+\par \plain\f3\fs20 Base type.  Valid only if TypeKind is TKIND_ALIAS.\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the TypeInfo
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b Records \{8B21775C-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection\plain\f3\fs20\b 
+\par Property Get Item(ByVal Index As Integer) As RecordInfo
+\par \plain\f3\fs20 RecordInfo object\plain\f3\fs20\b 
+\par Property Get IndexedItem(ByVal TypeInfoNumber As Integer) As RecordInfo
+\par \plain\f3\fs20 Fetch by TypeInfo number\plain\f3\fs20\b 
+\par Property Get NamedItem(ByVal TypeInfoName As String) As RecordInfo
+\par \plain\f3\fs20 Fetch by name
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b SearchHelper \{8B217752-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Sub _OldInit
+\par 
+\par Function CheckHaveMatch(ByVal szName As String) As Boolean
+\par 
+\par Sub Init(ByVal SysKind As SysKinds, ByVal LCID As Long, Optional ByVal GrowSize As Integer=100)
+\par \plain\f3\fs20 
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b SearchItem \{8B217756-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Text of search\plain\f3\fs20\b 
+\par Property Get SearchData() As Long
+\par \plain\f3\fs20 Packed search data\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 TypeInfo number (LOWORD of SearchData)\plain\f3\fs20\b 
+\par Property Get LibNum() As Byte
+\par \plain\f3\fs20 Library number (LOBYTE of HIWORD of SearchData)\plain\f3\fs20\b 
+\par Property Get SearchType() As TliSearchTypes
+\par \plain\f3\fs20 SearchType data (HIBYTE of HIWORD of SearchData)\plain\f3\fs20\b 
+\par Property Get MemberId() As Long
+\par \plain\f3\fs20 MemberID (DispId) for GetFilteredMembers search\plain\f3\fs20\b 
+\par Property Get InvokeKinds() As InvokeKinds
+\par \plain\f3\fs20 InvokeKinds (method, property let/get/set) for current search item
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b SearchResults \{8B217757-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Item(ByVal Index As Integer) As SearchItem
+\par \plain\f3\fs20 Search item object\plain\f3\fs20\b 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of search hits\plain\f3\fs20\b 
+\par Property Get Sorted() As Boolean
+\par \plain\f3\fs20 Are the results currently sorted\plain\f3\fs20\b 
+\par Sub Sort(Optional ByVal CustomSort As CustomSort=0)
+\par \plain\f3\fs20 Sort the SearchResults collection\plain\f3\fs20\b 
+\par Function Filter(ByVal CustomFilter As CustomFilter, Optional ByVal AppendExtractedTo As SearchResults=0, Optional ByVal StartAfter As SearchItem=0) As SearchResults
+\par \plain\f3\fs20 Modify this collection
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b TLIApplication \{8B21775E-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function TypeLibInfoFromFile(ByVal FileName As String) As TypeLibInfo
+\par \plain\f3\fs20 Create a TypeLibInfo object from a file\plain\f3\fs20\b 
+\par Function InterfaceInfoFromObject(ByVal Object As Object) As InterfaceInfo
+\par \plain\f3\fs20 Create an InterfaceInfo object from a running IDispatch object\plain\f3\fs20\b 
+\par Property Get ListBoxNotification() As ListBoxNotification
+\par \plain\f3\fs20 Notification object for all Get*Direct methods.  Use with Implements.\plain\f3\fs20\b 
+\par Property Set ListBoxNotification() As ListBoxNotification
+\par \plain\f3\fs20 Notification object for all Get*Direct methods.  Use with Implements.\plain\f3\fs20\b 
+\par Property Get ResolveAliases() As Boolean
+\par \plain\f3\fs20 Automatically resolve all aliased parameters and return types.  Defaults to True.\plain\f3\fs20\b 
+\par Property Let ResolveAliases(RHS  As Boolean)
+\par \plain\f3\fs20 Automatically resolve all aliased parameters and return types.  Defaults to True.\plain\f3\fs20\b 
+\par Function InvokeHook(ByVal Object As Object, ByVal ID As Variant, ByVal InvokeKind As InvokeKinds, Optional ByVal ReverseArgList() As Variant) As Variant
+\par \plain\f3\fs20 Hook to IDispatch::Invoke.  ID is Name or MemberID (DispId).  List arguments backwards.  Supports ByRef.\plain\f3\fs20\b 
+\par Function InvokeHookArray(ByVal Object As Object, ByVal ID As Variant, ByVal InvokeKind As InvokeKinds, ByVal ReverseArgList() As Variant) As Variant
+\par \plain\f3\fs20 Hook to IDispatch::Invoke.  ID is Name or MemberID.  Arguments in ReverseArgList must be listed backwards.  ByRef args not supported.
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b TypeInfo \{8B217759-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the typeinfo\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 GUID of the typeinfo\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the typeinfo\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the typeinfo\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the typeinfo\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the typeinfo\plain\f3\fs20\b 
+\par Property Get TypeKindString() As String
+\par \plain\f3\fs20 TypeKind of the typeinfo, string\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 Actual Index of typeinfo in TypeLib\plain\f3\fs20\b 
+\par Property Get VTableInterface() As InterfaceInfo
+\par \plain\f3\fs20 VTable version of this interface\plain\f3\fs20\b 
+\par Property Get GetMember(ByVal Index As Variant) As MemberInfo
+\par \plain\f3\fs20 Member by name or MemID\plain\f3\fs20\b 
+\par Property Get Members() As Members
+\par \plain\f3\fs20 Members collection\plain\f3\fs20\b 
+\par Property Get Parent() As TypeLibInfo
+\par \plain\f3\fs20 Containing TypeLibInfo object\plain\f3\fs20\b 
+\par Property Get Interfaces() As Interfaces
+\par \plain\f3\fs20 Interfaces collection\plain\f3\fs20\b 
+\par Property Get DefaultInterface() As InterfaceInfo
+\par \plain\f3\fs20 Information for Default Interface.  CoClassInfo only.\plain\f3\fs20\b 
+\par Property Get DefaultEventInterface() As InterfaceInfo
+\par \plain\f3\fs20 Information for Default Event Interface.  CoClassInfo only.\plain\f3\fs20\b 
+\par Property Get TypeKind() As TypeKinds
+\par \plain\f3\fs20 TypeKind of the typeinfo, numeric value\plain\f3\fs20\b 
+\par Property Get ResolvedType() As VarTypeInfo
+\par \plain\f3\fs20 Base type.  Valid only if TypeKind is TKIND_ALIAS.\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the TypeInfo
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b TypeInfos \{8B21775A-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection\plain\f3\fs20\b 
+\par Property Get Item(ByVal Index As Integer) As TypeInfo
+\par \plain\f3\fs20 TypeInfo object\plain\f3\fs20\b 
+\par Property Get IndexedItem(ByVal TypeInfoNumber As Integer) As TypeInfo
+\par \plain\f3\fs20 Fetch by TypeInfo number\plain\f3\fs20\b 
+\par Property Get NamedItem(ByVal TypeInfoName As String) As TypeInfo
+\par \plain\f3\fs20 Fetch by name
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b TypeLibInfo \{8B217746-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get ContainingFile() As String
+\par \plain\f3\fs20 Name of file containing TypeLib\plain\f3\fs20\b 
+\par Property Let ContainingFile(RHS  As String)
+\par \plain\f3\fs20 Name of file containing TypeLib\plain\f3\fs20\b 
+\par Sub LoadRegTypeLib(ByVal TypeLibGuid As String, ByVal MajorVersion As Integer, ByVal MinorVersion As Integer, ByVal LCID As Long)
+\par \plain\f3\fs20 Load a registered typelib\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of TypeLib\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the library\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the library\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 Registry format of TypeLib GUID\plain\f3\fs20\b 
+\par Property Get LCID() As Long
+\par \plain\f3\fs20 LCID of TypeLib\plain\f3\fs20\b 
+\par Property Get MajorVersion() As Integer
+\par \plain\f3\fs20 Major Version of TypeLib\plain\f3\fs20\b 
+\par Property Get MinorVersion() As Integer
+\par \plain\f3\fs20 Minor Version of TypeLib\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the library\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attribute strings for the library\plain\f3\fs20\b 
+\par Property Get CoClasses() As CoClasses
+\par \plain\f3\fs20 The CoClasses for the current TypeLib\plain\f3\fs20\b 
+\par Property Get Interfaces() As Interfaces
+\par \plain\f3\fs20 The interfaces for the current TypeLib\plain\f3\fs20\b 
+\par Property Get Constants() As Constants
+\par \plain\f3\fs20 The constants for the current TypeLib\plain\f3\fs20\b 
+\par Property Get Declarations() As Declarations
+\par \plain\f3\fs20 The declarations for the current TypeLib\plain\f3\fs20\b 
+\par Property Get TypeInfoCount() As Integer
+\par \plain\f3\fs20 Total TypeInfos in typelib\plain\f3\fs20\b 
+\par Property Get GetTypeInfo(ByVal Index As Variant) As TypeInfo
+\par \plain\f3\fs20 Get TypeInfo directly by Name or TypeInfoNumber\plain\f3\fs20\b 
+\par Property Get GetTypeInfoNumber(ByVal Name As String) As Integer
+\par \plain\f3\fs20 Get interface number by name\plain\f3\fs20\b 
+\par Function IsSameLibrary(ByVal CheckLib As TypeLibInfo) As Boolean
+\par \plain\f3\fs20 Is this the same TypeLib?\plain\f3\fs20\b 
+\par Property Let AppObjString(RHS  As String)
+\par \plain\f3\fs20 The string to put in the list for an application object entry\plain\f3\fs20\b 
+\par Property Let LibNum(RHS  As Integer)
+\par \plain\f3\fs20 The external library number.  Placed in ItemData when lists are filled.\plain\f3\fs20\b 
+\par Property Get ShowLibName() As Boolean
+\par \plain\f3\fs20 Whether or not to display the library name.\plain\f3\fs20\b 
+\par Property Let ShowLibName(RHS  As Boolean)
+\par \plain\f3\fs20 Whether or not to display the library name.\plain\f3\fs20\b 
+\par Property Get GetTypeKind(ByVal TypeInfoNumber As Integer) As TypeKinds
+\par \plain\f3\fs20 TypeKind of TypeInfo number\plain\f3\fs20\b 
+\par Property Get SysKind() As SysKinds
+\par \plain\f3\fs20 SysKind of TypeLib\plain\f3\fs20\b 
+\par Property Get SearchDefault() As TliSearchTypes
+\par \plain\f3\fs20 Default search filter\plain\f3\fs20\b 
+\par Property Let SearchDefault(RHS  As TliSearchTypes)
+\par \plain\f3\fs20 Default search filter\plain\f3\fs20\b 
+\par Function CaseTypeName(ByVal bstrName As String, Optional ByVal SearchType As TliSearchTypes=4096) As TliSearchTypes
+\par \plain\f3\fs20 Try to case the name of a type which matches the search criteria.  Returns matching search flags.\plain\f3\fs20\b 
+\par Function CaseMemberName(ByVal bstrName As String, Optional ByVal SearchType As TliSearchTypes=4096) As Boolean
+\par \plain\f3\fs20 Check if this is a valid member name\plain\f3\fs20\b 
+\par Sub ResetSearchCriteria(Optional ByVal TypeFilter As TypeFlags=528, Optional ByVal IncludeEmptyTypes As Boolean=False, Optional ByVal ShowUnderscore As Boolean=False)
+\par \plain\f3\fs20 Resets search criteria.  Only matching typeinfos will be searched.\plain\f3\fs20\b 
+\par Function GetTypesWithMember(ByVal MemberName As String, Optional ByVal StartResults As SearchResults=0, Optional ByVal SearchType As TliSearchTypes=4096, Optional ByVal Sort As Boolean=True, Optional ByVal ShowUnderscore As Boolean=False) As SearchResults
+\par \plain\f3\fs20 Get matching types\plain\f3\fs20\b 
+\par Function GetTypesWithMemberDirect(ByVal MemberName As String, ByVal hWnd As Integer, Optional ByVal WindowType As TliWindowTypes=0, Optional ByVal SearchType As TliSearchTypes=4096, Optional ByVal ShowUnderscore As Boolean=False) As Integer
+\par \plain\f3\fs20 Get matching types.  Add directly to hWnd.\plain\f3\fs20\b 
+\par Function GetMembersWithSubString(ByVal SubString As String, Optional ByVal StartResults As SearchResults=0, Optional ByVal SearchType As TliSearchTypes=4096, Optional ByVal SearchMiddle As Boolean=True, Optional ByVal Helper As SearchHelper=0, Optional ByVal Sort As Boolean=True, Optional ByVal ShowUnderscore As Boolean=False) As SearchResults
+\par \plain\f3\fs20 Get matching member names\plain\f3\fs20\b 
+\par Function GetMembersWithSubStringDirect(ByVal SubString As String, ByVal hWnd As Integer, Optional ByVal WindowType As TliWindowTypes=0, Optional ByVal SearchType As TliSearchTypes=4096, Optional ByVal SearchMiddle As Boolean=True, Optional ByVal Helper As SearchHelper=0, Optional ByVal ShowUnderscore As Boolean=False) As Integer
+\par \plain\f3\fs20 Get matching member names. Add directly to hWnd.\plain\f3\fs20\b 
+\par Function GetTypesWithSubString(ByVal SubString As String, Optional ByVal StartResults As SearchResults=0, Optional ByVal SearchType As TliSearchTypes=4096, Optional ByVal SearchMiddle As Boolean=True, Optional ByVal Sort As Boolean=True) As SearchResults
+\par \plain\f3\fs20 Get matching type names.\plain\f3\fs20\b 
+\par Function GetTypesWithSubStringDirect(ByVal SubString As String, ByVal hWnd As Integer, Optional ByVal WindowType As TliWindowTypes=0, Optional ByVal SearchType As TliSearchTypes=4096, Optional ByVal SearchMiddle As Boolean=True) As Integer
+\par \plain\f3\fs20 Get matching type names. Add directly to hWnd.\plain\f3\fs20\b 
+\par Function GetTypes(Optional ByVal StartResults As SearchResults=0, Optional ByVal SearchType As TliSearchTypes=4096, Optional ByVal Sort As Boolean=True) As SearchResults
+\par \plain\f3\fs20 Get types which match the give search criteria.\plain\f3\fs20\b 
+\par Function GetTypesDirect(ByVal hWnd As Integer, Optional ByVal WindowType As TliWindowTypes=0, Optional ByVal SearchType As TliSearchTypes=4096) As Integer
+\par \plain\f3\fs20 Get types which match the give search criteria.  Add directly to hWnd.\plain\f3\fs20\b 
+\par Function GetMembers(ByVal SearchData As Long, Optional ByVal ShowUnderscore As Boolean=False) As SearchResults
+\par \plain\f3\fs20 Get members corresponding to SearchData\plain\f3\fs20\b 
+\par Function GetMembersDirect(ByVal SearchData As Long, ByVal hWnd As Integer, Optional ByVal WindowType As TliWindowTypes=0, Optional ByVal ItemDataType As TliItemDataTypes=0, Optional ByVal ShowUnderscore As Boolean=False) As Integer
+\par \plain\f3\fs20 Get members corresponding to SearchData.  Add directly to hWnd.\plain\f3\fs20\b 
+\par Sub SetMemberFilters(Optional ByVal FuncFilter As FuncFlags=65, Optional ByVal VarFilter As VarFlags=192)
+\par \plain\f3\fs20 Set filters for member searches (GetMembersWithSubstring[Direct], GetMembers[Direct])\plain\f3\fs20\b 
+\par Function MakeSearchData(ByVal TypeInfoName As String, Optional ByVal SearchType As TliSearchTypes=4096) As Long
+\par \plain\f3\fs20 Generate SearchData for use with GetMembers[Direct]\plain\f3\fs20\b 
+\par Property Get TypeInfos() As TypeInfos
+\par \plain\f3\fs20 The TypeInfos for the current TypeLib\plain\f3\fs20\b 
+\par Property Get Records() As Records
+\par \plain\f3\fs20 The records for the current TypeLib\plain\f3\fs20\b 
+\par Property Get IntrinsicAliases() As IntrinsicAliases
+\par \plain\f3\fs20 The intrinsic aliases for the current TypeLib\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Function GetMemberInfo(ByVal SearchData As Long, Optional ByVal InvokeKinds As InvokeKinds=0, Optional ByVal MemberId As Long=-1, Optional ByVal MemberName As String=) As MemberInfo
+\par \plain\f3\fs20 Create MemberInfo object from type and member searches.\plain\f3\fs20\b 
+\par Property Get Unions() As Unions
+\par \plain\f3\fs20 The unions for the current TypeLib\plain\f3\fs20\b 
+\par Function AddTypes(ByVal TypeInfoNumbers() As Integer, Optional ByVal StartResults As SearchResults=0, Optional ByVal SearchType As TliSearchTypes=4096, Optional ByVal Sort As Boolean=True) As SearchResults
+\par \plain\f3\fs20 Add types to a GetType* SearchResults object\plain\f3\fs20\b 
+\par Function AddTypesDirect(ByVal TypeInfoNumbers() As Integer, ByVal hWnd As Integer, Optional ByVal WindowType As TliWindowTypes=0, Optional ByVal SearchType As TliSearchTypes=4096) As Integer
+\par \plain\f3\fs20 Add types directly to hWnd\plain\f3\fs20\b 
+\par Sub FreeSearchCriteria
+\par \plain\f3\fs20 Free cached search information.  (8 * TypeInfoCount bytes)\plain\f3\fs20\b 
+\par Sub Register(Optional ByVal HelpDir As String=)
+\par \plain\f3\fs20 Register the typelib\plain\f3\fs20\b 
+\par Sub UnRegister
+\par \plain\f3\fs20 UnRegister the typelib\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the library\plain\f3\fs20\b 
+\par Property Get AppObjString() As String
+\par \plain\f3\fs20 The string to put in the list for an application object entry\plain\f3\fs20\b 
+\par Property Get LibNum() As Integer
+\par \plain\f3\fs20 The external library number.  Placed in ItemData when lists are filled.
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b UnionInfo \{8B217765-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get Name() As String
+\par \plain\f3\fs20 Name of the TypeInfo\plain\f3\fs20\b 
+\par Property Get GUID() As String
+\par \plain\f3\fs20 GUID of the TypeInfo\plain\f3\fs20\b 
+\par Property Get HelpContext() As Long
+\par \plain\f3\fs20 HelpContext for the TypeInfo\plain\f3\fs20\b 
+\par Property Get HelpFile() As String
+\par \plain\f3\fs20 HelpFile for the TypeInfo\plain\f3\fs20\b 
+\par Property Get AttributeMask() As Integer
+\par \plain\f3\fs20 Type attribute mask for the TypeInfo\plain\f3\fs20\b 
+\par Property Get AttributeStrings(ByVal AttributeArray() As String) As Integer
+\par \plain\f3\fs20 Type attributes for the TypeInfo\plain\f3\fs20\b 
+\par Property Get TypeKindString() As String
+\par \plain\f3\fs20 TypeKind of the TypeInfo, string\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 Actual Index of TypeInfo in TypeLib\plain\f3\fs20\b 
+\par Property Get GetMember(ByVal Index As Variant) As MemberInfo
+\par \plain\f3\fs20 Member by name or MemID\plain\f3\fs20\b 
+\par Property Get Members() As Members
+\par \plain\f3\fs20 Members collection\plain\f3\fs20\b 
+\par Property Get Parent() As TypeLibInfo
+\par \plain\f3\fs20 Containing TypeLibInfo object\plain\f3\fs20\b 
+\par Property Get TypeKind() As TypeKinds
+\par \plain\f3\fs20 TypeKind of the TypeInfo, numeric value\plain\f3\fs20\b 
+\par Property Get ResolvedType() As VarTypeInfo
+\par \plain\f3\fs20 Base type.  Valid only if TypeKind is TKIND_ALIAS.\plain\f3\fs20\b 
+\par Property Get CustomDataCollection() As CustomDataCollection
+\par \plain\f3\fs20 Custom data GUIDs and Values\plain\f3\fs20\b 
+\par Property Get HelpString(Optional ByVal LCID As Long=0) As String
+\par \plain\f3\fs20 Helpstring for the TypeInfo
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b Unions \{8B217766-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Function _NewEnum() As Unknown
+\par 
+\par Property Get Count() As Integer
+\par \plain\f3\fs20 Number of TypeInfos in collection\plain\f3\fs20\b 
+\par Property Get Item(ByVal Index As Integer) As UnionInfo
+\par \plain\f3\fs20 UnionInfo object\plain\f3\fs20\b 
+\par Property Get IndexedItem(ByVal TypeInfoNumber As Integer) As UnionInfo
+\par \plain\f3\fs20 Fetch by TypeInfo number\plain\f3\fs20\b 
+\par Property Get NamedItem(ByVal TypeInfoName As String) As UnionInfo
+\par \plain\f3\fs20 Fetch by name
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\b VarTypeInfo \{8B21774B-717D-11CE-AB5B-D41203C10000\}
+\par \plain\f4\fs20 
+\par \plain\f3\fs20\ul Methods\plain\f3\fs20\b 
+\par Property Get TypeInfo() As TypeInfo
+\par \plain\f3\fs20 Type information for VT_PTR VarType\plain\f3\fs20\b 
+\par Property Get TypeInfoNumber() As Integer
+\par \plain\f3\fs20 TypeInfo number for VT_PTR VarType (Cheaper than TypeInfo property)\plain\f3\fs20\b 
+\par Property Get TypedVariant() As Variant
+\par \plain\f3\fs20 Get a variant with this VarType\plain\f3\fs20\b 
+\par Property Get IsExternalType() As Boolean
+\par \plain\f3\fs20 Is TypeInfo external to this library\plain\f3\fs20\b 
+\par Property Get TypeLibInfoExternal() As TypeLibInfo
+\par \plain\f3\fs20 Get external typelib\plain\f3\fs20\b 
+\par Property Get PointerLevel() As Integer
+\par \plain\f3\fs20 Dereferencing level for VT_PTR VarType\plain\f3\fs20\b 
+\par Property Get VarType() As TliVarType
+\par \plain\f3\fs20 VarType of Parameter\plain\f3\fs20\b 
+\par Function ArrayBounds(ByVal Bounds() As Long) As Integer
+\par \plain\f3\fs20 Get bounds for VT_VECTOR array.  LBound in column 1, UBound in column 2.
+\par \plain\f3\fs20\ul Events
+\par \plain\f3\fs20 None 
+\par \plain\f4\fs20 
+\par 
+\par }
+ 

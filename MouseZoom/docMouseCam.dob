@@ -1,0 +1,689 @@
+VERSION 5.00
+Begin VB.UserDocument docMouseZoom 
+   BackColor       =   &H80000000&
+   ClientHeight    =   2130
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   2385
+   ContinuousScroll=   0   'False
+   HScrollSmallChange=   15
+   Picture         =   "docMouseCam.dox":0000
+   ScaleHeight     =   142
+   ScaleMode       =   3  'Pixel
+   ScaleWidth      =   159
+   ScrollBars      =   0  'None
+   VScrollSmallChange=   15
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":03B6
+      Height          =   330
+      Index           =   6
+      Left            =   2040
+      Picture         =   "docMouseCam.dox":0728
+      Style           =   1  'Graphical
+      TabIndex        =   11
+      TabStop         =   0   'False
+      ToolTipText     =   "Change Interval"
+      Top             =   0
+      Width           =   330
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":0B6A
+      Height          =   330
+      Index           =   5
+      Left            =   1710
+      Picture         =   "docMouseCam.dox":0EDC
+      Style           =   1  'Graphical
+      TabIndex        =   7
+      TabStop         =   0   'False
+      ToolTipText     =   "Change Interval"
+      Top             =   0
+      Width           =   330
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":1292
+      Enabled         =   0   'False
+      Height          =   330
+      Index           =   4
+      Left            =   1380
+      Picture         =   "docMouseCam.dox":1648
+      Style           =   1  'Graphical
+      TabIndex        =   6
+      TabStop         =   0   'False
+      ToolTipText     =   "Zoom 100%"
+      Top             =   0
+      Width           =   330
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":19FE
+      Enabled         =   0   'False
+      Height          =   330
+      Index           =   3
+      Left            =   1035
+      Picture         =   "docMouseCam.dox":1DB4
+      Style           =   1  'Graphical
+      TabIndex        =   5
+      TabStop         =   0   'False
+      ToolTipText     =   "Zoom Back"
+      Top             =   0
+      Width           =   345
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":216A
+      Enabled         =   0   'False
+      Height          =   330
+      Index           =   2
+      Left            =   690
+      Picture         =   "docMouseCam.dox":2520
+      Style           =   1  'Graphical
+      TabIndex        =   4
+      TabStop         =   0   'False
+      ToolTipText     =   "Zoom Out"
+      Top             =   0
+      Width           =   345
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":28D6
+      Enabled         =   0   'False
+      Height          =   330
+      Index           =   1
+      Left            =   345
+      Picture         =   "docMouseCam.dox":2C8C
+      Style           =   1  'Graphical
+      TabIndex        =   3
+      TabStop         =   0   'False
+      ToolTipText     =   "Zoom In"
+      Top             =   0
+      Width           =   345
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":3042
+      Height          =   330
+      Index           =   0
+      Left            =   0
+      Picture         =   "docMouseCam.dox":33F8
+      Style           =   1  'Graphical
+      TabIndex        =   2
+      TabStop         =   0   'False
+      ToolTipText     =   "Click to start"
+      Top             =   0
+      Width           =   345
+   End
+   Begin VB.PictureBox picZoom 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   1800
+      Left            =   0
+      ScaleHeight     =   120
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   160
+      TabIndex        =   1
+      Top             =   330
+      Width           =   2400
+      Begin VB.TextBox txtInterval 
+         Height          =   270
+         Left            =   30
+         TabIndex        =   8
+         TabStop         =   0   'False
+         Text            =   "100"
+         Top             =   270
+         Visible         =   0   'False
+         Width           =   930
+      End
+      Begin VB.Label lblIntervall 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "Interval: (ms)"
+         ForeColor       =   &H80000008&
+         Height          =   225
+         Left            =   30
+         TabIndex        =   10
+         Top             =   45
+         Visible         =   0   'False
+         Width           =   975
+      End
+      Begin VB.Label lblZoomPercent 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "Zoom: 100 %"
+         ForeColor       =   &H80000008&
+         Height          =   210
+         Left            =   30
+         TabIndex        =   9
+         Top             =   60
+         Visible         =   0   'False
+         Width           =   1365
+      End
+   End
+   Begin VB.TextBox txtFocus 
+      Height          =   240
+      Left            =   60
+      TabIndex        =   0
+      Top             =   15
+      Width           =   210
+   End
+   Begin VB.Timer tmrCamShot 
+      Enabled         =   0   'False
+      Interval        =   100
+      Left            =   30
+      Top             =   345
+   End
+   Begin VB.Timer tmrHideLabels 
+      Enabled         =   0   'False
+      Interval        =   500
+      Left            =   450
+      Top             =   345
+   End
+   Begin VB.Timer tmrStatusCheck 
+      Enabled         =   0   'False
+      Interval        =   1000
+      Left            =   45
+      Top             =   45
+   End
+End
+Attribute VB_Name = "docMouseZoom"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+'Enum to control Camera States:
+Private Enum mcCameraState
+   mcStop = 0
+   mcRun = 1
+   mcPause = 2
+End Enum
+
+Private CameraState     As mcCameraState 'current State of Camera
+
+'PointAPI type (needed for the API to get Cursor Position)
+Private Type POINTAPI
+   x                    As Long
+   y                    As Long
+End Type
+
+'API to get Cursor Position
+Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
+Private MyPointAPI      As POINTAPI
+'API to make a snapshot, stretching when necessary:
+Private Declare Function StretchBlt Lib "gdi32" (ByVal hdc As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal nSrcWidth As Long, ByVal nSrcHeight As Long, ByVal dwRop As Long) As Long
+Private Const MakeSnapshot = &HCC0020 ' = vbSrcCopy
+'API to get hwnd of Desktop (needed to get HdC of desktop)
+Private Declare Function GetDesktopWindow Lib "user32" () As Long
+Private DesktopHwnd     As Long
+'API to get HdC of Desktop (needed to make camera independent to form placement and size)
+Private Declare Function GetWindowDC Lib "user32" (ByVal hWnd As Long) As Long
+Private DesktopHdC      As Long
+
+Private lngX            As Long 'Mirror of MyPointAPI.x
+Private lngY            As Long 'Mirror of MyPointAPI.y
+
+Private intZoomLevel    As Integer 'Level of Zoom
+Private intLastZoom     As Integer 'Last ZoomLevel (enables 1:1 zoom and back)
+
+Public isCameraOn       As Boolean 'Not needed anymore. Left alone for compatibility
+
+Private intCamWidth     As Integer 'Camera Width
+Private intCamHeight    As Integer 'Camera Height
+Private intDisplayWidth As Integer 'Display Width
+Private intDisplayHeight As Integer 'Display Height
+Private lngMaxX         As Long 'Max X position due to Screen.Width
+Private lngMaxY         As Long 'Max Y position due to Screen.Height
+
+'******************************************************************************
+'                           START PROCEDURE
+'******************************************************************************
+Private Sub UserDocument_Initialize()
+   On Error Resume Next
+
+   'Get the hwnd of desktop (to make camera work all around)
+   DesktopHwnd = GetDesktopWindow()
+   'Get the hDc of the Desktop (necessary for snapshot)
+   DesktopHdC = GetWindowDC(DesktopHwnd)
+   'set initial zoom level to last used zoom level:
+   intZoomLevel = 1 'in case GetSetting causes an error
+   intZoomLevel = CInt(GetSetting(gsREG_APP, "Mouse Zoom", "ZoomLevel", "1"))
+
+   'set the LastZoom to 0 (no last zoom)
+   intLastZoom = 0
+   'initially, camera is off:
+   CameraState = mcStop
+   'Set the initial Display Height and Width:
+   intDisplayWidth = 136
+   intDisplayHeight = 120
+   'Set the initial Camera Height and Width:
+   intCamWidth = 136
+   intCamHeight = 120
+   'Set the Maximum X and Y position:
+   lngMaxX = (Screen.Width / Screen.TwipsPerPixelX) - intCamWidth
+   lngMaxY = (Screen.Height / Screen.TwipsPerPixelY) - intCamHeight
+
+   err.Clear
+
+End Sub
+
+Private Sub UserDocument_Resize()
+   On Error GoTo errUserDocument_Resize
+
+   'Check the UserDocument size, and resize picZoom as necessary:
+   If (UserDocument.ScaleWidth > 70) And (UserDocument.ScaleHeight > 60) Then
+      'Document size is OK to perform:
+      picZoom.Move 1, 23, UserDocument.ScaleWidth - 2, (CInt(UserDocument.ScaleHeight / 2) * 2) - 24
+   ElseIf (UserDocument.ScaleWidth > 70) Then
+      'Width OK
+      picZoom.Move 1, 23, (CInt(UserDocument.ScaleWidth / 2) * 2) - 2, 26
+   ElseIf (UserDocument.ScaleHeight > 60) Then
+      'Height OK
+      picZoom.Move 1, 23, 70, (CInt(UserDocument.ScaleHeight / 2) * 2) - 24
+   Else
+      'Document too small!!
+      picZoom.Move 1, 23, 70, 26
+   End If
+   'Set the Display Height and Width:
+   intDisplayWidth = picZoom.Width
+   intDisplayHeight = picZoom.Height
+   'Set the Camera Height and Width:
+   intCamWidth = CInt((CDbl(intDisplayWidth) / CDbl(intZoomLevel)) / 2) * 2
+   intCamHeight = CInt((CDbl(intDisplayHeight) / CDbl(intZoomLevel)) / 2) * 2
+   'Set the Maximum X and Y position:
+   lngMaxX = (Screen.Width / Screen.TwipsPerPixelX) - intCamWidth
+   lngMaxY = (Screen.Height / Screen.TwipsPerPixelY) - intCamHeight
+
+   Exit Sub
+errUserDocument_Resize:
+   err.Clear
+   MsgBox err.Description, vbCritical + vbOKOnly, "Error initialising Mouse Camera"
+   'Set the initial values back:
+   intZoomLevel = 1
+   intDisplayWidth = 70
+   intDisplayHeight = 26
+   intCamWidth = 70
+   intCamHeight = 26
+   lngMaxX = 700
+   lngMaxY = 500
+
+End Sub
+
+Private Sub UserDocument_Show()
+   On Error Resume Next
+   'Get the hwnd of desktop (to make camera work all around)
+   DesktopHwnd = GetDesktopWindow()
+   'Get the hDc of the Desktop (necessary for snapshot)
+   DesktopHdC = GetWindowDC(DesktopHwnd)
+   'set initial zoom level to last saved value
+   intZoomLevel = 1 'in case GetSetting causes an error
+   intZoomLevel = CInt(GetSetting(gsREG_APP, "Mouse Zoom", "ZoomLevel", "1"))
+   'stop camera:
+   CameraState = mcStop
+   ControlCamera
+   'stop camera timer:
+   tmrCamShot.Enabled = False
+   'make sure that resize will be shooted
+   'in case user resizes the container of UserControl when the
+   'UserControl was invisible:
+   Call UserDocument_Resize
+
+   err.Clear
+
+End Sub
+
+'******************************************************************************
+'                           USER INTERFACE EVENTS
+'******************************************************************************
+
+Private Sub cmdMouseCam_Click(index As Integer)
+   On Error GoTo errcmdMouseCam_Click
+   Select Case index
+      Case 0 'Off/Pause/On:
+         Select Case CameraState
+            Case mcRun 'it was running, so we stop
+               CameraState = mcStop
+
+            Case mcPause 'it was pausing, so we run again
+               CameraState = mcRun
+
+            Case mcStop 'it was stopping, so we run
+               CameraState = mcRun
+
+         End Select
+         ControlCamera
+
+      Case 1 'Zoom In
+         'increase Zoom Level by 1
+         intZoomLevel = intZoomLevel + 1
+         'limit max. Zoom Level to 99 (9900 %)
+         If intZoomLevel > 99 Then intZoomLevel = 99
+         ShowPercent
+
+      Case 2 'Zoom Out
+         'decrease Zoom Level by 1
+         intZoomLevel = intZoomLevel - 1
+         'limit zoom level to 1 (100%)
+         If intZoomLevel < 1 Then intZoomLevel = 1
+         ShowPercent
+
+      Case 3 'Zoom Back
+         'use the copy of Zoom Level to restore Zoom Level:
+         intZoomLevel = intLastZoom
+         'Last Zoom = 0, so ZoomBack will be disabled
+         intLastZoom = 0
+         ShowPercent
+
+      Case 4 'Zoom 1-1
+         'make a copy of actual Zoom Level
+         intLastZoom = intZoomLevel
+         'set Zoom level to 100%
+         intZoomLevel = 1
+         ShowPercent
+
+      Case 5 'Camera Speed
+         'if Camera is running, pause:
+         If CameraState = mcRun Then
+            CameraState = mcPause
+            ControlCamera
+         End If
+         'show the actual interval in textbox:
+         txtInterval.Text = Format$(tmrCamShot.Interval)
+         'make the label and textbox visible:
+         lblIntervall.Visible = True
+         txtInterval.Visible = True
+         'set focus to the textbox:
+         txtInterval.SetFocus
+
+      Case 6 ' *** About
+         MsgBox "The Mouse Zoom has been made by Alper Saracoglu" & Chr$(13) & "Visit : http://www.logo-systemhaus.de", vbInformation + vbOKOnly, "Mouse Zoom"
+
+   End Select
+
+   Exit Sub
+errcmdMouseCam_Click:
+   err.Clear
+
+End Sub
+
+Private Sub txtInterval_KeyPress(KeyAscii As Integer)
+   On Error GoTo errtxtInterval_KeyPress
+   If KeyAscii = 13 Then 'User Pressed Enter, so check the interval:
+      KeyAscii = 0 'set KeyAscii to 0 so that it wont beep
+      If Len(txtInterval.Text) = 0 Then
+         'textbox is empty
+         txtInterval.Text = "100"
+      ElseIf Not IsNumeric(txtInterval.Text) Then
+         'the text is not numeric
+         txtInterval.Text = "100"
+      ElseIf CLng(txtInterval.Text) > 60000 Or CLng(txtInterval.Text) < 1 Then
+         'the interval is too big or too small
+         txtInterval.Text = "100"
+      End If
+      'hide the label and textbox:
+      lblIntervall.Visible = False
+      txtInterval.Visible = False
+      'set the new interval:
+      tmrCamShot.Interval = CLng(txtInterval.Text)
+      'if Camera was pausing, start camera timer:
+      If CameraState = mcPause Then
+         CameraState = mcRun
+         ControlCamera
+      End If
+
+   ElseIf KeyAscii = 8 Then
+      'Backspace is enabled
+   ElseIf KeyAscii < 48 Or KeyAscii > 57 Then
+      'no other keys are enabled
+      KeyAscii = 0
+   End If
+
+   Exit Sub
+errtxtInterval_KeyPress:
+   err.Clear
+   lblIntervall.Visible = False
+   txtInterval.Visible = False
+   tmrCamShot.Interval = 100
+   If CameraState = mcPause Then
+      CameraState = mcRun
+      ControlCamera
+   End If
+
+End Sub
+
+Private Sub txtInterval_LostFocus()
+   On Error GoTo errtxtInterval_LostFocus
+   'txtbox lost focus, so check the interval:
+   If Len(txtInterval.Text) = 0 Then
+      'textbox was empty
+      txtInterval.Text = "100"
+   ElseIf Not IsNumeric(txtInterval.Text) Then
+      'text was not numeric
+      txtInterval.Text = "100"
+   ElseIf CLng(txtInterval.Text) > 60000 Or CLng(txtInterval.Text) < 1 Then
+      'numeric value of text was too high or too low
+      txtInterval.Text = "100"
+   End If
+   'hide label and textbox:
+   lblIntervall.Visible = False
+   txtInterval.Visible = False
+   'set the new interval:
+   tmrCamShot.Interval = CLng(txtInterval.Text)
+   'start camera:
+   If CameraState = mcPause Then
+      CameraState = mcRun
+      ControlCamera
+   End If
+
+   Exit Sub
+errtxtInterval_LostFocus:
+   err.Clear
+   lblIntervall.Visible = False
+   txtInterval.Visible = False
+   tmrCamShot.Interval = 100
+   If CameraState = mcPause Then
+      CameraState = mcRun
+      ControlCamera
+   End If
+
+End Sub
+
+'******************************************************************************
+'                           TIMER EVENTS
+'******************************************************************************
+
+Private Sub tmrCamShot_Timer()
+   On Error GoTo errtmrCamShot_Timer
+   'Get the current Position:
+   GetCursorPos MyPointAPI
+   'set the Camera around cursor:
+   lngX = MyPointAPI.x - (intCamWidth / 2)
+   lngY = MyPointAPI.y - (intCamHeight / 2)
+
+   'Check the lngX and lngY to prevent Camera
+   'running out of screen boundaries:
+   If lngX < 0 Then
+      lngX = 0
+   ElseIf lngX > lngMaxX Then
+      lngX = lngMaxX
+   End If
+   If lngY < 0 Then
+      lngY = 0
+   ElseIf lngY > lngMaxY Then
+      lngY = lngMaxY
+   End If
+
+   'Make a snapshot around cursor, stretching when necessary:
+   StretchBlt picZoom.hdc, 0, 0, intDisplayWidth, intDisplayHeight, _
+      DesktopHdC, lngX, lngY, intCamWidth, intCamHeight, MakeSnapshot
+
+   Exit Sub
+errtmrCamShot_Timer:
+   err.Clear
+
+End Sub
+
+Private Sub tmrHideLabels_Timer()
+   On Error GoTo errtmrHideLabels_Timer
+   'stop the delay timer:
+   tmrHideLabels.Enabled = False
+   'hide label:
+   lblZoomPercent.Visible = False
+   'if Camera should be running, start camera timer and set pictures:
+   If CameraState = mcPause Then
+      CameraState = mcRun
+      ControlCamera
+   End If
+
+   Exit Sub
+errtmrHideLabels_Timer:
+   err.Clear
+
+End Sub
+
+Private Sub tmrStatusCheck_Timer()
+   On Error GoTo errtmrStatusCheck_Timer
+   If gwinMouseZoom.Visible Then
+      Select Case VBInstance.ActiveWindow.Type
+         Case vbext_wt_CodeWindow
+            'Pause Camera if CodeWindow is activated
+            If CameraState = mcRun Then
+               CameraState = mcPause
+               ControlCamera
+            End If
+
+            '        Case vbext_wt_Browser
+            '        Case vbext_wt_ColorPalette
+            '        Case vbext_wt_Designer
+            '        Case vbext_wt_Find
+            '        Case vbext_wt_FindReplace
+            '        Case vbext_wt_FindReplace
+            '        Case vbext_wt_Immediate
+            '        Case vbext_wt_LinkedWindowFrame
+            '        Case vbext_wt_Locals
+            '        Case vbext_wt_MainWindow
+            '        Case vbext_wt_Preview
+            '        Case vbext_wt_ProjectWindow
+            '        Case vbext_wt_PropertyWindow
+            '        Case vbext_wt_Toolbox
+            '        Case vbext_wt_ToolWindow
+            '        Case vbext_wt_Watch
+
+         Case Else
+            'For all other windows, camera will be running
+            If CameraState = mcPause Then
+               CameraState = mcRun
+               ControlCamera
+            End If
+
+      End Select
+   End If
+
+   Exit Sub
+errtmrStatusCheck_Timer:
+   err.Clear
+
+End Sub
+
+'******************************************************************************
+'                           FUNCTIONS
+'******************************************************************************
+
+Private Function ShowPercent()
+   On Error GoTo errShowPercent
+   '    'Stop Camera:
+   '    If CameraState = mcRun Then
+   '        CameraState = mcPause
+   '        ControlCamera
+   '    End If
+   'Set the Camera Height and Width:
+   intCamWidth = CInt((CDbl(intDisplayWidth) / CDbl(intZoomLevel)) / 2) * 2
+   intCamHeight = CInt((CDbl(intDisplayHeight) / CDbl(intZoomLevel)) / 2) * 2
+   'Set the Maximum X and Y position:
+   lngMaxX = (Screen.Width / Screen.TwipsPerPixelX) - intCamWidth
+   lngMaxY = (Screen.Height / Screen.TwipsPerPixelY) - intCamHeight
+   '    gwinWindow.Caption = "Mouse Camera - " & Format$(intZoomLevel * 100) & " %"
+   '    'Show the Label
+   '    lblZoomPercent.Caption = "Zoom: " & Format$(intZoomLevel * 100) & " %"
+   '    lblZoomPercent.Visible = True
+   '    'Enable the Timer that hides the label and starts camera:
+   '    tmrHideLabels.Enabled = True
+   'Save the current setting in Registry:
+   SaveSetting gsREG_APP, "Mouse Zoom", "ZoomLevel", Format$(intZoomLevel)
+
+   Exit Function
+errShowPercent:
+   err.Clear
+
+End Function
+
+Public Function ControlCamera()
+   On Error GoTo errControlCamera
+
+   Select Case CameraState
+      Case mcRun 'if the camera shall start:
+         'set the picture using the userdocument picture:
+         cmdMouseCam(0).Picture = UserDocument.Picture 'Picture of RunState
+         'Recalculate Camera Values (infact, necessary only for Resuming after pause)
+         'Get the hwnd of desktop (to make camera work all around)
+         DesktopHwnd = GetDesktopWindow()
+         'Get the hDc of the Desktop (necessary for snapshot)
+         DesktopHdC = GetWindowDC(DesktopHwnd)
+         'Set the Display Height and Width:
+         intDisplayWidth = picZoom.Width
+         intDisplayHeight = picZoom.Height
+         'Set the Camera Height and Width:
+         intCamWidth = CInt((CDbl(intDisplayWidth) / CDbl(intZoomLevel)) / 2) * 2
+         intCamHeight = CInt((CDbl(intDisplayHeight) / CDbl(intZoomLevel)) / 2) * 2
+         'Set the Maximum X and Y position:
+         lngMaxX = (Screen.Width / Screen.TwipsPerPixelX) - intCamWidth
+         lngMaxY = (Screen.Height / Screen.TwipsPerPixelY) - intCamHeight
+         'enable StatusControl timer:
+         tmrStatusCheck.Enabled = True
+         'enable camera timer:
+         tmrCamShot.Enabled = True
+         'Set WindowCaption:
+         '           gwinWindow.Caption = "Mouse Camera - " & Format$(intZoomLevel * 100) & " %"
+         'Set cmd Tooltip:
+         cmdMouseCam(0).ToolTipText = "Click to stop"
+
+      Case mcPause 'if the camera shall pause:
+         tmrCamShot.Enabled = False 'stop the timer
+         'set the picture, using the DisabledPicture of cmd(5):
+         cmdMouseCam(0).Picture = cmdMouseCam(5).DisabledPicture 'Picture of PauseState
+         'Set WindowCaption:
+         '            gwinWindow.Caption = "Mouse Camera - Paused"
+         'Set cmd Tooltip:
+         cmdMouseCam(0).ToolTipText = "Click to resume"
+
+      Case mcStop 'if the camera shall stop:
+         'stop the camera timer:
+         tmrCamShot.Enabled = False
+         'disable StatusControl timer:
+         tmrStatusCheck.Enabled = False
+         'set the picture, using the DisabledPicture:
+         cmdMouseCam(0).Picture = cmdMouseCam(0).DisabledPicture 'Picture of StopState
+         'delete the contents of display:
+         picZoom.Picture = LoadPicture("")
+         'Set WindowCaption:
+         '            gwinWindow.Caption = "Mouse Camera"
+         'Set cmd Tooltip:
+         cmdMouseCam(0).ToolTipText = "Click to start"
+
+   End Select
+
+   'ZoomIn is enabled, unless Camera is running, and Zoom < 9900%
+   cmdMouseCam(1).Enabled = (intZoomLevel < 99) And (CameraState = mcRun)
+   'ZoomOut out enabled, unless Camera is running, and Zoom > 100%
+   cmdMouseCam(2).Enabled = (intZoomLevel > 1) And (CameraState = mcRun)
+   'ZoomBack is enabled, unless Camera is running, and there is a LastZoom
+   cmdMouseCam(3).Enabled = (intLastZoom > 0) And (CameraState = mcRun)
+   'Zoom 1:1 is enabled unless Zoom is 1
+   cmdMouseCam(4).Enabled = (intZoomLevel > 1) And (CameraState = mcRun)
+   'Change Interval is always enabled!!
+
+   Exit Function
+errControlCamera:
+   err.Clear
+
+End Function
+

@@ -1,0 +1,1372 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Begin VB.UserDocument docAdvFndRpl 
+   ClientHeight    =   3450
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   10095
+   HScrollSmallChange=   15
+   ScaleHeight     =   3450
+   ScaleWidth      =   10095
+   VScrollSmallChange=   15
+   Begin VB.CommandButton cmdGoto 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Index           =   2
+      Left            =   9425
+      Picture         =   "docAdvFndRpl.dox":0000
+      Style           =   1  'Graphical
+      TabIndex        =   28
+      Top             =   2340
+      Width           =   570
+   End
+   Begin VB.CommandButton cmdGoto 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Index           =   1
+      Left            =   8850
+      Picture         =   "docAdvFndRpl.dox":030A
+      Style           =   1  'Graphical
+      TabIndex        =   27
+      Top             =   2340
+      Width           =   580
+   End
+   Begin MSComctlLib.ImageList imlImages 
+      Left            =   9525
+      Top             =   0
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   12632256
+      _Version        =   393216
+   End
+   Begin MSComctlLib.ListView lvwMatches 
+      Height          =   1740
+      Left            =   75
+      TabIndex        =   25
+      Top             =   1650
+      Width           =   8715
+      _ExtentX        =   15372
+      _ExtentY        =   3069
+      View            =   3
+      LabelEdit       =   1
+      LabelWrap       =   -1  'True
+      HideSelection   =   0   'False
+      Checkboxes      =   -1  'True
+      FullRowSelect   =   -1  'True
+      _Version        =   393217
+      ForeColor       =   -2147483640
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Appearance      =   1
+      NumItems        =   6
+      BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         Key             =   "Replace"
+         Object.Width           =   741
+      EndProperty
+      BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   1
+         Key             =   "Project"
+         Text            =   "Project"
+         Object.Width           =   1940
+      EndProperty
+      BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   2
+         Key             =   "Component"
+         Text            =   "Component"
+         Object.Width           =   2295
+      EndProperty
+      BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   3
+         Key             =   "Scope/Type"
+         Text            =   "Scope/Type"
+         Object.Width           =   2672
+      EndProperty
+      BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   4
+         Key             =   "Member"
+         Text            =   "Member"
+         Object.Width           =   3810
+      EndProperty
+      BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   5
+         Key             =   "Text"
+         Text            =   "Text"
+         Object.Width           =   8819
+      EndProperty
+   End
+   Begin VB.Frame fraGeneral 
+      BorderStyle     =   0  'None
+      Caption         =   "Frame1"
+      Height          =   1095
+      Left            =   225
+      TabIndex        =   0
+      Top             =   450
+      Width           =   8490
+      Begin VB.CheckBox chkWholeWord 
+         Caption         =   "Find Whole Word Only"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   6525
+         TabIndex        =   10
+         Top             =   150
+         Width           =   1965
+      End
+      Begin VB.Frame fraSearch 
+         Caption         =   "Search"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1050
+         Left            =   4575
+         TabIndex        =   7
+         Top             =   0
+         Width           =   1815
+         Begin VB.OptionButton optSearch 
+            Caption         =   "All Projects"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   2
+            Left            =   150
+            TabIndex        =   24
+            Top             =   750
+            Width           =   1440
+         End
+         Begin VB.OptionButton optSearch 
+            Caption         =   "Current Project"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   195
+            Index           =   1
+            Left            =   150
+            TabIndex        =   9
+            Top             =   480
+            Width           =   1440
+         End
+         Begin VB.OptionButton optSearch 
+            Caption         =   "Current Module"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   0
+            Left            =   150
+            TabIndex        =   8
+            Top             =   200
+            Value           =   -1  'True
+            Width           =   1440
+         End
+      End
+      Begin VB.CheckBox chkMatchCase 
+         Caption         =   "Match Case"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   6525
+         TabIndex        =   11
+         Top             =   450
+         Width           =   1290
+      End
+      Begin VB.CheckBox chkPatternMatch 
+         Caption         =   "Use Pattern Matching"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   6525
+         TabIndex        =   12
+         Top             =   750
+         Width           =   1890
+      End
+      Begin VB.ComboBox cboFind 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   1200
+         OLEDropMode     =   1  'Manual
+         TabIndex        =   3
+         Top             =   90
+         Width           =   3240
+      End
+      Begin VB.ComboBox cboReplace 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   1200
+         OLEDropMode     =   1  'Manual
+         TabIndex        =   5
+         Top             =   570
+         Width           =   3240
+      End
+      Begin VB.Label lblStatus 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   75
+         TabIndex        =   6
+         Top             =   900
+         Width           =   4365
+      End
+      Begin VB.Label lblFind 
+         Caption         =   "Find What :"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   75
+         TabIndex        =   2
+         Top             =   140
+         Width           =   915
+      End
+      Begin VB.Label lblReplace 
+         Caption         =   "Replace With :"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   75
+         TabIndex        =   4
+         Top             =   620
+         Width           =   1065
+      End
+   End
+   Begin VB.CommandButton cmdFind 
+      Caption         =   "Find"
+      Default         =   -1  'True
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   8850
+      TabIndex        =   13
+      Top             =   1650
+      Width           =   1140
+   End
+   Begin VB.CommandButton cmdReplace 
+      Caption         =   "Replace All"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Index           =   1
+      Left            =   8850
+      TabIndex        =   16
+      Top             =   3075
+      Width           =   1140
+   End
+   Begin VB.CommandButton cmdReplace 
+      Caption         =   "Replace"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Index           =   0
+      Left            =   8850
+      TabIndex        =   15
+      Top             =   2700
+      Width           =   1140
+   End
+   Begin VB.CommandButton cmdGoto 
+      Caption         =   "GoTo"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Index           =   0
+      Left            =   8850
+      TabIndex        =   14
+      Top             =   2025
+      Width           =   1140
+   End
+   Begin VB.Frame fraAdvanced 
+      Caption         =   "Exclude these components from search"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   915
+      Left            =   225
+      TabIndex        =   1
+      Top             =   450
+      Width           =   6240
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Modules"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   1
+         Left            =   150
+         TabIndex        =   18
+         Top             =   600
+         Width           =   915
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Forms"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   5
+         Left            =   150
+         TabIndex        =   17
+         Top             =   300
+         Width           =   1065
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Class Modules"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   2
+         Left            =   1200
+         TabIndex        =   19
+         Top             =   300
+         Width           =   1440
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Active X Designers"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   11
+         Left            =   1200
+         TabIndex        =   20
+         Top             =   600
+         Width           =   1740
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "User Controls"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   8
+         Left            =   3000
+         TabIndex        =   21
+         Top             =   300
+         Width           =   1440
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "User Documents"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   9
+         Left            =   3000
+         TabIndex        =   22
+         Top             =   600
+         Width           =   1515
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Property Pages"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   7
+         Left            =   4725
+         TabIndex        =   23
+         Top             =   300
+         Width           =   1440
+      End
+   End
+   Begin MSComctlLib.TabStrip tabSearch 
+      Height          =   1545
+      Left            =   75
+      TabIndex        =   26
+      Top             =   75
+      Width           =   8715
+      _ExtentX        =   15372
+      _ExtentY        =   2725
+      _Version        =   393216
+      BeginProperty Tabs {1EFB6598-857C-11D1-B16A-00C0F0283628} 
+         NumTabs         =   2
+         BeginProperty Tab1 {1EFB659A-857C-11D1-B16A-00C0F0283628} 
+            Caption         =   "General"
+            Key             =   "General"
+            Object.ToolTipText     =   "General search criteria"
+            ImageVarType    =   2
+         EndProperty
+         BeginProperty Tab2 {1EFB659A-857C-11D1-B16A-00C0F0283628} 
+            Caption         =   "Advanced"
+            Key             =   "Advanced"
+            Object.ToolTipText     =   "Advanced search criteria"
+            ImageVarType    =   2
+         EndProperty
+      EndProperty
+   End
+End
+Attribute VB_Name = "docAdvFndRpl"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+' ***************************************************************************
+' Routine Name : Advanced Find/Replace Add-In
+' Written By   : Brian Barnett <>< (babarnett@mindspring.com)
+' ***************************************************************************
+
+Option Explicit
+
+'--------------------------------------------------------------
+'Public declarations
+'--------------------------------------------------------------
+'Public VBInstance As VBIDE.VBE
+'Public Connect As Connect
+
+'--------------------------------------------------------------
+'Private declarations
+'--------------------------------------------------------------
+'Goto button indexes
+Private Const GOTO_SELECTED As Integer = 0
+Private Const GOTO_PREV As Integer = 1
+Private Const GOTO_NEXT As Integer = 2
+
+'Replace button indexes
+Private Const RPL_SELECTED As Integer = 0
+Private Const RPL_ALL   As Integer = 1
+
+Private Enum SearchMethodEnum
+   smSearchInModule
+   smSearchInProject
+   smSearchInAllProjects
+End Enum
+
+Private m_enuSearchMethod As SearchMethodEnum
+
+'Used to cache Search options.
+Private m_strFindText   As String
+Private m_strReplaceText As String
+Private m_blnWholeWord  As Boolean
+Private m_blnMatchCase  As Boolean
+Private m_blnPatternMatch As Boolean
+
+Private Sub UserDocument_Initialize()
+   'Default to search in the selected module
+   m_enuSearchMethod = smSearchInModule
+
+   'Load images from resource file into image list control
+   With imlImages
+      .ListImages.Add , "Replace", LoadResPicture("Replace", vbResIcon)
+      .ListImages.Add , "Up", LoadResPicture("Arrow_Up", vbResIcon)
+      .ListImages.Add , "Down", LoadResPicture("Arrow_Down", vbResIcon)
+   End With
+
+   'Initialize listview
+   With lvwMatches
+      .SmallIcons = imlImages
+      .ColumnHeaderIcons = imlImages
+      .ColumnHeaders("Replace").Icon = "Replace"
+      .ColumnHeaders("Component").Icon = "Up"
+      .Sorted = True
+      .SortKey = .ColumnHeaders("Component").index
+      .SortOrder = lvwAscending
+      .Tag = .SortKey
+   End With
+
+End Sub
+
+Public Property Let SelectedText(rsSelectedText As String)
+   cboFind.Text = rsSelectedText
+End Property
+
+Private Sub cboFind_Change()
+   cmdFind.Enabled = Len(Trim$(cboFind.Text)) > 0
+End Sub
+
+Private Sub cboFind_Click()
+   cmdFind.Enabled = Len(Trim$(cboFind.Text)) > 0
+End Sub
+
+Private Sub cboFind_OLEDragDrop(data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single)
+   Dim llPos            As Long
+   Dim lsText           As String
+
+   On Error Resume Next
+
+   'If the selected text is on multiple lines then only include the portion that is
+   'on the first first line.
+   lsText = data.GetData(vbCFText)
+   'Search for the carriage return within the selected text
+   llPos = InStr(1, lsText, vbCrLf)
+   If llPos = 0 Then
+      cboFind.Text = lsText
+   Else
+      cboFind.Text = left$(lsText, llPos - 1)
+   End If
+End Sub
+
+Private Sub cboReplace_OLEDragDrop(data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single)
+   Dim llPos            As Long
+   Dim lsText           As String
+
+   On Error Resume Next
+
+   'If the selected text is on multiple lines then only include the portion that is
+   'on the first first line.
+   lsText = data.GetData(vbCFText)
+   'Search for the carriage return within the selected text
+   llPos = InStr(1, lsText, vbCrLf)
+   If llPos = 0 Then
+      cboReplace.Text = lsText
+   Else
+      cboReplace.Text = left$(lsText, llPos - 1)
+   End If
+End Sub
+
+Private Sub chkPatternMatch_Click()
+   If chkPatternMatch.Value Then
+      chkMatchCase.Value = 0
+      chkMatchCase.Enabled = False
+   Else
+      chkMatchCase.Enabled = True
+   End If
+End Sub
+
+Private Sub tabSearch_Click()
+   '---------------------------------------------------------------------------------
+   'Purpose: The Tabstrip control is not a container window, thus it does not handle
+   '         the display of controls on a tab so this task must be done manually.
+   '---------------------------------------------------------------------------------
+
+   Dim lbGeneral        As Boolean
+   Dim lbAdvanced       As Boolean
+
+   lbGeneral = (tabSearch.SelectedItem.Key = "General")
+   lbAdvanced = Not lbGeneral
+
+   'General tab
+   fraGeneral.Visible = lbGeneral
+   fraGeneral.Enabled = lbGeneral
+   cboFind.Enabled = lbGeneral
+   cboReplace.Enabled = lbGeneral
+   optSearch(0).Enabled = lbGeneral
+   optSearch(1).Enabled = lbGeneral
+   chkWholeWord.Enabled = lbGeneral
+   chkMatchCase.Enabled = lbGeneral
+   chkPatternMatch.Enabled = lbGeneral
+
+   'Advanced tab
+   fraAdvanced.Visible = lbAdvanced
+   fraAdvanced.Enabled = lbAdvanced
+   chkExclude(vbext_ct_VBForm).Enabled = lbAdvanced
+   chkExclude(vbext_ct_StdModule).Enabled = lbAdvanced
+   chkExclude(vbext_ct_ClassModule).Enabled = lbAdvanced
+   chkExclude(vbext_ct_ActiveXDesigner).Enabled = lbAdvanced
+   chkExclude(vbext_ct_UserControl).Enabled = lbAdvanced
+   chkExclude(vbext_ct_DocObject).Enabled = lbAdvanced
+   chkExclude(vbext_ct_PropPage).Enabled = lbAdvanced
+
+   If lbGeneral Then
+      fraGeneral.ZOrder vbBringToFront
+   Else
+      fraAdvanced.ZOrder vbBringToFront
+   End If
+
+End Sub
+
+Private Sub cmdFind_Click()
+
+   AddTextToList cboFind
+   lvwMatches.ListItems.Clear
+
+   'Cache property values
+   m_strFindText = cboFind.Text
+   m_blnWholeWord = chkWholeWord
+   m_blnMatchCase = chkMatchCase
+   m_blnPatternMatch = chkPatternMatch
+
+   Screen.MousePointer = vbHourglass
+   lblStatus = "Searching..."
+   lblStatus.Refresh
+   Select Case m_enuSearchMethod
+      Case smSearchInModule
+         If VBInstance.SelectedVBComponent Is Nothing Then
+            Screen.MousePointer = vbNormal
+            MsgBox "Please select a module to perform the Find.", vbInformation, AdvFndRplCaption
+            Exit Sub
+         End If
+         SearchModule VBInstance.SelectedVBComponent, VBInstance.ActiveVBProject.Name
+      Case smSearchInProject
+         SearchProject VBInstance.ActiveVBProject
+      Case smSearchInAllProjects
+         SearchAllProjects
+      Case Else
+         Exit Sub
+   End Select
+   Screen.MousePointer = vbNormal
+
+   lblStatus = lvwMatches.ListItems.Count & " Occurrence(s) Found"
+   If lvwMatches.ListItems.Count > 0 Then
+      EnableGotoButtons lvwMatches.SelectedItem.index, lvwMatches.ListItems.Count
+      cmdReplace(RPL_SELECTED).Enabled = True
+      cmdReplace(RPL_ALL).Enabled = True
+   Else
+      EnableGotoButtons 0, 0
+      cmdReplace(RPL_SELECTED).Enabled = False
+      cmdReplace(RPL_ALL).Enabled = False
+      MsgBox "Search text not found.", vbExclamation, AdvFndRplCaption
+      If tabSearch.SelectedItem.Key = "General" Then
+         cboFind.SetFocus
+      End If
+   End If
+
+End Sub
+
+Private Sub cmdGoto_Click(index As Integer)
+   On Error GoTo ErrorHandler
+
+   With lvwMatches
+      Select Case index
+         Case GOTO_PREV
+            Set .SelectedItem = .ListItems(.SelectedItem.index - 1)
+         Case GOTO_NEXT
+            Set .SelectedItem = .ListItems(.SelectedItem.index + 1)
+      End Select
+
+      EnableGotoButtons .SelectedItem.index, .ListItems.Count
+   End With
+   GotoCodePane
+   Exit Sub
+ErrorHandler:
+   EnableGotoButtons lvwMatches.SelectedItem.index, lvwMatches.ListItems.Count
+End Sub
+
+Private Sub cmdReplace_Click(index As Integer)
+
+   AddTextToList cboReplace
+   m_strReplaceText = cboReplace.Text
+
+   Select Case index
+      Case RPL_SELECTED
+         ReplaceCodeLine
+      Case RPL_ALL
+         ReplaceCodeLine True
+      Case Else
+   End Select
+
+End Sub
+
+Private Sub lvwMatches_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
+   '----------------------------------------------------------------------
+   'Purpose:
+   '   When a ColumnHeader object is clicked, the ListView control is
+   '   sorted by the subitems of that column.
+   '   Set the SortKey to the Index of the ColumnHeader - 1
+   '----------------------------------------------------------------------
+
+   If ColumnHeader.Key = "Replace" Then Exit Sub
+
+   With lvwMatches
+      .SortKey = ColumnHeader.index - 1
+      .Sorted = True
+      'Reverse the sort order
+      .SortOrder = Abs(Not CBool(.SortOrder))
+
+      'Toggle columnheader sort icon. Remove previous columnheader's icon if necessary
+      If CInt(.Tag) <> ColumnHeader.index Then .ColumnHeaders(CInt(.Tag)).Icon = 0
+
+      If .SortOrder = lvwAscending Then
+         ColumnHeader.Icon = "Up"
+      Else
+         ColumnHeader.Icon = "Down"
+      End If
+      'Store current sorted Columnheader in the listview's Tag property
+      .Tag = ColumnHeader.index
+   End With
+
+End Sub
+
+Private Sub lvwMatches_DblClick()
+   GotoCodePane
+End Sub
+
+Private Sub lvwMatches_ItemClick(ByVal Item As MSComctlLib.ListItem)
+   EnableGotoButtons Item.index, lvwMatches.ListItems.Count
+End Sub
+
+Private Sub lvwMatches_KeyPress(KeyAscii As Integer)
+   'If the Enter key was pressed goto the selected code pane.
+   If KeyAscii = 13 Then GotoCodePane
+End Sub
+
+Private Sub optSearch_Click(index As Integer)
+   m_enuSearchMethod = index
+End Sub
+
+Private Sub SearchAllProjects()
+   '----------------------------------------------------------------------
+   'Purpose:
+   '   Searches each member in all projects for the search text.
+   '----------------------------------------------------------------------
+   Dim lprjAll          As VBProjects
+   Dim lprjActive       As VBProject
+
+   Set lprjAll = VBInstance.VBProjects
+   For Each lprjActive In lprjAll
+      SearchProject lprjActive
+   Next lprjActive
+
+End Sub
+
+Private Sub SearchProject(rprjActive As VBProject)
+   '----------------------------------------------------------------------
+   'Purpose:
+   '   Searches each member in the entire active project for the search text.
+   '----------------------------------------------------------------------
+   Dim lcmp             As VBComponent
+
+   For Each lcmp In rprjActive.VBComponents
+      If lcmp.Type <> vbext_ct_ResFile Then
+         SearchModule lcmp, rprjActive.Name
+      End If
+   Next lcmp
+
+End Sub
+
+Private Sub SearchModule(rcmp As VBComponent, rsProjectName As String)
+   '----------------------------------------------------------------------
+   'Purpose:
+   '   Searches the passed in component's code module for the search text.
+   '----------------------------------------------------------------------
+   Dim lbReadOnly       As Boolean
+   Dim lbFound          As Boolean      'Indicates if search text was found
+   Dim llStartLine      As Long         'Line to start search
+   Dim llStartCol       As Long         'Column to start search
+   Dim llEndLine        As Long         'Line to end search
+   Dim llEndCol         As Long         'Column to end search
+   Dim llCmpType        As Long         'Component type
+   Dim lsCmpName        As String       'Component's name
+   Dim lsScope          As String       'Member's scope
+   Dim lsMatchLocation  As String       'Location of search text on the code line.
+   'Has the following format:
+   '"Start Line, Start Column, End Line, End Column"
+   Dim lsMemberName     As String       'Member's name
+   Dim lsCode           As String       'Code line where search text was found.
+
+   On Error Resume Next
+
+   llCmpType = rcmp.Type
+
+   'Treat the MDI Form as a Form for exclusion purposes
+   If llCmpType = vbext_ct_VBMDIForm Then
+      llCmpType = vbext_ct_VBForm
+   End If
+
+   'Note: The chkExclude indexes correspond to the 'Component.Type'.  For example
+   '      the index for the Forms checkbox is 5, which is the component type for
+   '      VBForms.  This simplifies the code required.
+   If chkExclude(llCmpType) Then
+      Exit Sub
+   End If
+
+   lsCmpName = rcmp.Name
+
+   'Determine if Readonly
+   lbReadOnly = GetAttr(rcmp.FileNames(1)) And vbReadOnly
+
+   'Initialize start line to first line of the code module
+   llStartLine = 1
+   llStartCol = 1
+
+   With rcmp.CodeModule
+      Do
+         llEndLine = .CountOfLines
+         llEndCol = 300
+         If llStartLine > llEndLine Then Exit Do
+         lbFound = False
+
+         If .Find(m_strFindText, llStartLine, llStartCol, llEndLine, _
+            llEndCol, m_blnWholeWord, m_blnMatchCase, m_blnPatternMatch) _
+            Then
+            'Text was found
+            lsMemberName = .ProcOfLine(llStartLine, vbext_pk_Proc)
+            If lsMemberName <> "" Then
+               lsScope = GetScope(rcmp.CodeModule, llStartLine, lsMemberName)
+            Else
+               lsScope = "(General)"
+               lsMemberName = "(Declarations)"
+            End If
+            lsCode = .Lines(llStartLine, llEndLine - llStartLine + 1)
+            lsMatchLocation = llStartLine & "," & llStartCol & "," _
+               & llEndLine & "," & llEndCol
+            AddItemToList rsProjectName, lsCmpName, lsScope, lsMemberName, lsCode, lsMatchLocation, lbReadOnly
+            lbFound = True
+         End If
+         llStartCol = llStartCol + 1
+      Loop Until lbFound = False
+   End With
+
+End Sub
+
+Private Function GetScope( _
+   rcmoCdeMod As VBIDE.CodeModule, _
+   rlStartline As Long, _
+   rsMemberName As String _
+   ) As String
+   '-----------------------------------------------------------------------
+   'Purpose:
+   '   Returns the scope and type of a member.
+   '-----------------------------------------------------------------------
+   Dim i                As Long
+   Dim lsScope          As String
+   Dim lMbrModuleMbr    As VBIDE.Member
+
+   Set lMbrModuleMbr = rcmoCdeMod.members(rsMemberName)
+
+   With lMbrModuleMbr
+      Select Case .Scope
+         Case vbext_Friend
+            lsScope = "Friend"
+         Case vbext_Private
+            lsScope = "Private"
+         Case vbext_Public
+            lsScope = "Public"
+      End Select
+
+      Select Case .Type
+         Case vbext_mt_Const
+            lsScope = lsScope & " Const"
+         Case vbext_mt_Event
+            lsScope = lsScope & " Event"
+         Case vbext_mt_Method
+            ' this could be a real method or an ingoing event
+            ' the following code is not bullet-proof
+            If InStr(.Name, "_") And .Scope = vbext_Private Then
+               lsScope = lsScope & " Event proc"
+            Else
+               lsScope = lsScope & " Method"
+            End If
+         Case vbext_mt_Property
+            For i = vbext_pk_Let To vbext_pk_Get
+               lsScope = GetPropertyScope(rcmoCdeMod, rlStartline, rsMemberName, i)
+               If lsScope <> vbNullString Then Exit For
+            Next i
+         Case vbext_mt_Variable
+            lsScope = lsScope & " Variable"
+      End Select
+   End With
+
+   GetScope = lsScope
+
+End Function
+
+Private Function GetPropertyScope( _
+   rcmoCdeMod As VBIDE.CodeModule, _
+   rlStartline As Long, _
+   rsMemberName As String, _
+   reProcKind As vbext_ProcKind _
+   ) As String
+   '-----------------------------------------------------------------------
+   'Purpose:
+   '   Returns the scope and type of a property.  We cannot rely on the
+   '   .Scope property because a property can have its Get method be Public
+   '   and its Let method be Private.  Or vise versa.  In this case the
+   '   .Scope property would be set to Public.  So, we must search the
+   '   method's definition line to properly determine it's scope.
+   '-----------------------------------------------------------------------
+
+   Dim llPropCount      As Long
+   Dim llPropStart      As Long
+   Dim lsMemberDefLine  As String
+   Dim lsScope          As String
+
+   'Determine exactly what property procedure the line is in.
+   'Takes a little work.
+   On Error GoTo ErrorHandler
+
+   llPropCount = rcmoCdeMod.ProcCountLines(rsMemberName, reProcKind)
+   llPropStart = rcmoCdeMod.ProcBodyLine(rsMemberName, reProcKind)
+   If rlStartline >= llPropStart And _
+      rlStartline < llPropStart + llPropCount _
+      Then
+      lsMemberDefLine = rcmoCdeMod.Lines(llPropStart, 1)
+      If InStr(1, lsMemberDefLine, "Private") > 0 Then
+         lsScope = "Private"
+      ElseIf InStr(1, lsMemberDefLine, "Friend") > 0 Then
+         lsScope = "Friend"
+      Else
+         lsScope = "Public"
+      End If
+
+      Select Case reProcKind
+         Case vbext_pk_Get
+            lsScope = lsScope & " Property Get"
+         Case vbext_pk_Let
+            lsScope = lsScope & " Property Let"
+         Case vbext_pk_Set
+            lsScope = lsScope & " Property Set"
+      End Select
+      GetPropertyScope = lsScope
+   End If
+
+   Exit Function
+ErrorHandler:
+   GetPropertyScope = vbNullString
+End Function
+
+Private Sub AddItemToList( _
+   rsProjectName As String, _
+   rsComponent As String, _
+   rsScope As String, _
+   rsMember As String, _
+   rsCode As String, _
+   rsMatchLocation As String, _
+   rbReadOnly As Boolean _
+   )
+
+   Dim lliListItems     As MSComctlLib.ListItem           ' list item object
+   Dim llsi             As MSComctlLib.ListSubItem
+   Dim llForeColor      As Long
+
+   If rbReadOnly Then
+      llForeColor = &HFF&
+   Else
+      llForeColor = vbWindowText
+   End If
+
+   Set lliListItems = lvwMatches.ListItems.Add()
+   With lliListItems
+      Set llsi = .ListSubItems.Add(, "Project", rsProjectName)
+      llsi.ForeColor = llForeColor
+
+      Set llsi = .ListSubItems.Add(, "Component", rsComponent)
+      llsi.ForeColor = llForeColor
+      If rbReadOnly Then
+         llsi.Tag = "ReadOnly"
+         llsi.ToolTipText = "Read Only"
+      End If
+      Set llsi = .ListSubItems.Add(, "Scope", rsScope)
+      llsi.ForeColor = llForeColor
+
+      Set llsi = .ListSubItems.Add(, "Member", rsMember)
+      llsi.ForeColor = llForeColor
+
+      Set llsi = .ListSubItems.Add(, "Text", Trim$(rsCode))
+      llsi.Tag = rsCode
+      'If line is a comment then color code to comment color
+      If rbReadOnly Then
+         llsi.ForeColor = &HFF&
+      Else
+         If left$(llsi.Text, 1) = "'" Then llsi.ForeColor = &H8000&
+      End If
+
+      .Tag = rsMatchLocation
+   End With
+
+End Sub
+
+Private Sub GotoCodePane()
+   '----------------------------------------------------------------------
+   'Purpose:
+   '   Display the code module's code pane and select the found search text.
+   '----------------------------------------------------------------------
+   Dim i                As Integer
+   Dim llStartLine      As Long                 'Start line of selection
+   Dim llStartCol       As Long                 'Start column of selection
+   Dim llEndLine        As Long                 'End line of selection
+   Dim llEndCol         As Long                 'End column of selection
+   Dim llTopLine        As Long                 'Top line to display in code pane
+   Dim lsPrjName        As String               'Project name
+   Dim lsCmpName        As String               'Component name
+   Dim lcmoCdeMod       As VBIDE.CodeModule     'Code module object
+
+   On Error Resume Next
+
+   lvwMatches.SelectedItem.EnsureVisible
+   lsPrjName = lvwMatches.SelectedItem.ListSubItems("Project").Text
+   lsCmpName = lvwMatches.SelectedItem.ListSubItems("Component").Text
+
+   If Trim$(lsCmpName) = "" Then Exit Sub
+
+   'Get code module reference - exit if error
+   Set lcmoCdeMod = VBInstance.VBProjects(lsPrjName).VBComponents(lsCmpName).CodeModule
+   If err Then Exit Sub
+
+   'Show selected code line in the center of the code pane
+   With lcmoCdeMod
+      ParseMatchLocation lvwMatches.SelectedItem.Tag, llStartLine, llStartCol, llEndLine, llEndCol
+      llTopLine = llStartLine - (.CodePane.CountOfVisibleLines / 2)
+      If llTopLine < 0 Then
+         llTopLine = .CodePane.CountOfVisibleLines / 2
+      End If
+      .CodePane.TopLine = llTopLine
+      .CodePane.SetSelection llStartLine, llStartCol, llEndLine, llEndCol
+      LockWindowUpdate VBInstance.MainWindow.hWnd
+      .CodePane.Window.Visible = False
+      .CodePane.Show
+      .CodePane.Window.SetFocus
+      LockWindowUpdate 0  'Repaint
+   End With
+
+End Sub
+
+Private Sub ParseMatchLocation(rsUnParsed As String, _
+   rlStartline As Long, _
+   rlStartCol As Long, _
+   rlEndLine As Long, _
+   rlEndCol As Long)
+   '----------------------------------------------------------------------
+   'Purpose:
+   '   Parse the unparsed matched text location string into the selected
+   '   start line,  start column, end line, and end column.  The unparsed
+   '   location has the following format:
+   '   start line, start column, end line, end column  (ie. "168,12,168,30")
+   '
+   'Parameters:
+   '   rsUnParsed      Unparsed matched text location string
+   '   rlStartLine     Matched text's start line
+   '   rlStartCol      Matched text's start column
+   '   rlEndLine       Matched text's end line
+   '   rlEndCol        Matched text's end column
+   '----------------------------------------------------------------------
+
+   Dim llPos            As Long
+   Dim llPrevPos        As Long
+
+   llPos = InStr(1, rsUnParsed, ",")
+   If llPos = 0 Then Exit Sub
+   rlStartline = left$(rsUnParsed, llPos)
+   llPrevPos = llPos
+
+   llPos = InStr(llPos + 1, rsUnParsed, ",")
+   rlStartCol = Mid$(rsUnParsed, llPrevPos + 1, llPos - llPrevPos)
+   llPrevPos = llPos
+
+   llPos = InStr(llPos + 1, rsUnParsed, ",")
+   rlEndLine = Mid$(rsUnParsed, llPrevPos + 1, llPos - llPrevPos)
+   llPrevPos = llPos
+
+   rlEndCol = right$(rsUnParsed, Len(rsUnParsed) - llPos)
+
+End Sub
+
+Private Sub ReplaceCodeLine(Optional rbReplaceAll As Boolean = False)
+   '----------------------------------------------------------------------
+   'Purpose:
+   '   Loop through the listview and replace search text in each of the
+   '   selected items or all of the items. After the text is replaced, the
+   '   module is removed from the listview.
+   '
+   'Parameters:
+   '   rbReplaceAll    Indicates if search text should be replaced in all
+   '                   code modules or only the selected modules.
+   '----------------------------------------------------------------------
+   Dim i                As Integer
+   Dim liReplaceCount   As Integer
+   Dim llStartLine      As Long
+   Dim llStartCol       As Long
+   Dim llEndLine        As Long
+   Dim llEndCol         As Long
+   Dim lsPrjName        As String               'Project name
+   Dim lsCmpName        As String               'Component name
+   Dim lsPrevPrjName    As String               'Previous Project name
+   Dim lsPrevCmpName    As String               'Previous Component name
+   Dim lsCodeLineOld    As String
+   Dim lsCodeLineNew    As String
+   Dim lcmo             As VBIDE.CodeModule
+
+   On Error Resume Next
+
+   lblStatus = "Replacing..."
+   lblStatus.Refresh
+
+   'Because listview listitem is removed, step thru the list in reverse order.
+   For i = lvwMatches.ListItems.Count To 1 Step -1
+      If lvwMatches.ListItems(i).Checked Or rbReplaceAll Then
+         If lvwMatches.ListItems(i).ListSubItems("Component").Tag <> "ReadOnly" Then
+            lsPrjName = lvwMatches.ListItems(i).ListSubItems("Project").Text
+            lsCmpName = lvwMatches.ListItems(i).ListSubItems("Component").Text
+            If Trim$(lsCmpName) <> "" Then
+               'Get code module reference
+               If lsPrjName <> lsPrevPrjName Or lsCmpName <> lsPrevCmpName Then
+                  Set lcmo = VBInstance.VBProjects(lsPrjName).VBComponents(lsCmpName).CodeModule
+                  lsPrevPrjName = lsPrjName
+                  lsPrevCmpName = lsCmpName
+               End If
+               If err = 0 Then
+                  'Replace line
+                  ParseMatchLocation lvwMatches.ListItems(i).Tag, llStartLine, llStartCol, llEndLine, llEndCol
+                  lsCodeLineOld = lvwMatches.ListItems(i).ListSubItems("Text").Tag 'Original, untrimmed code.
+                  lsCodeLineNew = left$(lsCodeLineOld, llStartCol - 1) & m_strReplaceText & Mid$(lsCodeLineOld, llEndCol)
+                  'Line will only be replaced if file is not read-only
+                  lcmo.ReplaceLine llStartLine, lsCodeLineNew
+                  If err = 0 Then
+                     lvwMatches.ListItems.Remove i
+                     liReplaceCount = liReplaceCount + 1
+                  End If
+               End If
+            End If
+         End If
+      End If
+   Next i
+
+   lblStatus = liReplaceCount & " Occurrence(s) Replaced.  " & _
+      lvwMatches.ListItems.Count & " Occurrence(s) remain"
+
+   'Enable Goto and Replace buttons
+   If lvwMatches.ListItems.Count = 0 Then
+      EnableGotoButtons 0, 0
+   Else
+      EnableGotoButtons lvwMatches.SelectedItem.index, lvwMatches.ListItems.Count
+   End If
+
+   cmdReplace(RPL_SELECTED).Enabled = lvwMatches.ListItems.Count > 0
+   cmdReplace(RPL_ALL).Enabled = lvwMatches.ListItems.Count > 0
+
+End Sub
+
+Private Sub UserDocument_Resize()
+   Dim llButtonLeft     As Long
+
+   'For width, account for the left and right document border and the area between
+   'cmdFind and lvwMatches.  Then subtract width of buttons.
+   lvwMatches.Width = ScaleWidth - (lvwMatches.left * 3) - (cmdFind.Width)
+   lvwMatches.Height = ScaleHeight - (cmdFind.top)
+
+   llButtonLeft = lvwMatches.Width + (lvwMatches.left * 2)
+   cmdFind.left = llButtonLeft
+   cmdGoto(GOTO_SELECTED).left = llButtonLeft
+   cmdGoto(GOTO_PREV).left = llButtonLeft
+   cmdGoto(GOTO_NEXT).left = llButtonLeft + cmdGoto(GOTO_NEXT).Width
+   cmdReplace(RPL_SELECTED).left = llButtonLeft
+   cmdReplace(RPL_ALL).left = llButtonLeft
+
+End Sub
+
+Public Sub Initialize()
+
+   lblStatus = vbNullString
+   lvwMatches.ListItems.Clear
+   EnableGotoButtons 0, 0
+   cmdReplace(RPL_SELECTED).Enabled = False
+   cmdReplace(RPL_ALL).Enabled = False
+
+End Sub
+
+Private Sub AddTextToList(rcboList As ComboBox)
+   If FindListItemStringExact(rcboList) < 0 Then
+      rcboList.AddItem rcboList.Text, 0
+   End If
+End Sub
+
+Private Function FindListItemStringExact(rcboList As ComboBox) As Long
+   '------------------------------------------------------------------------
+   ' Purpose:
+   '   This method is called to search a ComboBox for a matching list entry
+   '   matching rsSearch exactly.
+   '
+   ' Returns
+   '   Long:  > -1 - The list box index for the matching string value found.
+   '            -1 - No match was found.
+   '------------------------------------------------------------------------
+   On Error GoTo FindListItemStringExact_Error
+   'SendMessage constants
+   Const CB_FINDSTRINGEXACT = &H158     'Combobox
+
+   FindListItemStringExact = SendMessageByString(rcboList.hWnd, CB_FINDSTRINGEXACT, -1, (rcboList.Text))
+
+   Exit Function
+FindListItemStringExact_Error:
+
+   Exit Function
+End Function
+
+Private Sub EnableGotoButtons( _
+   rlSelectedIndex As Long, _
+   rlListItemCount As Long _
+   )
+
+   cmdGoto(GOTO_SELECTED).Enabled = (rlListItemCount > 0)
+   cmdGoto(GOTO_PREV).Enabled = (rlSelectedIndex > 1)
+   cmdGoto(GOTO_NEXT).Enabled = (rlSelectedIndex < rlListItemCount)
+
+End Sub
+

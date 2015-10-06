@@ -1,0 +1,25 @@
+/*
+|*  ActiveX Documenter
+\*
+
+This all-VB application uses TLBINF32.DLL (the one used by VB's object browser) 
+to investigate the interfaces of compiled ActiveX documents. 
+This release allows you to quickly browse an ActiveX object's members, 
+copy the member definitions as fully formatted VB code 
+to your own application and also creates a superb documentation template 
+using the procedure attributes built into the ActiveX object's Type Lib. 
+This is a must download if you're trying to create help files 
+for your ActiveX objects. 
+The next release (due in August) will be even more powerful - 
+you'll be able to create Superclasses of existing ActiveX objects, 
+choosing where you want to delegate interfaces, 
+and it will generate fully hyperlinked HTML documentation. 
+Includes full source code, with some serious features- all-VB RichEdit, 
+Rebar and Toolbar controls. 
+
+
+
+                       \\\\|////
+                       ( O   O )
+                  ---oOOo--U--oOOo---
+Have you ever danced with the devil by the pale moonlight!!!

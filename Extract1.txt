@@ -1,0 +1,1 @@
+' *** Don't extract string in this line
