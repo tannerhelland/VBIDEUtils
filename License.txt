@@ -1,67 +1,26 @@
-Software Licence / Copyright
-----------------------------
+VBIDEUtils is licensed under the MIT license.  For additional questions regarding licensing, please visit:
+http://www.vbforums.com/showthread.php?806227-VBIDEUtils-now-open-sources
 
-Software Licence
+A full copy of the MIT License follows.
 
-Please read the following lines carefully, before using this software. Should you
-disagree with the following, then you are not allowed to use this program. You 
-MUST then delete it and never use it.
+The MIT License (MIT)
 
-Shareware-version
+Copyright (c) 2015 Thierry69
 
-You have the right to test this program for the period of one month. You are 
-allowed to copy this Shareware-version (and ONLY the Shareware version) and give
-it to any other person, as long as it is not modified in any way. Under modifi-
-cations we understand the changing, adding or removing of any files of this 
-package without the author's written permission. You are NOT allowed to pack
-this program together with a commercial program or a book. Shareware dealers are
-allowed to sell the Shareware version only with my explicit agreement. You are
-encouraged to put this program on as many BBS systems and web site as possible.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Usage of this software after the trial period of one month is in violation of 
-international Copyright law! Also it is unfair against the author, who spent
-hundreds of hours writing this program.
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-Registration
-
-This program is neither freeware nor public domain. A use after the 30 day trial
-period requires registration. For the small registration fee see in the readme
-file for further details.
-
-Registered version
-
-The registered version may be installed on as many computers as desired, 
-as long as it is ONLY running once at a time (I.e. one installation at 
-home and one at the office used by the same person). The usage by 
-multiple persons at the same time (on multiple computers) requires 
-additional licences.
-You need a registered version on each computer used to develop your application.
-You don't have any runtime fee when you sell the product using the registered
-version.
-
-Multiple licences
-
-Additional licences allow an institution, company or school to install the
-program on multiple computers or on a server. It must be guaranteed that the 
-program does not run on more machines at the same time than there are licences 
-purchased. All licences are issued to the same (company) name, which appears in
-the program's title bar.
-Additional licences allow the usage of the program at home, as long as 
-the main use is at the company. 
-
-Legal domicile is Brussels, Belgium
-
-Liability
-
-We try to keep our software as bug-free as possible. But it's a general rule
-(Murphy), that no software ever is error free, and the number of errors increases
-with the complexity of the program. That's why we cannot guarantee that this
-software will run in each environment, on any Windows compatible machine, 
-together with any other application, without producing errors. Any liability for
-damages of any sort is hereby rejected. In any case, the liability is limited to
-the registration fee.
-
-Please test this program with non-critical data, we cannot make guarantees for
-the security of your data. Should you detect errors before registration, you
-accept them if you register. Any description of bugs will be accepted, but we
-cannot guarantee that we will be able to correct them.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
