@@ -5,8 +5,8 @@ http://www.vbforums.com/showthread.php?806227-VBIDEUtils-now-open-sources
 It will take some time to explore the source, but in the meantime, here are the contents of the original README.txt file:
 
 
-VBIDEUtils / VBCodeDatabase 4.0 by Me
-======================================
+VBIDEUtils / VBCodeDatabase 4.0 by Thierry69
+============================================
 
 Description
 -----------
