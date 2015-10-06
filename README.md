@@ -4,16 +4,16 @@ http://www.vbforums.com/showthread.php?806227-VBIDEUtils-now-open-sources
 
 It will take some time to explore the source, but in the meantime, here are the contents of the original README.txt file:
 
-/*
-|*  VBIDEUtils / VBCodeDatabase 4.0 by Me
-\*
+
+VBIDEUtils / VBCodeDatabase 4.0 by Me
+======================================
 
 Description
 -----------
 
 VBIDEUtils is a great add-in for VB 5.0 and VB 6.0. With
 this add-in, you can do :
-	- Code Repository
+    - Code Repository
                 - Store VB Code, Classes, Projects
                 - Store files
                 - Store HTML pages
@@ -33,20 +33,20 @@ this add-in, you can do :
                 - 
                 - .....
         - Make search through a very extensive Book repository
-	- Indent easily your code, procedure, block, variables
-	- Add comment to your modules and procedures
-	- Find the corresponding ending block instruction
-	- Know all the APIs error name
-	- Clear the debug Window
-	- Change easily the taborder of all your controls
-	- Add customized error handler to your code
-	- Add enhanced error handler to your code with
+    - Indent easily your code, procedure, block, variables
+    - Add comment to your modules and procedures
+    - Find the corresponding ending block instruction
+    - Know all the APIs error name
+    - Clear the debug Window
+    - Change easily the taborder of all your controls
+    - Add customized error handler to your code
+    - Add enhanced error handler to your code with
           loggin, trace
-	- Show the KeyAscii table to help you coding 
+    - Show the KeyAscii table to help you coding 
           functions
-	- An assistant to create your messagebox
-	- A Toolbar code generator
-	- Close all the unused windows in the VB IDE
+    - An assistant to create your messagebox
+    - A Toolbar code generator
+    - Close all the unused windows in the VB IDE
         - Spy the classname of each windows
         - An Icon browser
         - A DBCreator code generator
@@ -58,7 +58,7 @@ this add-in, you can do :
         - Extract all the strings and translate them directly 
           in the addin for further use of resources String 
           and so internationalize your applications
-	- Change/Modify the tooltips all your controls
+    - Change/Modify the tooltips all your controls
         - Add new procedure/functions/properties easily
           with parameters, description....
         - Get all dependencies of an executable or a VB project
@@ -74,9 +74,9 @@ this add-in, you can do :
         - Get easily code from several VB Code websites on the web
         - Added an enhanced find in VB projects
         - Added the automatic creation of connections strings for ADO
-	- Generate automatically DLL Base Adresses
-	- Generate GUID
-	- A lot of of other new features
+    - Generate automatically DLL Base Adresses
+    - Generate GUID
+    - A lot of of other new features
 
 VBCodeDatabase is an external application and have exactly 
 the same functions than the Code repository in the VBIDEUtils. The database is full compatible. It has been created for the users wich don't want the full add-ins, but only the code 
@@ -91,7 +91,7 @@ Visual Basic 5.0, Visual Basic 6.0
 You need Microsoft® Visual Basic® 5.0 Service Pack 3 or higher 
 in order to run properly. If you need a version without any 
 service pack, it is possible, you have to contact me in that case.
-				 
+                 
 
 Intent
 ------
@@ -188,7 +188,7 @@ you will be able to :
 The use of this add-in is very simple and very useful.
 
 
-		J U S T   T R Y   I T.
+        J U S T   T R Y   I T.
 
 
 Future
@@ -196,10 +196,10 @@ Future
 
 - Many other possibilities in the future
         -> Documentation of your code
-	-> Increased database
-	-> C++, Java, Delphi, Windev database
-	-> Colorization of other languages
-	-> ...
+    -> Increased database
+    -> C++, Java, Delphi, Windev database
+    -> Colorization of other languages
+    -> ...
 
 This add-ins is changing often in order to be the best thing on the market.
 You, users, could help me telling me your needs and what could be useful for your work.
@@ -218,8 +218,8 @@ VBCodeDatabase history
 *Version 1.8   *21 April 1999    * 1260 items stored in the VBCodeDatabase
 *Version 1.9   *27 October 1999  * 2473 items stored in the VBCodeDatabase
 *Version 2.1   *13 March 2000    * 3257 items stored in the VBCodeDatabase
-*Version 3.0   *15 March 2001 	 * 12000 items stored in the VBCodeDatabase
-*Version 4.0   *01 August 2001 	 * 12500 items stored in the VBCodeDatabase
+*Version 3.0   *15 March 2001      * 12000 items stored in the VBCodeDatabase
+*Version 4.0   *01 August 2001      * 12500 items stored in the VBCodeDatabase
 *              *                 *
 *******************************************************************************
 
@@ -255,28 +255,28 @@ Tell me what you like, what you don't like, and for that matter, if you think
 the tool is worth a shareware fee. See the prices below :
 
 VBIDEUtils+VBCodeDatabase Full database license : $99
-	- You will receive one license with synchronization access to the sites
-	Order at 
-	https://secure.element5.com/register.html?productid=102545&language=English
-	https://secure.element5.com/register.html?productid=102545&language=Spanish
-	https://secure.element5.com/register.html?productid=102545&language=Portuguese
-	https://secure.element5.com/register.html?productid=102545&language=German
+    - You will receive one license with synchronization access to the sites
+    Order at 
+    https://secure.element5.com/register.html?productid=102545&language=English
+    https://secure.element5.com/register.html?productid=102545&language=Spanish
+    https://secure.element5.com/register.html?productid=102545&language=Portuguese
+    https://secure.element5.com/register.html?productid=102545&language=German
 
 VBIDEUtils/VBCodeDatabase on CD Full database license : $199
-	- You will receive one license with the full code library on a CD
-	Order at 
-	https://secure.element5.com/register.html?productid=107109&language=English
-	https://secure.element5.com/register.html?productid=107109&language=Spanish
-	https://secure.element5.com/register.html?productid=107109&language=Portuguese
-	https://secure.element5.com/register.html?productid=107109&language=German
+    - You will receive one license with the full code library on a CD
+    Order at 
+    https://secure.element5.com/register.html?productid=107109&language=English
+    https://secure.element5.com/register.html?productid=107109&language=Spanish
+    https://secure.element5.com/register.html?productid=107109&language=Portuguese
+    https://secure.element5.com/register.html?productid=107109&language=German
 
 VBIDEUtils+VBCodeDatabase Full Site corporate database license : $1299
-	- You will receive a license for use in all your company 
+    - You will receive a license for use in all your company 
           with the full code library on a CD
-	https://secure.element5.com/register.html?productid=102557&language=English
-	https://secure.element5.com/register.html?productid=102557&language=Spanish
-	https://secure.element5.com/register.html?productid=102557&language=Portuguese
-	https://secure.element5.com/register.html?productid=102557&language=German
+    https://secure.element5.com/register.html?productid=102557&language=English
+    https://secure.element5.com/register.html?productid=102557&language=Spanish
+    https://secure.element5.com/register.html?productid=102557&language=Portuguese
+    https://secure.element5.com/register.html?productid=102557&language=German
 
 
 If you prefer to send me the registration fee directly by mail, you may send money, 
@@ -341,7 +341,7 @@ I have also developped other products. They are all on my web site. Here is the 
         - Print Preview OCX for VB 5.0, VC++, VB 4.0 32 bits, Office...
         - VBIDEUtils addins for VB 5.0, VB 6.0
         - VBCodeDatabase for VB 5.0, VB 6.0, VBScript,
-	  Javascript...
+      Javascript...
         - Print Preview OLE 2 Control for VB 3.0, VB 4.0 16 bits
         - TBCalendar OCX for VB 5.0, VC++, VB 4.0 32 bits, Office...
         - Logger OCX for VB 5.0, VC++, VB 4.0 32 bits, Office...
