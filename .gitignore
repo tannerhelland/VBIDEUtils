@@ -106,10 +106,5 @@ Desktop.ini
 *.log
 *.bak
 *.vbw
-*.oca
-*.dll
-*.ocx
-*.exp
-*.lib
 *.vbr
 *.vbd

@@ -1,9 +1,10 @@
-This repository is currently just a mirror of the original VBIDEUtils source, as uploaded here:
+Update 04 Feb 2016: Compiled binaries from the original author are now available in the root folder.  As with any precompiled files, use at your own risk.  Per Thierry69's instructions, "in order to add it to the list of addins, the user must call the AddToINI in the immediate window."
 
-http://www.vbforums.com/showthread.php?806227-VBIDEUtils-now-open-sources
+Update 06 October 2015: Please note that I am not the author of this code.  "Thierry69" is the owner and author of the code, and it is reproduced here at his request.  This repository is primarily a mirror of the original VBIDEUtils source, as uploaded here: http://www.vbforums.com/showthread.php?806227-VBIDEUtils-now-open-sources
 
-It will take some time to explore the source, but in the meantime, here are the contents of the original README.txt file:
+I am happy to merge any improvements or updates, but questions should be directed to Thierry69 himself.  I do not have contact information other than his vbForums profile: http://www.vbforums.com/member.php?244339-Thierry69
 
+Original README follows:
 
 VBIDEUtils / VBCodeDatabase 4.0 by Thierry69
 ============================================
@@ -78,9 +79,7 @@ this add-in, you can do :
     - Generate GUID
     - A lot of of other new features
 
-VBCodeDatabase is an external application and have exactly 
-the same functions than the Code repository in the VBIDEUtils. The database is full compatible. It has been created for the users wich don't want the full add-ins, but only the code 
-repository.
+VBCodeDatabase is an external application and have exactly the same functions than the Code repository in the VBIDEUtils. The database is full compatible. It has been created for the users wich don't want the full add-ins, but only the code repository.
 
 
 Target platforms
@@ -88,7 +87,7 @@ Target platforms
 
 Visual Basic 5.0, Visual Basic 6.0
 
-You need Microsoft® Visual Basic® 5.0 Service Pack 3 or higher 
+You need MicrosoftÂ® Visual BasicÂ® 5.0 Service Pack 3 or higher 
 in order to run properly. If you need a version without any 
 service pack, it is possible, you have to contact me in that case.
                  
@@ -289,8 +288,8 @@ Web Site : http://www.ppreview.net
 
 System Requirements
 -------------------
-You need a computer running Microsoft® Windows 95/98® or Microsoft® Windows NT®.
-Microsoft® Visual Basic® 5.0 (Service Pack 3) or Higher with all the runtime installed and 
+You need a computer running MicrosoftÂ® Windows 95/98Â® or MicrosoftÂ® Windows NTÂ®.
+MicrosoftÂ® Visual BasicÂ® 5.0 (Service Pack 3) or Higher with all the runtime installed and 
 an installation of Internet Explorer 3.0 or 4.0 or higher installed.
 
 

@@ -1,15 +1,166 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.UserDocument docAdvFndRpl 
-   ClientHeight    =   3450
-   ClientLeft      =   45
-   ClientTop       =   330
-   ClientWidth     =   10095
-   HScrollSmallChange=   15
-   ScaleHeight     =   3450
-   ScaleWidth      =   10095
-   VScrollSmallChange=   15
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   10020
+   HScrollSmallChange=   225
+   ScaleHeight     =   3600
+   ScaleWidth      =   10020
+   VScrollSmallChange=   225
+   Begin VB.Frame fraAdvanced 
+      Caption         =   "Exclude these components from search"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   915
+      Left            =   150
+      TabIndex        =   20
+      Top             =   450
+      Width           =   6240
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Property Pages"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   7
+         Left            =   4725
+         TabIndex        =   27
+         Top             =   300
+         Width           =   1440
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "User Documents"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   9
+         Left            =   3000
+         TabIndex        =   26
+         Top             =   600
+         Width           =   1515
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "User Controls"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   8
+         Left            =   3000
+         TabIndex        =   25
+         Top             =   300
+         Width           =   1440
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Active X Designers"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   11
+         Left            =   1200
+         TabIndex        =   24
+         Top             =   600
+         Width           =   1740
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Class Modules"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   2
+         Left            =   1200
+         TabIndex        =   23
+         Top             =   300
+         Width           =   1440
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Forms"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   5
+         Left            =   150
+         TabIndex        =   22
+         Top             =   300
+         Width           =   1065
+      End
+      Begin VB.CheckBox chkExclude 
+         Caption         =   "Modules"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   1
+         Left            =   150
+         TabIndex        =   21
+         Top             =   600
+         Width           =   915
+      End
+   End
    Begin VB.CommandButton cmdGoto 
+      Caption         =   "GoTo"
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Tahoma"
@@ -21,13 +172,284 @@ Begin VB.UserDocument docAdvFndRpl
          Strikethrough   =   0   'False
       EndProperty
       Height          =   330
-      Index           =   2
-      Left            =   9425
-      Picture         =   "docAdvFndRpl.dox":0000
-      Style           =   1  'Graphical
-      TabIndex        =   28
-      Top             =   2340
-      Width           =   570
+      Index           =   0
+      Left            =   8775
+      TabIndex        =   19
+      Top             =   2025
+      Width           =   1140
+   End
+   Begin VB.CommandButton cmdReplace 
+      Caption         =   "Replace"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Index           =   0
+      Left            =   8775
+      TabIndex        =   18
+      Top             =   2700
+      Width           =   1140
+   End
+   Begin VB.CommandButton cmdReplace 
+      Caption         =   "Replace All"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Index           =   1
+      Left            =   8775
+      TabIndex        =   17
+      Top             =   3075
+      Width           =   1140
+   End
+   Begin VB.CommandButton cmdFind 
+      Caption         =   "Find"
+      Default         =   -1  'True
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   8775
+      TabIndex        =   16
+      Top             =   1650
+      Width           =   1140
+   End
+   Begin VB.Frame fraGeneral 
+      BorderStyle     =   0  'None
+      Caption         =   "Frame1"
+      Height          =   1095
+      Left            =   150
+      TabIndex        =   3
+      Top             =   450
+      Width           =   8490
+      Begin VB.ComboBox cboReplace 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   1200
+         OLEDropMode     =   1  'Manual
+         TabIndex        =   12
+         Top             =   570
+         Width           =   3240
+      End
+      Begin VB.ComboBox cboFind 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   1200
+         OLEDropMode     =   1  'Manual
+         TabIndex        =   11
+         Top             =   90
+         Width           =   3240
+      End
+      Begin VB.CheckBox chkPatternMatch 
+         Caption         =   "Use Pattern Matching"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   6525
+         TabIndex        =   10
+         Top             =   750
+         Width           =   1890
+      End
+      Begin VB.CheckBox chkMatchCase 
+         Caption         =   "Match Case"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   6525
+         TabIndex        =   9
+         Top             =   450
+         Width           =   1290
+      End
+      Begin VB.Frame fraSearch 
+         Caption         =   "Search"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1050
+         Left            =   4575
+         TabIndex        =   5
+         Top             =   0
+         Width           =   1815
+         Begin VB.OptionButton optSearch 
+            Caption         =   "Current Module"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   0
+            Left            =   150
+            TabIndex        =   8
+            Top             =   200
+            Value           =   -1  'True
+            Width           =   1440
+         End
+         Begin VB.OptionButton optSearch 
+            Caption         =   "Current Project"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   195
+            Index           =   1
+            Left            =   150
+            TabIndex        =   7
+            Top             =   480
+            Width           =   1440
+         End
+         Begin VB.OptionButton optSearch 
+            Caption         =   "All Projects"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   2
+            Left            =   150
+            TabIndex        =   6
+            Top             =   750
+            Width           =   1440
+         End
+      End
+      Begin VB.CheckBox chkWholeWord 
+         Caption         =   "Find Whole Word Only"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   6525
+         TabIndex        =   4
+         Top             =   150
+         Width           =   1965
+      End
+      Begin VB.Label lblReplace 
+         Caption         =   "Replace With :"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   75
+         TabIndex        =   15
+         Top             =   620
+         Width           =   1065
+      End
+      Begin VB.Label lblFind 
+         Caption         =   "Find What :"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   75
+         TabIndex        =   14
+         Top             =   140
+         Width           =   915
+      End
+      Begin VB.Label lblStatus 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   75
+         TabIndex        =   13
+         Top             =   900
+         Width           =   4365
+      End
    End
    Begin VB.CommandButton cmdGoto 
       Enabled         =   0   'False
@@ -42,15 +464,35 @@ Begin VB.UserDocument docAdvFndRpl
       EndProperty
       Height          =   330
       Index           =   1
-      Left            =   8850
-      Picture         =   "docAdvFndRpl.dox":030A
+      Left            =   8775
+      Picture         =   "docAdvFndRpl.dox":0000
       Style           =   1  'Graphical
-      TabIndex        =   27
+      TabIndex        =   1
       Top             =   2340
       Width           =   580
    End
+   Begin VB.CommandButton cmdGoto 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Index           =   2
+      Left            =   9350
+      Picture         =   "docAdvFndRpl.dox":030A
+      Style           =   1  'Graphical
+      TabIndex        =   0
+      Top             =   2340
+      Width           =   570
+   End
    Begin MSComctlLib.ImageList imlImages 
-      Left            =   9525
+      Left            =   9450
       Top             =   0
       _ExtentX        =   1005
       _ExtentY        =   1005
@@ -62,8 +504,8 @@ Begin VB.UserDocument docAdvFndRpl
    End
    Begin MSComctlLib.ListView lvwMatches 
       Height          =   1740
-      Left            =   75
-      TabIndex        =   25
+      Left            =   0
+      TabIndex        =   2
       Top             =   1650
       Width           =   8715
       _ExtentX        =   15372
@@ -115,452 +557,10 @@ Begin VB.UserDocument docAdvFndRpl
          Object.Width           =   8819
       EndProperty
    End
-   Begin VB.Frame fraGeneral 
-      BorderStyle     =   0  'None
-      Caption         =   "Frame1"
-      Height          =   1095
-      Left            =   225
-      TabIndex        =   0
-      Top             =   450
-      Width           =   8490
-      Begin VB.CheckBox chkWholeWord 
-         Caption         =   "Find Whole Word Only"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   6525
-         TabIndex        =   10
-         Top             =   150
-         Width           =   1965
-      End
-      Begin VB.Frame fraSearch 
-         Caption         =   "Search"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   1050
-         Left            =   4575
-         TabIndex        =   7
-         Top             =   0
-         Width           =   1815
-         Begin VB.OptionButton optSearch 
-            Caption         =   "All Projects"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   240
-            Index           =   2
-            Left            =   150
-            TabIndex        =   24
-            Top             =   750
-            Width           =   1440
-         End
-         Begin VB.OptionButton optSearch 
-            Caption         =   "Current Project"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   195
-            Index           =   1
-            Left            =   150
-            TabIndex        =   9
-            Top             =   480
-            Width           =   1440
-         End
-         Begin VB.OptionButton optSearch 
-            Caption         =   "Current Module"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   240
-            Index           =   0
-            Left            =   150
-            TabIndex        =   8
-            Top             =   200
-            Value           =   -1  'True
-            Width           =   1440
-         End
-      End
-      Begin VB.CheckBox chkMatchCase 
-         Caption         =   "Match Case"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   6525
-         TabIndex        =   11
-         Top             =   450
-         Width           =   1290
-      End
-      Begin VB.CheckBox chkPatternMatch 
-         Caption         =   "Use Pattern Matching"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   6525
-         TabIndex        =   12
-         Top             =   750
-         Width           =   1890
-      End
-      Begin VB.ComboBox cboFind 
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Left            =   1200
-         OLEDropMode     =   1  'Manual
-         TabIndex        =   3
-         Top             =   90
-         Width           =   3240
-      End
-      Begin VB.ComboBox cboReplace 
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Left            =   1200
-         OLEDropMode     =   1  'Manual
-         TabIndex        =   5
-         Top             =   570
-         Width           =   3240
-      End
-      Begin VB.Label lblStatus 
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   75
-         TabIndex        =   6
-         Top             =   900
-         Width           =   4365
-      End
-      Begin VB.Label lblFind 
-         Caption         =   "Find What :"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   75
-         TabIndex        =   2
-         Top             =   140
-         Width           =   915
-      End
-      Begin VB.Label lblReplace 
-         Caption         =   "Replace With :"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   75
-         TabIndex        =   4
-         Top             =   620
-         Width           =   1065
-      End
-   End
-   Begin VB.CommandButton cmdFind 
-      Caption         =   "Find"
-      Default         =   -1  'True
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   330
-      Left            =   8850
-      TabIndex        =   13
-      Top             =   1650
-      Width           =   1140
-   End
-   Begin VB.CommandButton cmdReplace 
-      Caption         =   "Replace All"
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   330
-      Index           =   1
-      Left            =   8850
-      TabIndex        =   16
-      Top             =   3075
-      Width           =   1140
-   End
-   Begin VB.CommandButton cmdReplace 
-      Caption         =   "Replace"
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   330
-      Index           =   0
-      Left            =   8850
-      TabIndex        =   15
-      Top             =   2700
-      Width           =   1140
-   End
-   Begin VB.CommandButton cmdGoto 
-      Caption         =   "GoTo"
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   330
-      Index           =   0
-      Left            =   8850
-      TabIndex        =   14
-      Top             =   2025
-      Width           =   1140
-   End
-   Begin VB.Frame fraAdvanced 
-      Caption         =   "Exclude these components from search"
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   915
-      Left            =   225
-      TabIndex        =   1
-      Top             =   450
-      Width           =   6240
-      Begin VB.CheckBox chkExclude 
-         Caption         =   "Modules"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   195
-         Index           =   1
-         Left            =   150
-         TabIndex        =   18
-         Top             =   600
-         Width           =   915
-      End
-      Begin VB.CheckBox chkExclude 
-         Caption         =   "Forms"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   195
-         Index           =   5
-         Left            =   150
-         TabIndex        =   17
-         Top             =   300
-         Width           =   1065
-      End
-      Begin VB.CheckBox chkExclude 
-         Caption         =   "Class Modules"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   195
-         Index           =   2
-         Left            =   1200
-         TabIndex        =   19
-         Top             =   300
-         Width           =   1440
-      End
-      Begin VB.CheckBox chkExclude 
-         Caption         =   "Active X Designers"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   195
-         Index           =   11
-         Left            =   1200
-         TabIndex        =   20
-         Top             =   600
-         Width           =   1740
-      End
-      Begin VB.CheckBox chkExclude 
-         Caption         =   "User Controls"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   195
-         Index           =   8
-         Left            =   3000
-         TabIndex        =   21
-         Top             =   300
-         Width           =   1440
-      End
-      Begin VB.CheckBox chkExclude 
-         Caption         =   "User Documents"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   195
-         Index           =   9
-         Left            =   3000
-         TabIndex        =   22
-         Top             =   600
-         Width           =   1515
-      End
-      Begin VB.CheckBox chkExclude 
-         Caption         =   "Property Pages"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   195
-         Index           =   7
-         Left            =   4725
-         TabIndex        =   23
-         Top             =   300
-         Width           =   1440
-      End
-   End
    Begin MSComctlLib.TabStrip tabSearch 
       Height          =   1545
-      Left            =   75
-      TabIndex        =   26
+      Left            =   0
+      TabIndex        =   28
       Top             =   75
       Width           =   8715
       _ExtentX        =   15372
@@ -893,7 +893,7 @@ Private Sub SearchAllProjects()
    For Each lprjActive In lprjAll
       SearchProject lprjActive
    Next lprjActive
-
+   
 End Sub
 
 Private Sub SearchProject(rprjActive As VBProject)
@@ -1369,4 +1369,5 @@ Private Sub EnableGotoButtons( _
    cmdGoto(GOTO_NEXT).Enabled = (rlSelectedIndex < rlListItemCount)
 
 End Sub
+
 

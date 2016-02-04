@@ -1,13 +1,13 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.UserDocument docProjectExplorer 
-   ClientHeight    =   3075
+   ClientHeight    =   3600
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   3570
+   ClientWidth     =   4800
    HScrollSmallChange=   225
-   ScaleHeight     =   3075
-   ScaleWidth      =   3570
+   ScaleHeight     =   3600
+   ScaleWidth      =   4800
    VScrollSmallChange=   225
    Begin VB.PictureBox picSideBar 
       AutoRedraw      =   -1  'True
@@ -27,7 +27,7 @@ Begin VB.UserDocument docProjectExplorer
       Left            =   3240
       ScaleHeight     =   2595
       ScaleWidth      =   255
-      TabIndex        =   3
+      TabIndex        =   0
       Top             =   360
       Visible         =   0   'False
       Width           =   255
@@ -300,10 +300,10 @@ Begin VB.UserDocument docProjectExplorer
       Align           =   1  'Align Top
       Height          =   360
       Left            =   0
-      TabIndex        =   2
+      TabIndex        =   1
       Top             =   0
-      Width           =   3570
-      _ExtentX        =   6297
+      Width           =   4800
+      _ExtentX        =   8467
       _ExtentY        =   635
       ButtonWidth     =   609
       ButtonHeight    =   582
@@ -355,7 +355,7 @@ Begin VB.UserDocument docProjectExplorer
    Begin MSComctlLib.TreeView treMain 
       Height          =   2340
       Left            =   45
-      TabIndex        =   1
+      TabIndex        =   2
       Top             =   405
       Width           =   3330
       _ExtentX        =   5874
@@ -380,7 +380,7 @@ Begin VB.UserDocument docProjectExplorer
    Begin MSComctlLib.TabStrip border 
       Height          =   2715
       Left            =   0
-      TabIndex        =   0
+      TabIndex        =   3
       Top             =   360
       Width           =   3435
       _ExtentX        =   6059
@@ -513,11 +513,11 @@ Private Sub ClearOutStack(treeKey As String)
    ' *
    ' *
    ' **********************************************************************
-
+      
    On Error Resume Next
-
+   
    Dim parentNode       As Node
-
+   
    With outStack
       While .Count > 0
          Set parentNode = nodeStart.Parent
@@ -549,7 +549,7 @@ Private Function GetNodeType(VBComponent As VBIDE.VBComponent) As String
    ' **********************************************************************
 
    On Error Resume Next
-
+   
    GetNodeType = "Unknown"
    On Error Resume Next
    Select Case VBComponent.Type
@@ -602,7 +602,7 @@ Private Function GetProjectType(VBProject As VBIDE.VBProject) As String
    ' **********************************************************************
 
    On Error Resume Next
-
+   
    GetProjectType = "Unknown"
    On Error Resume Next
    Select Case VBProject.Type
@@ -643,7 +643,7 @@ Public Sub Reload()
    Dim VBProject        As VBIDE.VBProject
 
    On Error Resume Next
-
+   
    If tNodes Is Nothing Then
       Set tNodes = treMain.Nodes
    End If
@@ -651,9 +651,9 @@ Public Sub Reload()
    If gdocProjectExplorer Is Nothing Then
       Exit Sub
    End If
-
+   
    SetRedraw Me, False
-
+   
    Set gdocProjectExplorer.compEvents = VBInstance.Events.VBComponentsEvents(VBInstance.ActiveVBProject)
    Set gdocProjectExplorer.projEvents = VBInstance.Events.VBProjectsEvents
 
@@ -702,7 +702,7 @@ Private Sub AddProject(VBProject As VBIDE.VBProject)
    Dim nCount           As Long
 
    On Error Resume Next
-
+   
    If Not VBProject.VBComponents Is Nothing Then
       sProjectName = VBProject.Name
       On Error Resume Next
@@ -721,7 +721,7 @@ Private Sub AddProject(VBProject As VBIDE.VBProject)
       ' *** Description
       sKey = "Description~" & VBProject.Description & "~" & sProjectName
       Set aNodeDesc = tNodes.Add(aNode, tvwChild, sKey, VBProject.Description, "Description")
-
+      
       nCount = VBProject.VBComponents.Count
       ' *** Add all forms
       If nCount > 0 Then
@@ -844,7 +844,7 @@ Public Sub LoadData(sComponent As String, sData As String)
    Dim b_vars           As Boolean
 
    On Error Resume Next
-
+   
    If tNodes Is Nothing Then
       Set tNodes = treMain.Nodes
    End If
@@ -1260,7 +1260,7 @@ Private Sub addStartSection(strLine As String, line As String, sSectionType As S
    ' **********************************************************************
 
    On Error Resume Next
-
+   
    If LCase$(strLine) Like "private*" Then
       strLine = Replace(strLine, "private ", "", 1, 1, vbTextCompare)
    End If
@@ -1365,14 +1365,14 @@ Private Sub AddLine(strLine As String, line As String, Optional lineColor As use
    ' *
    ' *
    ' **********************************************************************
-
+   
    On Error Resume Next
-
+   
    'add a normal line of code (or close element wend/loop/etc) to the tree
    If nodeStart Is Nothing Then
       Exit Sub
    End If
-
+   
    Dim Title            As String
    If Len(strLine) > 50 Then
       Title = left$(strLine, 47) & "..."
@@ -1421,97 +1421,97 @@ Private Sub clsPopupMenu_Click(ItemNumber As Long)
       Case "projectsave":
          'file menu
          menuBar.Controls("File").Controls("Save Project").Execute
-
+      
       Case "projectindent":
          ' *** Indent the project
          Call IndentProject
-
+         
       Case "indent":
          ' *** Indent Sub...
          Call IndentProcedure
-
+         
       Case "indentmodule"
          ' *** Indent Modules
-         Call IndentModule
-
+            Call IndentModule
+         
       Case "projectsetstartup":
          tNodes("Project~" & VBInstance.VBProjects.StartProject.Name).Bold = False
          VBInstance.VBProjects.StartProject = VBInstance.VBProjects(tNodes(clsPopupMenu.ItemData(ItemNumber)).Text)
          tNodes("Project~" & VBInstance.VBProjects.StartProject.Name).Bold = True
-
+         
       Case "addform":
          If menuBar.Controls("Project").Controls("Add Form").Enabled Then
             menuBar.Controls("Project").Controls("Add Form").accDoDefaultAction
          End If
-
+         
       Case "addmdiform":
          If menuBar.Controls("Project").Controls("Add MDI Form").Enabled Then
             menuBar.Controls("Project").Controls("Add MDI Form").accDoDefaultAction
          End If
-
+         
       Case "addmodule":
          If menuBar.Controls("Project").Controls("Add Module").Enabled Then
             menuBar.Controls("Project").Controls("Add Module").accDoDefaultAction
          End If
-
+         
       Case "addclass":
          If menuBar.Controls("Project").Controls("Add Class Module").Enabled Then
             menuBar.Controls("Project").Controls("Add Class Module").accDoDefaultAction
          End If
-
+         
       Case "addusercontrol":
          If menuBar.Controls("Project").Controls("Add User Control").Enabled Then
             menuBar.Controls("Project").Controls("Add User Control").accDoDefaultAction
          End If
-
+         
       Case "addpropertypage":
          If menuBar.Controls("Project").Controls("Add Property Page").Enabled Then
             menuBar.Controls("Project").Controls("Add Property Page").accDoDefaultAction
          End If
-
+         
       Case "adduserdocument":
          If menuBar.Controls("Project").Controls("Add User Document").Enabled Then
             menuBar.Controls("Project").Controls("Add User Document").accDoDefaultAction
          End If
-
+         
       Case "addfile":
          If menuBar.Controls("Project").Controls("Add File...").Enabled Then
             menuBar.Controls("Project").Controls("Add File...").accDoDefaultAction
          End If
-
+         
       Case "object":
          treMain.SelectedItem = tNodes(clsPopupMenu.ItemData(ItemNumber))
          'tb.Buttons(2)_Click
          tb_ButtonClick tB.Buttons(2)
-
+         
       Case "properties":
          'MsgBox "Unable to perform as cannot set SelectedVBProperty - Blame MS for this one"
          'Exit Sub
          If menuBar.Controls("View").Controls("Properties Window").Enabled Then
             menuBar.Controls("View").Controls("Properties Window").accDoDefaultAction
          End If
-
+         
       Case "code":
          OpenNode tNodes(clsPopupMenu.ItemData(ItemNumber))
-
+         
       Case "remove":
          If Not VBInstance.VBProjects(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(1)).VBComponents(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(0)).IsDirty Then
             VBInstance.VBProjects(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(1)).VBComponents.Remove VBInstance.VBProjects(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(1)).VBComponents(VBA.Split(tNodes(clsPopupMenu.ItemData(ItemNumber)).Key, "~")(0))
          Else
             MsgBox "Must Be Saved First."
          End If
-         ' #HOut# ********************
-         ' #HOut# Programmer Name  : removed
-         ' #HOut# Date             : 06/17/2001
-         ' #HOut# Time             : 09:30
-         ' #HOut# Comment          :
-         ' #HOut# Comment          :
-         ' #HOut# Comment          :
-         ' #HOut# ********************
-         ' #Out#       Case "hide":
-         ' #Out#          connect.Hide
-         ' #HOut# ********************
-
+   ' #HOut# ********************
+   ' #HOut# Programmer Name  : removed
+   ' #HOut# Date             : 06/17/2001
+   ' #HOut# Time             : 09:30
+   ' #HOut# Comment          :
+   ' #HOut# Comment          :
+   ' #HOut# Comment          :
+   ' #HOut# ********************
+   ' #Out#       Case "hide":
+   ' #Out#          connect.Hide
+   ' #HOut# ********************
+   
       Case Else
          If left$(clsPopupMenu.ItemKey(ItemNumber), 5) = "Goto:" Then
             'is goto line number
@@ -1625,7 +1625,7 @@ Private Sub projEvents_ItemRemoved(ByVal VBProject As VBIDE.VBProject)
    ' **********************************************************************
    '
    On Error Resume Next
-
+   
    treMain.Nodes.Remove treMain.Nodes("Project~" & VBProject.Name).index
 
 End Sub
@@ -1685,7 +1685,7 @@ Private Sub tb_ButtonClick(ByVal Button As MSComctlLib.Button)
    Select Case LCase$(Button.Key)
       Case "view code"
          OpenNode treMain.SelectedItem
-
+         
       Case "view form"
          Set theNode = treMain.SelectedItem
 
@@ -1701,18 +1701,18 @@ Private Sub tb_ButtonClick(ByVal Button As MSComctlLib.Button)
          End If
          err.Clear
          On Error GoTo 0
-
+         
       Case "refresh" ' *** Refresh
          Reload
-
+         
       Case "indent" ' *** Indent
          If treMain.SelectedItem.Parent Is Nothing Then
             ' *** Project
             Call IndentProject
-
+                     
          Else
             OpenNode treMain.SelectedItem
-
+            
             Select Case LCase$(VBA.Split(treMain.SelectedItem.Parent.Key, "~")(1))
                Case "project":
                   ' *** Project
@@ -1743,15 +1743,15 @@ Private Sub tb_ButtonClick(ByVal Button As MSComctlLib.Button)
                   Call IndentProcedure
             End Select
          End If
-
+      
       Case "comment" ' *** Comment
          If treMain.SelectedItem.Parent Is Nothing Then
             ' *** Project
             Call InsertProjectHeader
-
+                     
          Else
             OpenNode treMain.SelectedItem
-
+            
             Select Case LCase$(VBA.Split(treMain.SelectedItem.Parent.Key, "~")(1))
                Case "project":
                   ' *** Project
@@ -1782,7 +1782,7 @@ Private Sub tb_ButtonClick(ByVal Button As MSComctlLib.Button)
                   Call InsertProcedureHeader
             End Select
          End If
-
+      
    End Select
 
 EXIT_tb_ButtonClick:
@@ -1835,7 +1835,7 @@ Private Sub treMain_DblClick()
    Dim aProject         As VBProject
 
    On Error Resume Next
-
+   
    If Not b_clicked Then
       Exit Sub
    End If
@@ -1885,7 +1885,7 @@ Private Sub treMain_Expand(ByVal Node As MSComctlLib.Node)
    Dim VBProject        As VBProject
 
    On Error Resume Next
-
+   
    Key = Node.Key
    index = 0
    If left$(Key, 5) = "Type~" Then
@@ -1960,9 +1960,9 @@ Private Sub treMain_MouseMove(Button As Integer, Shift As Integer, x As Single, 
    ' *
    ' **********************************************************************
    Dim aNode            As Node
-
+   
    On Error Resume Next
-
+   
    Set aNode = treMain.HitTest(x, y)
    If aNode Is Nothing Then
       treMain.ToolTipText = vbNullString
@@ -1992,24 +1992,24 @@ Private Sub treMain_MouseUp(Button As Integer, Shift As Integer, x As Single, y 
    ' *
    ' *
    ' **********************************************************************
-
+   
    Dim aNode            As Node
    Dim Key              As String
    Dim menuBarItem      As CommandBarControl
    Dim nItem            As Long
-
+   
    On Error Resume Next
-
+   
    d_x2 = x
    d_y2 = y
-
+   
    ' *** Here we create the context menu
    If Button = 2 Then
       ' *** Create menu depending on selected item
       clsPopupMenu.ImageList = ImageList1
       clsPopupMenu.GradientHighlight = True
       clsPopupMenu.Clear
-
+   
       Set aNode = treMain.HitTest(x, y)
       If aNode Is Nothing Then
          Set aNode = treMain.HitTest(treMain.Width / 2, y)
@@ -2026,29 +2026,29 @@ Private Sub treMain_MouseUp(Button As Integer, Shift As Integer, x As Single, y 
          LoadProjectMenu Key
          nItem = clsPopupMenu.AddItem("&Indent Project", , tNodes(Key).index, , ImageList1.ListImages("Indent").index - 1, , , "ProjectIndent")
          clsPopupMenu.OwnerDraw(nItem) = True
-
+      
       ElseIf left$(Key, 5) = "Type~" Then
          LoadTypeMenu Key, aNode.Parent.Key
-
+      
       ElseIf IsNumeric(right$(Key, 1)) Then
          LoadSubMenu Key, aNode.Parent.Key
-
+      
       ElseIf left$(Key, 12) = "Description~" Then
          Exit Sub
-
+      
       ElseIf Len(Key) > 0 Then
          LoadTypeMenu Key, aNode.Parent.Key
-
+      
          nItem = clsPopupMenu.AddItem("&Indent ", , , , ImageList1.ListImages("Indent").index - 1, , , "IndentModule")
          clsPopupMenu.OwnerDraw(nItem) = True
-
+      
       Else
          LoadDefaultMenu ""
       End If
-
+      
       On Error Resume Next
       err.Clear
-
+      
       If Key <> vbNullString Then
          Set menuBarItem = VBInstance.CommandBars("Menu Bar").Controls("Project")
          nItem = clsPopupMenu.AddItem("&Form", , , clsPopupMenu.IndexForKey("ProjectAdd"), ImageList1.ListImages("Form").index - 1, , menuBarItem.Controls("Add Form").Enabled, "AddForm")
@@ -2073,7 +2073,7 @@ Private Sub treMain_MouseUp(Button As Integer, Shift As Integer, x As Single, y 
          tPT.x = (treMain.left + x) / Screen.TwipsPerPixelX
          tPT.y = (treMain.left + y) / Screen.TwipsPerPixelY
          mAPIAndCallbacks.ClientToScreen treMain.hWnd, tPT
-
+      
          ' Firstly, evaluate the menu item's height in the main menu:
          Dim lHeight          As Long
          Dim nI               As Long
@@ -2085,13 +2085,13 @@ Private Sub treMain_MouseUp(Button As Integer, Shift As Integer, x As Single, y 
                lHeight = lHeight + clsPopupMenu.MenuItemHeight(nI)
             End If
          Next
-
+      
          ' We use a PictureBox to hold the side logo here for convenience,
          ' however, you could use CreateCompatibleDC and CreateCompatibleBitmap
          ' to create a memory DC to hold this to avoid having the extra control.
          picSideBar.Height = lHeight * Screen.TwipsPerPixelY
          picSideBar.Width = 250
-
+      
          ' Draw a gradient into it.  Here I stole the code directly from the
          ' SideLogo/Fonts at any angle project for simplicity:
          Dim c                As New class_Logo
@@ -2102,11 +2102,11 @@ Private Sub treMain_MouseUp(Button As Integer, Shift As Integer, x As Single, y 
             .Caption = "VBDiamond"
             .Draw
          End With
-
+         
          clsPopupMenu.ShowPopupAbsolute tPT.x, tPT.y
-
+   
       End If
-
+   
    End If
 End Sub
 
@@ -2174,17 +2174,17 @@ Private Sub LoadSubMenu(strKey As String, strType As String)
    ' *
    ' *
    ' **********************************************************************
-
+   
    Dim nItem            As Long
    Dim index            As Long
-
+   
    On Error Resume Next
-
+   
    index = 0
    While IsNumeric(right$(strKey, index + 1))
       index = index + 1
    Wend
-
+   
    LoadTypeMenu Mid$(strKey, 2, InStr(1, strKey, "@", vbBinaryCompare) - 2), strType
    nItem = clsPopupMenu.AddItem("&Goto Line " & CLng(right$(strKey, index)) + 1, , , , , , , "Goto:" & strKey)
    clsPopupMenu.OwnerDraw(nItem) = True
@@ -2215,7 +2215,7 @@ Private Sub LoadDefaultMenu(strKey As String)
    ' *
    ' *
    ' **********************************************************************
-
+   
    LoadProjectMenu strKey
 
 End Sub
@@ -2256,14 +2256,14 @@ Private Sub LoadTypeMenu(strKey As String, strType As String)
    clsPopupMenu.OwnerDraw(nItem) = True
    nItem = clsPopupMenu.AddItem("&Add", , , , , , , "ProjectAdd")
    clsPopupMenu.OwnerDraw(nItem) = True
-
+   
    If right(strKey, 1) = "~" Then
       nItem = clsPopupMenu.AddItem("-")
       clsPopupMenu.OwnerDraw(nItem) = True
-
+      
       nItem = clsPopupMenu.AddItem("&Remove " & VBA.Split(strKey, "~")(0) & "  ", , tNodes(strKey).index, , , , , "Remove")
       clsPopupMenu.OwnerDraw(nItem) = True
-
+   
       nItem = clsPopupMenu.AddItem("-")
       clsPopupMenu.OwnerDraw(nItem) = True
    End If
@@ -2409,7 +2409,7 @@ Private Sub treMain_NodeClick(ByVal Node As MSComctlLib.Node)
    ' *
    ' **********************************************************************
    'here we need to enable/disable buttons, but not show code/expand nodes
-
+   
    OpenNode Node, False
 
 End Sub
@@ -2451,10 +2451,10 @@ Private Sub UserDocument_Resize()
    ' * Resize the objects relative to the form size
    ' *
    ' **********************************************************************
-
+   
    On Error Resume Next
-   Border.Height = UserDocument.ScaleHeight - treMain.top - 160
-   Border.Width = UserDocument.ScaleWidth - 20
+   border.Height = UserDocument.ScaleHeight - treMain.top - 160
+   border.Width = UserDocument.ScaleWidth - 20
    treMain.Height = UserDocument.ScaleHeight - treMain.top - 550
    treMain.Width = UserDocument.ScaleWidth - 100
 
@@ -2476,9 +2476,9 @@ Private Sub UserDocument_Show()
    ' *
    ' *
    ' **********************************************************************
-
+   
    On Error Resume Next
-
+   
    If Not VBInstance Is Nothing Then
       'automatically show the content
       Reload
@@ -2503,9 +2503,9 @@ Private Sub UserDocument_Terminate()
    ' *
    ' *
    ' **********************************************************************
-
+   
    On Error Resume Next
-
+   
    ' Release resources
    Set nodeRoot = Nothing
    Set tNodes = Nothing
@@ -2532,9 +2532,9 @@ Private Sub compEvents_ItemActivated(ByVal VBComponent As VBIDE.VBComponent)
    ' *
    ' *
    ' **********************************************************************
-
+   
    On Error Resume Next
-
+   
    'move to relevant node
    Dim aNode            As Node
    On Error Resume Next
@@ -2571,9 +2571,9 @@ Private Sub compEvents_ItemAdded(ByVal VBComponent As VBIDE.VBComponent)
    '
    Dim nodetype         As String
    Dim aNode            As Node
-
+   
    On Error GoTo Error_compEvents_ItemAdded
-
+   
    nodetype = GetNodeType(VBComponent)
    Set aNode = Nothing
    Set aNode = tNodes("Type~" & nodetype & "~" & VBComponent.Collection.Parent.Name)
@@ -2586,7 +2586,7 @@ Private Sub compEvents_ItemAdded(ByVal VBComponent As VBIDE.VBComponent)
 
 Error_compEvents_ItemAdded:
    Exit Sub
-
+   
 End Sub
 
 Private Sub compEvents_ItemReloaded(ByVal VBComponent As VBIDE.VBComponent)
@@ -2608,7 +2608,7 @@ Private Sub compEvents_ItemReloaded(ByVal VBComponent As VBIDE.VBComponent)
    ' **********************************************************************
    '
    On Error Resume Next
-
+   
    If tNodes.Item(GetComponentName(VBComponent) & "~" & VBComponent.Collection.Parent.Name & "~").Expanded Then
       tNodes.Item(GetComponentName(VBComponent) & "~" & VBComponent.Collection.Parent.Name & "~").Expanded = False
       treMain_Expand tNodes.Item(GetComponentName(VBComponent) & "~" & VBComponent.Collection.Parent.Name & "~")
@@ -2654,9 +2654,9 @@ Private Sub compEvents_ItemRenamed(ByVal VBComponent As VBIDE.VBComponent, ByVal
    ' *
    ' *
    ' **********************************************************************
-
+   
    On Error Resume Next
-
+   
    'this is not right
    RemoveComponent OldName, VBComponent.Collection.Parent.Name
    AddComponent GetComponentName(VBComponent), GetNodeType(VBComponent), VBComponent.Collection.Parent.Name
@@ -2701,7 +2701,7 @@ Private Sub RemoveComponent(ComponentName As String, sProjectName As String)
    ' *
    ' *
    ' **********************************************************************
-
+   
    On Error Resume Next
    tNodes.Remove ComponentName & "~" & sProjectName & "~"
    d_components.Remove ComponentName & "~" & sProjectName & "~"
@@ -2734,7 +2734,7 @@ Private Sub AddComponent(ComponentName As String, TypeName As String, sProjectNa
    Dim nodeKey          As String
 
    On Error Resume Next
-
+   
    nodeKey = ComponentName & "~" & sProjectName & "~"
    If tNodes Is Nothing Then
       Set tNodes = treMain.Nodes
@@ -2789,9 +2789,9 @@ Private Function GetComponentName(VBComponent As VBIDE.VBComponent) As String
    ' *
    ' *
    ' **********************************************************************
-
+   
    On Error Resume Next
-
+   
    If Len(VBComponent.Name) < 1 Then
       GetComponentName = Mid$(VBComponent.FileNames(1), InStrRev(VBComponent.FileNames(1), "\", , vbBinaryCompare) + 1)
    Else
@@ -2799,4 +2799,5 @@ Private Function GetComponentName(VBComponent As VBIDE.VBComponent) As String
    End If
 
 End Function
+
 

@@ -1,112 +1,37 @@
 VERSION 5.00
 Begin VB.UserDocument docMouseZoom 
-   BackColor       =   &H80000000&
-   ClientHeight    =   2130
+   ClientHeight    =   2475
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   2385
-   ContinuousScroll=   0   'False
-   HScrollSmallChange=   15
-   Picture         =   "docMouseCam.dox":0000
-   ScaleHeight     =   142
-   ScaleMode       =   3  'Pixel
-   ScaleWidth      =   159
-   ScrollBars      =   0  'None
-   VScrollSmallChange=   15
-   Begin VB.CommandButton cmdMouseCam 
-      DisabledPicture =   "docMouseCam.dox":03B6
-      Height          =   330
-      Index           =   6
-      Left            =   2040
-      Picture         =   "docMouseCam.dox":0728
-      Style           =   1  'Graphical
+   ClientWidth     =   2655
+   HScrollSmallChange=   225
+   ScaleHeight     =   2475
+   ScaleWidth      =   2655
+   VScrollSmallChange=   225
+   Begin VB.Timer tmrStatusCheck 
+      Enabled         =   0   'False
+      Interval        =   1000
+      Left            =   45
+      Top             =   45
+   End
+   Begin VB.Timer tmrHideLabels 
+      Enabled         =   0   'False
+      Interval        =   500
+      Left            =   450
+      Top             =   345
+   End
+   Begin VB.Timer tmrCamShot 
+      Enabled         =   0   'False
+      Interval        =   100
+      Left            =   30
+      Top             =   345
+   End
+   Begin VB.TextBox txtFocus 
+      Height          =   240
+      Left            =   60
       TabIndex        =   11
-      TabStop         =   0   'False
-      ToolTipText     =   "Change Interval"
-      Top             =   0
-      Width           =   330
-   End
-   Begin VB.CommandButton cmdMouseCam 
-      DisabledPicture =   "docMouseCam.dox":0B6A
-      Height          =   330
-      Index           =   5
-      Left            =   1710
-      Picture         =   "docMouseCam.dox":0EDC
-      Style           =   1  'Graphical
-      TabIndex        =   7
-      TabStop         =   0   'False
-      ToolTipText     =   "Change Interval"
-      Top             =   0
-      Width           =   330
-   End
-   Begin VB.CommandButton cmdMouseCam 
-      DisabledPicture =   "docMouseCam.dox":1292
-      Enabled         =   0   'False
-      Height          =   330
-      Index           =   4
-      Left            =   1380
-      Picture         =   "docMouseCam.dox":1648
-      Style           =   1  'Graphical
-      TabIndex        =   6
-      TabStop         =   0   'False
-      ToolTipText     =   "Zoom 100%"
-      Top             =   0
-      Width           =   330
-   End
-   Begin VB.CommandButton cmdMouseCam 
-      DisabledPicture =   "docMouseCam.dox":19FE
-      Enabled         =   0   'False
-      Height          =   330
-      Index           =   3
-      Left            =   1035
-      Picture         =   "docMouseCam.dox":1DB4
-      Style           =   1  'Graphical
-      TabIndex        =   5
-      TabStop         =   0   'False
-      ToolTipText     =   "Zoom Back"
-      Top             =   0
-      Width           =   345
-   End
-   Begin VB.CommandButton cmdMouseCam 
-      DisabledPicture =   "docMouseCam.dox":216A
-      Enabled         =   0   'False
-      Height          =   330
-      Index           =   2
-      Left            =   690
-      Picture         =   "docMouseCam.dox":2520
-      Style           =   1  'Graphical
-      TabIndex        =   4
-      TabStop         =   0   'False
-      ToolTipText     =   "Zoom Out"
-      Top             =   0
-      Width           =   345
-   End
-   Begin VB.CommandButton cmdMouseCam 
-      DisabledPicture =   "docMouseCam.dox":28D6
-      Enabled         =   0   'False
-      Height          =   330
-      Index           =   1
-      Left            =   345
-      Picture         =   "docMouseCam.dox":2C8C
-      Style           =   1  'Graphical
-      TabIndex        =   3
-      TabStop         =   0   'False
-      ToolTipText     =   "Zoom In"
-      Top             =   0
-      Width           =   345
-   End
-   Begin VB.CommandButton cmdMouseCam 
-      DisabledPicture =   "docMouseCam.dox":3042
-      Height          =   330
-      Index           =   0
-      Left            =   0
-      Picture         =   "docMouseCam.dox":33F8
-      Style           =   1  'Graphical
-      TabIndex        =   2
-      TabStop         =   0   'False
-      ToolTipText     =   "Click to start"
-      Top             =   0
-      Width           =   345
+      Top             =   15
+      Width           =   210
    End
    Begin VB.PictureBox picZoom 
       Appearance      =   0  'Flat
@@ -118,7 +43,7 @@ Begin VB.UserDocument docMouseZoom
       ScaleHeight     =   120
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   160
-      TabIndex        =   1
+      TabIndex        =   7
       Top             =   330
       Width           =   2400
       Begin VB.TextBox txtInterval 
@@ -131,19 +56,6 @@ Begin VB.UserDocument docMouseZoom
          Visible         =   0   'False
          Width           =   930
       End
-      Begin VB.Label lblIntervall 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Interval: (ms)"
-         ForeColor       =   &H80000008&
-         Height          =   225
-         Left            =   30
-         TabIndex        =   10
-         Top             =   45
-         Visible         =   0   'False
-         Width           =   975
-      End
       Begin VB.Label lblZoomPercent 
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
@@ -152,36 +64,119 @@ Begin VB.UserDocument docMouseZoom
          ForeColor       =   &H80000008&
          Height          =   210
          Left            =   30
-         TabIndex        =   9
+         TabIndex        =   10
          Top             =   60
          Visible         =   0   'False
          Width           =   1365
       End
+      Begin VB.Label lblIntervall 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "Interval: (ms)"
+         ForeColor       =   &H80000008&
+         Height          =   225
+         Left            =   30
+         TabIndex        =   9
+         Top             =   45
+         Visible         =   0   'False
+         Width           =   975
+      End
    End
-   Begin VB.TextBox txtFocus 
-      Height          =   240
-      Left            =   60
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":0000
+      Height          =   330
+      Index           =   0
+      Left            =   0
+      Picture         =   "docMouseCam.dox":03B6
+      Style           =   1  'Graphical
+      TabIndex        =   6
+      TabStop         =   0   'False
+      ToolTipText     =   "Click to start"
+      Top             =   0
+      Width           =   345
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":076C
+      Enabled         =   0   'False
+      Height          =   330
+      Index           =   1
+      Left            =   345
+      Picture         =   "docMouseCam.dox":0B22
+      Style           =   1  'Graphical
+      TabIndex        =   5
+      TabStop         =   0   'False
+      ToolTipText     =   "Zoom In"
+      Top             =   0
+      Width           =   345
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":0ED8
+      Enabled         =   0   'False
+      Height          =   330
+      Index           =   2
+      Left            =   690
+      Picture         =   "docMouseCam.dox":128E
+      Style           =   1  'Graphical
+      TabIndex        =   4
+      TabStop         =   0   'False
+      ToolTipText     =   "Zoom Out"
+      Top             =   0
+      Width           =   345
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":1644
+      Enabled         =   0   'False
+      Height          =   330
+      Index           =   3
+      Left            =   1035
+      Picture         =   "docMouseCam.dox":19FA
+      Style           =   1  'Graphical
+      TabIndex        =   3
+      TabStop         =   0   'False
+      ToolTipText     =   "Zoom Back"
+      Top             =   0
+      Width           =   345
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":1DB0
+      Enabled         =   0   'False
+      Height          =   330
+      Index           =   4
+      Left            =   1380
+      Picture         =   "docMouseCam.dox":2166
+      Style           =   1  'Graphical
+      TabIndex        =   2
+      TabStop         =   0   'False
+      ToolTipText     =   "Zoom 100%"
+      Top             =   0
+      Width           =   330
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":251C
+      Height          =   330
+      Index           =   5
+      Left            =   1710
+      Picture         =   "docMouseCam.dox":288E
+      Style           =   1  'Graphical
+      TabIndex        =   1
+      TabStop         =   0   'False
+      ToolTipText     =   "Change Interval"
+      Top             =   0
+      Width           =   330
+   End
+   Begin VB.CommandButton cmdMouseCam 
+      DisabledPicture =   "docMouseCam.dox":2C44
+      Height          =   330
+      Index           =   6
+      Left            =   2040
+      Picture         =   "docMouseCam.dox":2FB6
+      Style           =   1  'Graphical
       TabIndex        =   0
-      Top             =   15
-      Width           =   210
-   End
-   Begin VB.Timer tmrCamShot 
-      Enabled         =   0   'False
-      Interval        =   100
-      Left            =   30
-      Top             =   345
-   End
-   Begin VB.Timer tmrHideLabels 
-      Enabled         =   0   'False
-      Interval        =   500
-      Left            =   450
-      Top             =   345
-   End
-   Begin VB.Timer tmrStatusCheck 
-      Enabled         =   0   'False
-      Interval        =   1000
-      Left            =   45
-      Top             =   45
+      TabStop         =   0   'False
+      ToolTipText     =   "Change Interval"
+      Top             =   0
+      Width           =   330
    End
 End
 Attribute VB_Name = "docMouseZoom"
@@ -193,12 +188,12 @@ Option Explicit
 
 'Enum to control Camera States:
 Private Enum mcCameraState
-   mcStop = 0
-   mcRun = 1
-   mcPause = 2
+    mcStop = 0
+    mcRun = 1
+    mcPause = 2
 End Enum
 
-Private CameraState     As mcCameraState 'current State of Camera
+Private CameraState As mcCameraState 'current State of Camera
 
 'PointAPI type (needed for the API to get Cursor Position)
 Private Type POINTAPI
@@ -239,7 +234,7 @@ Private lngMaxY         As Long 'Max Y position due to Screen.Height
 '******************************************************************************
 Private Sub UserDocument_Initialize()
    On Error Resume Next
-
+   
    'Get the hwnd of desktop (to make camera work all around)
    DesktopHwnd = GetDesktopWindow()
    'Get the hDc of the Desktop (necessary for snapshot)
@@ -686,4 +681,7 @@ errControlCamera:
    err.Clear
 
 End Function
+
+
+
 

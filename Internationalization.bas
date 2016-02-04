@@ -23,7 +23,7 @@ Global Const DANISH_LANG = 25000
 Public Sub InternationalizeForm(theForm As Form)
    ' #VBIDEUtils#************************************************************
    ' * Programmer Name  : removed
-   ' * Web Site         : www.vbdiamond.com
+   ' * Web Site         : www.ppreview.net
    ' * E-Mail           : removed
    ' * Date             : 08/11/1999
    ' * Time             : 12:07
@@ -50,7 +50,7 @@ Public Sub InternationalizeForm(theForm As Form)
    For nI = 0 To theForm.Controls.Count - 1
       ' *** Translate all the captions
       On Error Resume Next
-      If TypeOf theForm.Controls(nI) Is ToolBar Then
+      If TypeOf theForm.Controls(nI) Is Toolbar Then
          For nJ = 1 To theForm.Controls(nI).Buttons.Count
             With theForm.Controls(nI).Buttons(nJ)
                .Caption = Translation(.Caption)
@@ -85,7 +85,7 @@ End Sub
 Public Function Translation(sText As String) As String
    ' #VBIDEUtils#************************************************************
    ' * Programmer Name  : removed
-   ' * Web Site         : www.vbdiamond.com
+   ' * Web Site         : www.ppreview.net
    ' * E-Mail           : removed
    ' * Date             : 08/11/1999
    ' * Time             : 12:07
