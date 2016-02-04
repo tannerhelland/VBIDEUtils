@@ -1,6 +1,6 @@
 Type=OleDll
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINNT\System32\stdole2.tlb#OLE Automation
-Reference=*\G{8C8D80E7-4C18-436A-898A-29423B1CF2EC}#1.0#0#..\VBIDEUtils0.dll#VBIDEUtils- Subclassing and Timer Assistant (with configurable message response, multi-control support + timer bug fix)
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Reference=*\G{9A59F7C2-77D2-4E79-8998-522CDEA6F64F}#2.0#0#..\VBIDEUtils0\VBIDEUtils0.dll#VBIDEUtils- Subclassing and Timer Assistant (with configurable message response, multi-control support + timer bug fix)
 Class=cPopupMenu; cPopupMenu.cls
 Module=mDeclares; mGDIAPI.bas
 Class=cNCMetrics; cNCMetrics.cls
@@ -16,7 +16,7 @@ Name="VBIDEUtils3"
 HelpContextID="0"
 Description="VBIDEUtils- vbAccelerator Popup Menu DLL.  Create unlimited new pop-up menus."
 CompatibleMode="2"
-CompatibleEXE32="..\VBIDEUtils3.dll"
+CompatibleEXE32="..\VBIDEUtils3.cmp"
 VersionCompatible32="1"
 MajorVer=2
 MinorVer=1
