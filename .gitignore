@@ -108,3 +108,8 @@ Desktop.ini
 *.vbw
 *.vbr
 *.vbd
+*.oca
+*.dll
+*.ocx
+*.exp
+*.lib
