@@ -1,4 +1,4 @@
-Update 04 Feb 2016: Compiled binaries from the original author are now available in the root folder.  As with any precompiled files, use at your own risk.  Per Thierry69's instructions, "in order to add it to the list of addins, the user must call the AddToINI in the immediate window."
+﻿Update 04 Feb 2016: Compiled binaries from the original author are now available in the root folder.  As with any precompiled files, use at your own risk.  Per Thierry69's instructions, "in order to add it to the list of addins, the user must call the AddToINI in the immediate window."
 
 Update 06 October 2015: Please note that I am not the author of this code.  "Thierry69" is the owner and author of the code, and it is reproduced here at his request.  This repository is primarily a mirror of the original VBIDEUtils source, as uploaded here: http://www.vbforums.com/showthread.php?806227-VBIDEUtils-now-open-sources
 
@@ -12,72 +12,71 @@ VBIDEUtils / VBCodeDatabase 4.0 by Thierry69
 Description
 -----------
 
-VBIDEUtils is a great add-in for VB 5.0 and VB 6.0. With
-this add-in, you can do :
-    - Code Repository
-                - Store VB Code, Classes, Projects
-                - Store files
-                - Store HTML pages
-                - Store HTML links
-                - Search through all the database
-                - Store VB Scripts 
-                - Java Scripts 
-                - Java
-                - Icons
-                - Use bookmarks
-                - Enhanced search
-                - Search through all the VB Web sites
-                - Synchronize your local DB with the DB of VBDiamond
-                - Synchronize code with the major VB Code sites
-                - Search for programming books on the Web
-                - Save your code as HTML pages
-                - 
-                - .....
-        - Make search through a very extensive Book repository
-    - Indent easily your code, procedure, block, variables
-    - Add comment to your modules and procedures
-    - Find the corresponding ending block instruction
-    - Know all the APIs error name
-    - Clear the debug Window
-    - Change easily the taborder of all your controls
-    - Add customized error handler to your code
-    - Add enhanced error handler to your code with
-          loggin, trace
-    - Show the KeyAscii table to help you coding 
-          functions
-    - An assistant to create your messagebox
-    - A Toolbar code generator
-    - Close all the unused windows in the VB IDE
-        - Spy the classname of each windows
-        - An Icon browser
-        - A DBCreator code generator
-        - An ActiveX documentor
-        - Export all code to HTML files (from the VB IDE 
-          or the VBCodedatabase)
-        - Import/Export to VCL and DCB files        
-        - Export the VB Code from the VB IDE to HTML files
-        - Extract all the strings and translate them directly 
-          in the addin for further use of resources String 
-          and so internationalize your applications
-    - Change/Modify the tooltips all your controls
-        - Add new procedure/functions/properties easily
-          with parameters, description....
-        - Get all dependencies of an executable or a VB project
-        - Analyze VB projects
-        - Search all the web in the VB sites directly from the addin
-        - Added a VB project explorer
-        - Profile your VB projects and detect dead code
-           including dead variables, dead procedures...
-        - Add/remove line numbering in your code
-        - Control properties assistant
-        - Accelerator assistant
-        - Generate code to create toolbar at runtime
-        - Get easily code from several VB Code websites on the web
-        - Added an enhanced find in VB projects
-        - Added the automatic creation of connections strings for ADO
-    - Generate automatically DLL Base Adresses
-    - Generate GUID
-    - A lot of of other new features
+VBIDEUtils is a great add-in for VB 5.0 and VB 6.0. With this add-in, you can do:
+	- Code Repository
+				- Store VB Code, Classes, Projects
+				- Store files
+				- Store HTML pages
+				- Store HTML links
+				- Search through all the database
+				- Store VB Scripts 
+				- Java Scripts 
+				- Java
+				- Icons
+				- Use bookmarks
+				- Enhanced search
+				- Search through all the VB Web sites
+				- Synchronize your local DB with the DB of VBDiamond
+				- Synchronize code with the major VB Code sites
+				- Search for programming books on the Web
+				- Save your code as HTML pages
+				- 
+				- .....
+		- Make search through a very extensive Book repository
+	- Indent easily your code, procedure, block, variables
+	- Add comment to your modules and procedures
+	- Find the corresponding ending block instruction
+	- Know all the APIs error name
+	- Clear the debug Window
+	- Change easily the taborder of all your controls
+	- Add customized error handler to your code
+	- Add enhanced error handler to your code with
+		  loggin, trace
+	- Show the KeyAscii table to help you coding 
+		  functions
+	- An assistant to create your messagebox
+	- A Toolbar code generator
+	- Close all the unused windows in the VB IDE
+		- Spy the classname of each windows
+		- An Icon browser
+		- A DBCreator code generator
+		- An ActiveX documentor
+		- Export all code to HTML files (from the VB IDE 
+		  or the VBCodedatabase)
+		- Import/Export to VCL and DCB files		
+		- Export the VB Code from the VB IDE to HTML files
+		- Extract all the strings and translate them directly 
+		  in the addin for further use of resources String 
+		  and so internationalize your applications
+	- Change/Modify the tooltips all your controls
+		- Add new procedure/functions/properties easily
+		  with parameters, description....
+		- Get all dependencies of an executable or a VB project
+		- Analyze VB projects
+		- Search all the web in the VB sites directly from the addin
+		- Added a VB project explorer
+		- Profile your VB projects and detect dead code
+		   including dead variables, dead procedures...
+		- Add/remove line numbering in your code
+		- Control properties assistant
+		- Accelerator assistant
+		- Generate code to create toolbar at runtime
+		- Get easily code from several VB Code websites on the web
+		- Added an enhanced find in VB projects
+		- Added the automatic creation of connections strings for ADO
+	- Generate automatically DLL Base Adresses
+	- Generate GUID
+	- A lot of of other new features
 
 VBCodeDatabase is an external application and have exactly the same functions than the Code repository in the VBIDEUtils. The database is full compatible. It has been created for the users wich don't want the full add-ins, but only the code repository.
 
