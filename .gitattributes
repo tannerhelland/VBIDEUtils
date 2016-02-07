@@ -18,6 +18,7 @@
 *.frm    eol=crlf
 *.txt    eol=crlf
 *.vbp    eol=crlf
+*.vbg    eol=crlf
 
 # Standard to msysgit
 *.doc	 diff=astextplain
